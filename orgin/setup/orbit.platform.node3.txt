@@ -2,6 +2,7 @@
 -Dlogback.configurationFile=/Users/oceaneuropa/origin/logback/orbit0.xml 
 
 -Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
+-Dorbit.extension_registry.url=http://127.0.0.1:8000/orbit/v1/extensionregistry 
 -Dorbit.host.url=http://127.0.0.1:9003 
 
 -Dplatform.id=node3 

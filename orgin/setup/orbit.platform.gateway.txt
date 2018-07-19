@@ -17,6 +17,11 @@
 -Dcomponent.index_service.relay.context_root=/orbit/v1/indexservice 
 -Dcomponent.index_service.relay.hosts=http://127.0.0.1:8001;http://127.0.0.1:8002 
 
+-Dcomponent.extension_registry.relay.autostart=true 
+-Dcomponent.extension_registry.relay.name=ExtensionRegistryServiceFront 
+-Dcomponent.extension_registry.relay.context_root=/orbit/v1/extensionregistry 
+-Dcomponent.extension_registry.relay.hosts=http://127.0.0.1:8001;http://127.0.0.1:8002
+
 -Dcomponent.channel.relay.autostart=true 
 -Dcomponent.channel.relay.name=ChannelFront 
 -Dcomponent.channel.relay.context_root=/orbit/v1/channel 

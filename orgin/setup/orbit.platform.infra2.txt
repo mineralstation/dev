@@ -2,6 +2,7 @@
 -Dlogback.configurationFile=/Users/oceaneuropa/origin/logback/orbit0.xml 
 
 -Dorbit.index_service.url=http://127.0.0.1:8002/orbit/v1/indexservice 
+-Dorbit.extension_registry.url=http://127.0.0.1:8002/orbit/v1/extensionregistry 
 -Dorbit.host.url=http://127.0.0.1:8002 
 
 -Dplatform.id=p92 
@@ -18,6 +19,14 @@
 -Dcomponent.index_service.jdbc.url=jdbc:postgresql://127.0.0.1:5432/origin 
 -Dcomponent.index_service.jdbc.username=postgres 
 -Dcomponent.index_service.jdbc.password=password 
+
+-Dcomponent.extension_registry.autostart=true 
+-Dcomponent.extension_registry.name=ExtensionRegistryService2 
+-Dcomponent.extension_registry.context_root=/orbit/v1/extensionregistry 
+-Dcomponent.extension_registry.jdbc.driver=org.postgresql.Driver 
+-Dcomponent.extension_registry.jdbc.url=jdbc:postgresql://127.0.0.1:5432/origin 
+-Dcomponent.extension_registry.jdbc.username=postgres 
+-Dcomponent.extension_registry.jdbc.password=password 
 
 -Dcomponent.channel.autostart=true 
 -Dcomponent.channel.name=Channel2 

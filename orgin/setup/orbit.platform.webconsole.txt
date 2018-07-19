@@ -4,6 +4,7 @@
 -Dorbit.host.url=http://127.0.0.1:8080 
 
 -Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
+-Dorbit.extension_registry.url=http://127.0.0.1:8000/orbit/v1/extensionregistry 
 -Dorbit.user_registry.url=http://127.0.0.1:8000/orbit/v1/userregistry 
 -Dorbit.app_store.url=http://127.0.0.1:8000/orbit/v1/appstore 
 -Dorbit.domain_service.url=http://127.0.0.1:8000/orbit/v1/domain/machines 
