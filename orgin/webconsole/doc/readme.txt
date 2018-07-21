@@ -36,5 +36,5 @@ https://github.com/russmaxdesign
 Tabs
 https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_tabs&stacked=h
 https://speckyboy.com/10-simple-code-snippets-creating-beautiful-tabs/
-
+https://jqueryui.com/tabs/
 
