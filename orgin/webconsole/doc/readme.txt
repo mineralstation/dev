@@ -38,3 +38,5 @@ https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_tabs&stacked=h
 https://speckyboy.com/10-simple-code-snippets-creating-beautiful-tabs/
 https://jqueryui.com/tabs/
 
+File upload
+https://stackoverflow.com/questions/2422468/how-to-upload-files-to-server-using-jsp-servlet

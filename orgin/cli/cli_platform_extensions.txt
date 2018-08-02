@@ -1,0 +1,2 @@
+1. list all extensions of a platform
+lextensions

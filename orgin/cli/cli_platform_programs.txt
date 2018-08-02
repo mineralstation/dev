@@ -1,0 +1,48 @@
+1. list programs
+lprograms
+lprograms -b
+
+lprogram_manifests
+lprogram_manifests -b
+
+2. install/uninstall program
+installapp   -location "/Users/example/origin/ta1/temp/org.example.foo.editor_1.0.0.app"
+uninstallapp -id "org.example.foo.editor" -version "1.0.0"
+
+installapp   -location "/Users/example/origin/ta1/temp/org.app.foo.editor_2.0.1.app"
+uninstallapp -id org.app.foo.editor -version 2.0.1
+
+installapp   -location "/Users/example/origin/ta1/temp/org.app.bar.editor_1.0.0.app"
+uninstallapp -id "org.app.bar.editor" -version "1.0.0"
+
+
+3. activate/deactivate program
+activateapp   -id "org.example.foo.editor" -version "1.0.0"
+deactivateapp -id "org.example.foo.editor" -version "1.0.0"
+
+activateapp   -id "org.app.foo.editor" -version "2.0.1"
+deactivateapp -id "org.app.foo.editor" -version "2.0.1"
+
+activateapp   -id "org.app.bar.editor" -version "1.0.0"
+deactivateapp -id "org.app.bar.editor" -version "1.0.0"
+
+4. start/stop program
+startapp -id "org.example.foo.editor" -version "1.0.0"
+stopapp  -id "org.example.foo.editor" -version "1.0.0"
+
+startapp -id org.app.foo.editor -version 2.0.1
+stopapp  -id org.app.foo.editor -version 2.0.1
+
+startapp -id "org.app.bar.editor" -version "1.0.0"
+stopapp  -id "org.app.bar.editor" -version "1.0.0"
+
+
+OSGi commands
+1. install OSGi bundle
+install /Users/example/origin/ta1/apps/org.example.foo.editor_1.0.0/plugins/org.app.example1_1.0.0.201706141406.jar
+install /Users/example/origin/ta1/apps/org.example.foo.editor_1.0.0/plugins/org.app.example2_1.0.0.201706141406.jar
+
+install /Users/example/origin/ta1/apps/org.app.foo.editor_2.0.1/org.app.foo.editor_2.0.1.app
+install /Users/example/origin/ta1/apps/org.app.foo.editor_2.0.1/plugins/org.app.example1_1.0.5.jar
+install /Users/example/origin/ta1/apps/org.app.foo.editor_2.0.1/plugins/org.app.example2_1.0.6.jar
+
