@@ -40,3 +40,20 @@ https://jqueryui.com/tabs/
 
 File upload
 https://stackoverflow.com/questions/2422468/how-to-upload-files-to-server-using-jsp-servlet
+http://www.codejava.net/java-ee/servlet/apache-commons-fileupload-example-with-servlet-and-jsp
+https://commons.apache.org/proper/commons-fileupload/using.html
+https://stackoverflow.com/questions/27609569/file-upload-along-with-other-object-in-jersey-restful-web-service
+
+File download
+http://www.baeldung.com/servlet-download-file (Servlet)
+https://stackoverflow.com/questions/1442893/implementing-a-simple-file-download-servlet (Servlet)
+https://stackoverflow.com/questions/12239868/whats-the-correct-way-to-send-a-file-from-rest-web-service-to-client (REST)
+
+
+
+
+
+
+
+
+
