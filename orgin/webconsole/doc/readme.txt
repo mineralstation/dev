@@ -50,10 +50,15 @@ https://stackoverflow.com/questions/1442893/implementing-a-simple-file-download-
 https://stackoverflow.com/questions/12239868/whats-the-correct-way-to-send-a-file-from-rest-web-service-to-client (REST)
 
 
+Ajax
+https://stackoverflow.com/questions/4112686/how-to-use-servlets-and-ajax
+https://www.digitalocean.com/community/tutorials/an-introduction-to-jquery
 
 
+CDN
+https://developers.google.com/speed/libraries/
 
 
-
-
+Universe
+https://en.wikipedia.org/wiki/List_of_nearest_stars_and_brown_dwarfs
 
