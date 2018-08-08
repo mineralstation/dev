@@ -51,9 +51,10 @@ https://stackoverflow.com/questions/12239868/whats-the-correct-way-to-send-a-fil
 
 
 Ajax
-https://stackoverflow.com/questions/4112686/how-to-use-servlets-and-ajax
 https://www.digitalocean.com/community/tutorials/an-introduction-to-jquery
-
+https://stackoverflow.com/questions/4112686/how-to-use-servlets-and-ajax // general examples
+https://stackoverflow.com/questions/13392476/how-to-pass-arguments-into-jquery-function // pass parameters to jquery
+https://stackoverflow.com/questions/3273350/jquerys-click-pass-parameters-to-user-function // pass parameters to jquery
 
 CDN
 https://developers.google.com/speed/libraries/
