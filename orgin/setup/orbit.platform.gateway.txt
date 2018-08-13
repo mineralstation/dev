@@ -32,6 +32,11 @@
 -Dcomponent.user_registry.relay.context_root=/orbit/v1/userregistry 
 -Dcomponent.user_registry.relay.hosts=http://127.0.0.1:8003;http://127.0.0.1:8004 
 
+-Dcomponent.identity.relay.autostart=true 
+-Dcomponent.identity.relay.name=IdentityServiceFront 
+-Dcomponent.identity.relay.context_root=/orbit/v1/identity 
+-Dcomponent.identity.relay.hosts=http://127.0.0.1:8003;http://127.0.0.1:8004 
+
 -Dcomponent.auth.relay.autostart=true 
 -Dcomponent.auth.relay.name=AuthFront 
 -Dcomponent.auth.relay.context_root=/orbit/v1/auth 

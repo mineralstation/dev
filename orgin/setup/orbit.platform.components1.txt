@@ -22,6 +22,14 @@
 -Dcomponent.user_registry.jdbc.username=postgres 
 -Dcomponent.user_registry.jdbc.password=password 
 
+-Dcomponent.identity.autostart=true 
+-Dcomponent.identity.name=IdentityService1 
+-Dcomponent.identity.context_root=/orbit/v1/identity 
+-Dcomponent.identity.jdbc.driver=org.postgresql.Driver 
+-Dcomponent.identity.jdbc.url=jdbc:postgresql://127.0.0.1:5432/origin 
+-Dcomponent.identity.jdbc.username=postgres 
+-Dcomponent.identity.jdbc.password=password 
+
 -Dcomponent.auth.autostart=true 
 -Dcomponent.auth.name=Auth1 
 -Dcomponent.auth.context_root=/orbit/v1/auth 

@@ -5,7 +5,8 @@
 
 -Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
 -Dorbit.extension_registry.url=http://127.0.0.1:8000/orbit/v1/extensionregistry 
--Dorbit.user_registry.url=http://127.0.0.1:8000/orbit/v1/userregistry  
+-Dorbit.user_registry.url=http://127.0.0.1:8000/orbit/v1/userregistry 
+-Dorbit.identity_service.url=http://127.0.0.1:8000/orbit/v1/identity 
 -Dorbit.domain_service.url=http://127.0.0.1:8000/orbit/v1/domain/machines 
 -Dorbit.app_store.url=http://127.0.0.1:8003/orbit/v1/appstore
 
@@ -21,3 +22,6 @@
 
 -Dcomponent.web_console.autostart=true 
 -Dcomponent.web_console.context_root=/orbit/webconsole/component 
+
+-Dpublic.web_console.autostart=true 
+-Dpublic.web_console.context_root=/orbit/webconsole/public 

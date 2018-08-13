@@ -63,3 +63,27 @@ https://developers.google.com/speed/libraries/
 Universe
 https://en.wikipedia.org/wiki/List_of_nearest_stars_and_brown_dwarfs
 
+
+Servlet login/logout
+https://www.javatpoint.com/servlet-http-session-login-and-logout-example
+
+
+Annotation
+https://marcin-chwedczuk.github.io/creating-and-using-adnotations-in-java
+https://www.objc.io/issues/11-android/dependency-injection-in-java/ (good examples)
+
+
+Auth
+http://self-issued.info/docs/draft-ietf-oauth-v2-bearer.html
+https://tools.ietf.org/html/rfc7519#section-4.1.3 (about JWT attributes)
+
+
+iPaaS
+https://searchcloudapplications.techtarget.com/definition/iPaaS-Integration-platform-as-a-service
+
+
+About HttpSession
+https://osgi.org/javadoc/r4v42/org/osgi/service/http/HttpService.html
+https://github.com/eclipse/jetty.project/issues/224 ("if you want 2 servlets to share a single ServletContext, then they must have a common HttpContext passed into registerServlet method call.")
+
+
