@@ -87,3 +87,6 @@ https://osgi.org/javadoc/r4v42/org/osgi/service/http/HttpService.html
 https://github.com/eclipse/jetty.project/issues/224 ("if you want 2 servlets to share a single ServletContext, then they must have a common HttpContext passed into registerServlet method call.")
 
 
+REST resource get headers
+https://www.mkyong.com/webservices/jax-rs/get-http-header-in-jax-rs/
+https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
