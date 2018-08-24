@@ -90,3 +90,8 @@ https://github.com/eclipse/jetty.project/issues/224 ("if you want 2 servlets to 
 REST resource get headers
 https://www.mkyong.com/webservices/jax-rs/get-http-header-in-jax-rs/
 https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+
+
+Volume, partition and drive
+https://unix.stackexchange.com/questions/87300/differences-between-volume-partition-and-drive
+

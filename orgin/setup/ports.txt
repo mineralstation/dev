@@ -1,0 +1,18 @@
+gateway			8000
+infra1			8001
+infra2			8002
+components1		8003
+components2		8004
+webconsole1		8080
+
+dfs1			8100
+dfs1_volume1	8101
+dfs1_volume2	8102
+dfs1_volume3	8103
+dfs1_volume4	8104
+
+node1			9001
+node2			9002
+...
+node7			9007
+node8			9008

@@ -1,0 +1,23 @@
+-Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=8100 
+-Dlogback.configurationFile=/Users/oceaneuropa/origin/logback/orbit0.xml 
+
+-Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
+-Dorbit.extension_registry.url=http://127.0.0.1:8000/orbit/v1/extensionregistry 
+
+-Dorbit.host.url=http://127.0.0.1:8100 
+
+-Dplatform.id=p8100 
+-Dplatform.name=Substance10 
+-Dplatform.version=1.0.0 
+-Dplatform.type=server 
+-Dplatform.context_root=/orbit/v1/platform 
+ 
+-Dsubstance.dfs.autostart=true  
+-Dsubstance.dfs.id=dfs1 
+-Dsubstance.dfs.name=DFS1 
+-Dsubstance.dfs.context_root=/orbit/v1/dfs 
+-Dsubstance.dfs.jdbc.driver=org.postgresql.Driver 
+-Dsubstance.dfs.jdbc.url=jdbc:postgresql://127.0.0.1:5432/dfs1 
+-Dsubstance.dfs.jdbc.username=postgres 
+-Dsubstance.dfs.jdbc.password=password 
+-Dsubstance.dfs.block_capacity_mb=100 
