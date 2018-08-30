@@ -95,3 +95,6 @@ https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
 Volume, partition and drive
 https://unix.stackexchange.com/questions/87300/differences-between-volume-partition-and-drive
 
+UUID
+https://twasink.net/2017/11/02/using-shorter-uuids/
+

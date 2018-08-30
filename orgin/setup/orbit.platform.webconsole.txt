@@ -8,7 +8,8 @@
 -Dorbit.user_registry.url=http://127.0.0.1:8000/orbit/v1/userregistry 
 -Dorbit.identity_service.url=http://127.0.0.1:8000/orbit/v1/identity 
 -Dorbit.domain_service.url=http://127.0.0.1:8000/orbit/v1/domain/machines 
--Dorbit.app_store.url=http://127.0.0.1:8003/orbit/v1/appstore
+-Dorbit.app_store.url=http://127.0.0.1:8003/orbit/v1/appstore 
+-Dorbit.dfs.url=http://127.0.0.1:8100/orbit/v1/dfs 
 
 -Dplatform.id=webconsole1 
 -Dplatform.name=WebConsole1 
@@ -25,3 +26,9 @@
 
 -Dpublic.web_console.autostart=true 
 -Dpublic.web_console.context_root=/orbit/webconsole/public 
+
+-Dsubstance.dfs.web_console.autostart=true 
+-Dsubstance.dfs.web_console.context_root=/orbit/webconsole/dfs 
+
+-Dsubstance.dfs_volume.web_console.autostart=true 
+-Dsubstance.dfs_volume.web_console.context_root=/orbit/webconsole/dfsvolume 
