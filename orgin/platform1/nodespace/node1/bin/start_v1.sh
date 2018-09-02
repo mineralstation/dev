@@ -1,4 +1,4 @@
-PLATFORM_HOME=/Users/yayang/origin/ta1
+PLATFORM_HOME=/Users/oceaneuropa/origin/ta1
 
 CURRENT_DIR=$(dirname $0)
 PARENT_DIR="$(dirname ${CURRENT_DIR})"
