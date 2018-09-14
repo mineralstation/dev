@@ -22,4 +22,25 @@
 -Dsubstance.dfs.jdbc.password=password 
 -Dsubstance.dfs.block_capacity_mb=100 
 
-A
+
+Node properties:
+-----------------------------------------------------------------------------
+org.osgi.service.http.port=8100
+orbit.host.url=http://127.0.0.1:8100
+
+platform.id=p8100
+platform.name=Substance10
+platform.version=1.0.0
+platform.type=node
+platform.context_root=/orbit/v1/platform
+ 
+substance.dfs.autostart=true
+substance.dfs.id=dfs1
+substance.dfs.name=DFS1
+substance.dfs.context_root=/orbit/v1/dfs
+substance.dfs.jdbc.driver=org.postgresql.Driver
+substance.dfs.jdbc.url=jdbc:postgresql://127.0.0.1:5432/dfs1
+substance.dfs.jdbc.username=postgres
+substance.dfs.jdbc.password=password
+substance.dfs.block_capacity_mb=100
+-----------------------------------------------------------------------------

@@ -24,4 +24,27 @@
 -Dsubstance.dfs_volume.volume_capacity_gb=10 
 -Dsubstance.dfs_volume.block_capacity_mb=100 
 
-A
+
+Node properties:
+-----------------------------------------------------------------------------
+org.osgi.service.http.port=8101
+orbit.host.url=http://127.0.0.1:8101
+
+platform.id=p8101
+platform.name=Substance11
+platform.version=1.0.0
+platform.type=node
+platform.context_root=/orbit/v1/platform
+
+substance.dfs_volume.autostart=true
+substance.dfs_volume.dfs_id=dfs1
+substance.dfs_volume.id=volume1
+substance.dfs_volume.name=Volume1
+substance.dfs_volume.context_root=/orbit/v1/dfs_volume
+substance.dfs_volume.jdbc.driver=org.postgresql.Driver
+substance.dfs_volume.jdbc.url=jdbc:postgresql://127.0.0.1:5432/dfs1_volume1
+substance.dfs_volume.jdbc.username=postgres
+substance.dfs_volume.jdbc.password=password
+substance.dfs_volume.volume_capacity_gb=10
+substance.dfs_volume.block_capacity_mb=100
+-----------------------------------------------------------------------------
