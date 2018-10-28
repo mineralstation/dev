@@ -1,12 +1,12 @@
--Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=8204 
+-Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=9104 
 -Dlogback.configurationFile=/Users/oceaneuropa/origin/logback/orbit0.xml 
 
 -Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
 -Dorbit.extension_registry.url=http://127.0.0.1:8000/orbit/v1/extensionregistry 
 
--Dorbit.host.url=http://127.0.0.1:8204 
+-Dorbit.host.url=http://127.0.0.1:9104 
 
--Dplatform.id=p8204 
+-Dplatform.id=p9104 
 -Dplatform.name=Spirit14 
 -Dplatform.version=1.0.0 
 -Dplatform.type=server 
@@ -25,10 +25,10 @@
 
 Node properties:
 -----------------------------------------------------------------------------
-org.osgi.service.http.port=8204
-orbit.host.url=http://127.0.0.1:8204
+org.osgi.service.http.port=9104
+orbit.host.url=http://127.0.0.1:9104
 
-platform.id=p8204
+platform.id=p9104
 platform.name=Spirit14
 platform.version=1.0.0
 platform.type=node

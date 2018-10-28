@@ -28,6 +28,14 @@
 -Dcomponent.extension_registry.jdbc.username=postgres 
 -Dcomponent.extension_registry.jdbc.password=password 
 
+-Dinfra.config_registry.autostart=true 
+-Dinfra.config_registry.name=ConfigRegistry1 
+-Dinfra.config_registry.context_root=/orbit/v1/cfg 
+-Dinfra.config_registry.jdbc.driver=org.postgresql.Driver 
+-Dinfra.config_registry.jdbc.url=jdbc:postgresql://127.0.0.1:5432/origin 
+-Dinfra.config_registry.jdbc.username=postgres 
+-Dinfra.config_registry.jdbc.password=password 
+
 -Dcomponent.channel.autostart=true 
 -Dcomponent.channel.name=Channel1 
 -Dcomponent.channel.context_root=/orbit/v1/channel 

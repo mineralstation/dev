@@ -98,4 +98,7 @@ https://unix.stackexchange.com/questions/87300/differences-between-volume-partit
 UUID
 https://twasink.net/2017/11/02/using-shorter-uuids/
 
-A
+JVM
+https://stackoverflow.com/questions/35842/how-can-a-java-program-get-its-own-process-id
+
+
