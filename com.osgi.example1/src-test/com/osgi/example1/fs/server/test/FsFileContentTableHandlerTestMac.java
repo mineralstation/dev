@@ -88,9 +88,6 @@ public class FsFileContentTableHandlerTestMac {
 			is4 = new FileInputStream(file4);
 			boolean succeed4 = FsTableUtil.writeFileContentPostgres(conn, 4, is4);
 
-			is5 = new FileInputStream(file5);
-			boolean succeed5 = FsTableUtil.writeFileContentPostgres(conn, 5, is5);
-
 			is6 = new FileInputStream(file6);
 			boolean succeed6 = FsTableUtil.writeFileContentPostgres(conn, 6, is6);
 
@@ -98,7 +95,6 @@ public class FsFileContentTableHandlerTestMac {
 			System.out.println("succeed2 = " + succeed2);
 			System.out.println("succeed3 = " + succeed3);
 			System.out.println("succeed4 = " + succeed4);
-			System.out.println("succeed5 = " + succeed5);
 			System.out.println("succeed6 = " + succeed6);
 
 		} catch (SQLException e) {
