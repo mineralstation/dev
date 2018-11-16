@@ -67,7 +67,6 @@ public class FsFileContentTableHandlerTestMac {
 			File file2 = new File("/Users/example/Downloads/test/source/readme2.txt");
 			File file3 = new File("/Users/example/Downloads/test/source/readme3.txt");
 			File file4 = new File("/Users/example/Downloads/test/source/apache-tomcat-8.0.30.tar.gz");
-			File file5 = new File("/Users/example/Downloads/test/source/BW6 Refactoring.docx");
 			File file6 = new File("/Users/example/Downloads/test/source/commons-io-2.5-src.zip");
 
 			// long length1 = file1.length();
