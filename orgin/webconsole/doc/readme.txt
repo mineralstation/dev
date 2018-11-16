@@ -8,6 +8,7 @@ https://github.com/salmanarshad2000/demos
 Html
 https://www.w3schools.com/tags/tag_form.asp (html tags)
 https://www.w3schools.com/html/html_entities.asp (non-break space)
+https://www.w3schools.com/tags/att_global_data.asp (data-* attributes)
 
 Javascript
 https://www.w3schools.com/js/js_whereto.asp (where to put javascript)
