@@ -21,7 +21,7 @@
 
 
 -Dpublic.web_console.autostart=true 
--Dpublic.web_console.context_root=/orbit/webconsole/public
+-Dpublic.web_console.context_root=/orbit/webconsole/public 
 
 -Dplatform.web_console.autostart=true 
 -Dplatform.web_console.context_root=/orbit/webconsole/platform 
@@ -36,4 +36,7 @@
 -Dsubstance.web_console.context_root=/orbit/webconsole/substance 
 
 -Dspirit.web_console.autostart=true 
--Dspirit.web_console.context_root=/orbit/webconsole/spirit
+-Dspirit.web_console.context_root=/orbit/webconsole/spirit 
+
+-Dcube.web_console.autostart=true 
+-Dcube.web_console.context_root=/orbit/webconsole/cube 

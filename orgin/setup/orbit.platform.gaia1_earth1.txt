@@ -22,6 +22,10 @@
 -Dspirit.earth.jdbc.username=postgres 
 -Dspirit.earth.jdbc.password=password 
 
+-Dorbit.cube_manager.autostart=true 
+-Dorbit.cube_manager.id=cubeManager1 
+-Dorbit.cube_manager.name=CubeManager1 
+-Dorbit.cube_manager.context_root=/orbit/v1/cubemanager 
 
 Node properties:
 -----------------------------------------------------------------------------
@@ -43,4 +47,9 @@ spirit.earth.jdbc.driver=org.postgresql.Driver
 spirit.earth.jdbc.url=jdbc:postgresql://127.0.0.1:5432/gaia1_earth1
 spirit.earth.jdbc.username=postgres
 spirit.earth.jdbc.password=password
+
+orbit.cube_manager.autostart=true
+orbit.cube_manager.id=cubeManager1
+orbit.cube_manager.name=CubeManager1
+orbit.cube_manager.context_root=/orbit/v1/cubemanager
 -----------------------------------------------------------------------------

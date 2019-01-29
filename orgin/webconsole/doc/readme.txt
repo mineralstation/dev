@@ -24,6 +24,7 @@ CSS
 https://css-tricks.com/triangle-breadcrumbs/ (breadcrumbs)
 http://css3buttongenerator.com/ (button)
 http://border-radius.com/ (div corner)
+https://www.w3schools.com/css/css_tooltip.asp (tooltip)
 
 Tree
 https://metroui.org.ua/treeview.html
