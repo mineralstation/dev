@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Substance App
+Bundle-SymbolicName: org.orbit.substance
+Bundle-Version: 1.0.0
+Automatic-Module-Name: org.orbit.substance

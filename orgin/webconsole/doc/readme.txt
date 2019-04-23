@@ -103,4 +103,19 @@ https://twasink.net/2017/11/02/using-shorter-uuids/
 JVM
 https://stackoverflow.com/questions/35842/how-can-a-java-program-get-its-own-process-id
 
+Console shell
+https://stackoverflow.com/questions/30590137/apache-felix-shell-with-ssh
+https://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fconsole_shell.htm
+e.g.
+osgi.console.enable.builtin=false
+osgi.console=4002
+
+osgi.console=<port>
+osgi.console.ssh=<port>
+osgi.console.enable.builtin=false
+osgi.console.ssh.useDefaultSecureStorage=true
+java.security.auth.login.config=../ssh_config/equinox.console.jaas.login.conf
+ssh.server.keystore=../ssh_config/keystore.ser
+org.eclipse.equinox.console.jaas.file=../ssh_config/store
+
 
