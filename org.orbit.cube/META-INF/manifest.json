@@ -1,0 +1,28 @@
+{
+	"id" : "org.orbit.cube",
+	"version" : "1.0.0",
+	"name" : "Cube App",
+	"type" : "system component",
+	"description" : "System component for Cube",
+	"bundles" : [
+		{"Bundle-SymbolicName" : "org.orbit.cube.api", "Bundle-Version" : "1.0.0"},
+		{"Bundle-SymbolicName" : "org.orbit.cube.connector", "Bundle-Version" : "1.0.0"},
+		{"Bundle-SymbolicName" : "org.orbit.cube.io", "Bundle-Version" : "1.0.0"},
+		{"Bundle-SymbolicName" : "org.orbit.cube.model", "Bundle-Version" : "1.0.0"},
+		{"Bundle-SymbolicName" : "org.orbit.cube.runtime", "Bundle-Version" : "1.0.0"},
+		{"Bundle-SymbolicName" : "org.orbit.cube.webconsole", "Bundle-Version" : "1.0.0"}
+	],
+	"classpath" : [
+		"plugins/org.orbit.cube.api_1.0.0.jar",
+		"plugins/org.orbit.cube.connector_1.0.0.jar",
+		"plugins/org.orbit.cube.io_1.0.0.jar",
+		"plugins/org.orbit.cube.model_1.0.0.jar",
+		"plugins/org.orbit.cube.runtime_1.0.0.jar",
+		"plugins/org.orbit.cube.webconsole_1.0.0.jar"
+	],
+	"properties" : [
+		{"name" : "orbit.cube_manager.id", "value" : "cubeManager1"},
+		{"name" : "orbit.cube_manager.name", "value" : "CubeManager1"},
+		{"name" : "orbit.cube_manager.context_root", "value" : "/orbit/v1/cubemanager"}
+	]
+}
