@@ -12,7 +12,10 @@
 		{"Bundle-SymbolicName" : "org.orbit.spirit.resource", "Bundle-Version" : "1.0.0"},
 		{"Bundle-SymbolicName" : "org.orbit.spirit.runtime", "Bundle-Version" : "1.0.0"},
 		{"Bundle-SymbolicName" : "org.orbit.spirit.sdk", "Bundle-Version" : "1.0.0"},
-		{"Bundle-SymbolicName" : "org.orbit.spirit.webconsole", "Bundle-Version" : "1.0.0"}
+		{"Bundle-SymbolicName" : "org.orbit.spirit.webconsole", "Bundle-Version" : "1.0.0", "optional" : "true"},
+		{"Bundle-SymbolicName" : "org.common1", "Bundle-Version" : "1.0.0"},
+		{"Bundle-SymbolicName" : "org.common2", "Bundle-Version" : "1.0.0"},
+		{"Bundle-SymbolicName" : "org.common4", "Bundle-Version" : "1.0.0"}
 	],
 	"classpath" : [
 		"plugins/org.orbit.spirit.api_1.0.0.jar",
@@ -22,7 +25,10 @@
 		"plugins/org.orbit.spirit.resource_1.0.0.jar",
 		"plugins/org.orbit.spirit.runtime_1.0.0.jar",
 		"plugins/org.orbit.spirit.sdk_1.0.0.jar",
-		"plugins/org.orbit.spirit.webconsole_1.0.0.jar"
+		"plugins/org.orbit.spirit.webconsole_1.0.0.jar",
+		"plugins/org.common1_1.0.0.jar",
+		"plugins/org.common2_1.0.0.jar",
+		"plugins/org.common4_1.0.0.jar"
 	],
 	"properties" : [
 		{"name" : "spirit.gaia.id", "value" : "gaia1"},
