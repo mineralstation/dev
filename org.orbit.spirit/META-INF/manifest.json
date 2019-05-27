@@ -18,17 +18,7 @@
 		{"Bundle-SymbolicName" : "org.common4", "Bundle-Version" : "1.0.0"}
 	],
 	"classpath" : [
-		"plugins/org.orbit.spirit.api_1.0.0.jar",
-		"plugins/org.orbit.spirit.connector_1.0.0.jar",
-		"plugins/org.orbit.spirit.io_1.0.0.jar",
-		"plugins/org.orbit.spirit.model_1.0.0.jar",
-		"plugins/org.orbit.spirit.resource_1.0.0.jar",
-		"plugins/org.orbit.spirit.runtime_1.0.0.jar",
-		"plugins/org.orbit.spirit.sdk_1.0.0.jar",
-		"plugins/org.orbit.spirit.webconsole_1.0.0.jar",
-		"plugins/org.common1_1.0.0.jar",
-		"plugins/org.common2_1.0.0.jar",
-		"plugins/org.common4_1.0.0.jar"
+		"plugins"
 	],
 	"properties" : [
 		{"name" : "spirit.gaia.id", "value" : "gaia1"},

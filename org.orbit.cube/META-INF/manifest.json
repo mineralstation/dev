@@ -16,15 +16,7 @@
 		{"Bundle-SymbolicName" : "org.common4", "Bundle-Version" : "1.0.0"}
 	],
 	"classpath" : [
-		"plugins/org.orbit.cube.api_1.0.0.jar",
-		"plugins/org.orbit.cube.connector_1.0.0.jar",
-		"plugins/org.orbit.cube.io_1.0.0.jar",
-		"plugins/org.orbit.cube.model_1.0.0.jar",
-		"plugins/org.orbit.cube.runtime_1.0.0.jar",
-		"plugins/org.orbit.cube.webconsole_1.0.0.jar",
-		"plugins/org.common1_1.0.0.jar",
-		"plugins/org.common3_1.0.0.jar",
-		"plugins/org.common4_1.0.0.jar"
+		"plugins"
 	],
 	"properties" : [
 		{"name" : "orbit.cube_manager.id", "value" : "cubeManager1"},
