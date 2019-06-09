@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Book xmlns:tns="http://www.example.org/Book" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/Book ../Schemas/Book.xsd ">
+  <tns:ISBN>tns:ISBN</tns:ISBN>
+  <tns:title>tns:title</tns:title>
+  <tns:author>tns:author</tns:author>
+  <tns:publisher>tns:publisher</tns:publisher>
+</tns:Book>

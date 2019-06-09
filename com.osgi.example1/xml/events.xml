@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Events xmlns:tns="http://www.example.org/Events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/Events Events.xsd ">
+  <tns:Event>
+    <tns:id>tns:id</tns:id>
+    <tns:summary>tns:summary</tns:summary>
+    <tns:description>tns:description</tns:description>
+    <tns:authorName>tns:authorName</tns:authorName>
+    <tns:bookIsbn>tns:bookIsbn</tns:bookIsbn>
+    <tns:date>tns:date</tns:date>
+  </tns:Event>
+</tns:Events>

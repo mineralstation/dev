@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Book" xmlns:tns="http://www.example.org/Book" elementFormDefault="qualified">
+
+    <element name="Book" type="tns:BookType"></element>
+    
+    <complexType name="BookType">
+    	<sequence>
+            <element name="ISBN" type="string"></element>
+            <element name="title" type="string"></element>
+    		<element name="author" type="string"></element>
+    		<element name="publisher" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

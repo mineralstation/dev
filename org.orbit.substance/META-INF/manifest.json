@@ -1,7 +1,7 @@
 {
 	"id" : "org.orbit.substance",
 	"version" : "1.0.0",
-	"name" : "Substance App",
+	"name" : "DFS",
 	"type" : "system component",
 	"description" : "System component for substance (DFS and DFSVolume)",
 	"bundles" : [

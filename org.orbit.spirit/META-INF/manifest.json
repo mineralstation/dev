@@ -1,7 +1,7 @@
 {
 	"id" : "org.orbit.spirit",
 	"version" : "1.0.0",
-	"name" : "Spirit App",
+	"name" : "GAIA",
 	"type" : "system component",
 	"description" : "System component for spirit (GAIA and Earth)",
 	"bundles" : [
