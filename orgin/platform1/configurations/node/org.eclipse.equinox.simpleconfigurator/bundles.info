@@ -160,6 +160,7 @@ org.orbit.application.sdk,1.0.0,system/org.orbit.application.sdk_1.0.0.jar,5,tru
 # Components
 org.orbit.component.api,1.0.0,system/org.orbit.component.api_1.0.0.jar,5,true
 org.orbit.component.connector,1.0.0,system/org.orbit.component.connector_1.0.0.jar,5,true
+org.orbit.component.io,1.0.0,system/org.orbit.component.io_1.0.0.jar,5,true
 org.orbit.component.model,1.0.0,system/org.orbit.component.model_1.0.0.jar,5,true
 org.orbit.component.runtime,1.0.0,system/org.orbit.component.runtime_1.0.0.jar,5,true
 
