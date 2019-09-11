@@ -1,6 +1,6 @@
 package LC124_binary_tree_maximum_path_sum;
 
-import LC173_binary_search_tree_iterator.TreeNode;
+import common.TreeNode;
 
 /*
  * 

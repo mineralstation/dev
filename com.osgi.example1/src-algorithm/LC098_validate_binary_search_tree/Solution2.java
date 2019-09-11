@@ -3,7 +3,7 @@ package LC098_validate_binary_search_tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import LC173_binary_search_tree_iterator.TreeNode;
+import common.TreeNode;
 
 public class Solution2 {
 

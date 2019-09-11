@@ -1,4 +1,4 @@
-package LC173_binary_search_tree_iterator;
+package common;
 
 // Definition for a binary tree node.
 public class TreeNode {

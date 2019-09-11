@@ -5,8 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
-import LC047_permutations_ii.SolutionV2;
-
 public class Solution2 {
 	static List<List<Integer>> results = new ArrayList<List<Integer>>();
 
@@ -78,7 +76,7 @@ public class Solution2 {
 			System.out.println("input:");
 			System.out.println("    " + Arrays.toString(input));
 
-			List<List<Integer>> results = SolutionV2.permuteUnique(input);
+			List<List<Integer>> results = LC047_permutations_ii.Solution2.permuteUnique(input);
 			System.out.println("output:");
 			for (List<Integer> result : results) {
 				System.out.println("    " + Arrays.toString(result.toArray(new Integer[result.size()])));

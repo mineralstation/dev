@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.PriorityQueue;
 import java.util.TreeMap;
 
-import LC173_binary_search_tree_iterator.TreeNode;
+import common.TreeNode;
 
 public class Solution {
 

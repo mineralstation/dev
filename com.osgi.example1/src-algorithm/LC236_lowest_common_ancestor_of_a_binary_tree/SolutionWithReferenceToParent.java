@@ -3,8 +3,8 @@ package LC236_lowest_common_ancestor_of_a_binary_tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import LC173_binary_search_tree_iterator.TreeNode;
-import LC173_binary_search_tree_iterator.TreeNode2;
+import common.TreeNode;
+import common.TreeNode2;
 
 /*
 https://www.cnblogs.com/grandyang/p/4641968.html

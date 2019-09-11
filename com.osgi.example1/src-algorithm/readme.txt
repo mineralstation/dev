@@ -4,7 +4,6 @@ https://1o24bbs.com/t/topic/2148/4
 博主
 https://www.cnblogs.com/grandyang/
 
-
 Permutations
 https://blog.csdn.net/Jacky_chenjp/article/details/66477538
 LeetCode中与Permutations相关的共有四题： 
@@ -159,6 +158,90 @@ In-place conversion of Sorted DLL to Balanced BST
 
 	Note:
 	https://stackoverflow.com/questions/17759560/what-is-the-difference-between-lru-and-lfu
+
+257. Binary Tree Paths
+	https://www.cnblogs.com/grandyang/p/4738031.html
+	
+269. Alien Dictionary
+	https://www.cnblogs.com/grandyang/p/5250200.html
+	
+42. Trapping Rain Water
+	https://www.cnblogs.com/grandyang/p/4402392.html
+
+387. [LOW] First Unique Character in a String
+	https://www.cnblogs.com/grandyang/p/5802109.html
+
+398. [LOW] Random Pick Index
+	https://www.cnblogs.com/grandyang/p/5875509.html
+
+896. [LOW] Monotonic Array
+	https://www.cnblogs.com/grandyang/p/10961560.html
+
+138. [LOW] Copy List with Random Pointer
+	https://www.cnblogs.com/grandyang/p/4261431.html
+
+139. [HIGH] Word Break
+	https://www.cnblogs.com/grandyang/p/4257740.html
+
+278. First bad version
+	https://www.cnblogs.com/grandyang/p/4790469.html
+
+300. [HIGH] Longest Increasing Subsequence
+	https://www.jiuzhang.com/solution/longest-increasing-subsequence/
+	https://www.cnblogs.com/grandyang/p/4938187.html
+
+380. Insert Delete GetRandom O(1) 
+	常数时间内插入删除和获得随机数
+	https://www.cnblogs.com/grandyang/p/5740864.html
+
+523. Continuous Subarray Sum 连续的子数组之和
+	https://www.cnblogs.com/grandyang/p/6504158.html
+
+199. Binary Tree Right Side View 二叉树的右侧视图
+	https://www.cnblogs.com/grandyang/p/4392254.html
+
+199a. Binary Tree Level Order Traversal 二叉树层序遍历
+	https://www.cnblogs.com/grandyang/p/4051321.html
+
+206. Reverse Linked List 倒置链表
+	https://www.cnblogs.com/grandyang/p/4478820.html
+
+785. Is Graph Bipartite? 是二分图么？
+	https://www.cnblogs.com/grandyang/p/8519566.html
+
+94. Binary Tree Inorder Traversal 二叉树的中序遍历
+	https://www.cnblogs.com/grandyang/p/4297300.html
+
+143.Reorder List 链表重排序
+	https://www.cnblogs.com/grandyang/p/4254860.html
+
+161.One Edit Distance 一个编辑距离
+	https://www.cnblogs.com/grandyang/p/5184698.html
+
+200.Number of Islands
+	https://www.cnblogs.com/grandyang/p/4402656.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

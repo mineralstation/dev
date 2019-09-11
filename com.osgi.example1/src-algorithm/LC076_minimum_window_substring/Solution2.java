@@ -36,7 +36,7 @@ public class Solution2 {
 			this.map.put(c, newCount);
 
 			if (!this.match) {
-				if (oldCount == 0) {
+				if (newCount == 1) {
 					this.matchedLength++;
 				}
 				if (this.matchedLength == this.length) {
@@ -89,7 +89,7 @@ public class Solution2 {
 			win.add(c);
 
 			while (win.match()) {
-				int currLength = i - leftIndex + 1;
+				int currLength = i - (leftIndex - 1);
 				if (currLength < minLength) {
 					minLength = currLength;
 					result = S.substring(leftIndex, i + 1);

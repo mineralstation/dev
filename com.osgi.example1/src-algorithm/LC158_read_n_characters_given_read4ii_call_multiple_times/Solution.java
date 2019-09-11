@@ -19,6 +19,7 @@ public class Solution extends Reader4 {
 	 * @return
 	 */
 	public synchronized int read(char[] buf, int n) {
+		// the index is also the number of chars that are read
 		int index = 0;
 		while (index < n) {
 			while (index < n && this.bufferAvailable > 0) {

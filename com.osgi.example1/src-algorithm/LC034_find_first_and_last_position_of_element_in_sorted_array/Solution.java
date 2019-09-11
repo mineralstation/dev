@@ -15,7 +15,7 @@ Output: [-1,-1]
  */
 public class Solution {
 
-	public static int[] searchRange(int[] nums, int targetVal) {
+	public static int[] searchRange(int[] nums, int target) {
 		int[] result = new int[] { -1, -1 };
 
 		// find first value equal to target
@@ -24,13 +24,13 @@ public class Solution {
 
 		while (leftIndex < rightIndex) {
 			int mid = leftIndex + (rightIndex - leftIndex) / 2;
-			if (nums[mid] < targetVal) {
+			if (nums[mid] < target) {
 				leftIndex = mid + 1;
 			} else {
 				rightIndex = mid;
 			}
 		}
-		if (leftIndex < nums.length && nums[leftIndex] == targetVal) {
+		if (leftIndex < nums.length && nums[leftIndex] == target) {
 			result[0] = rightIndex;
 		} else {
 			// target val is not found
@@ -38,13 +38,13 @@ public class Solution {
 		}
 
 		// find first value less than or equal to target+1
-		targetVal = targetVal + 1;
+		int newTarget = target + 1;
 
 		leftIndex = rightIndex;
 		rightIndex = nums.length;
 		while (leftIndex < rightIndex) {
 			int mid = leftIndex + (rightIndex - leftIndex) / 2;
-			if (nums[mid] < targetVal) {
+			if (nums[mid] < newTarget) {
 				leftIndex = mid + 1;
 			} else {
 				rightIndex = mid;

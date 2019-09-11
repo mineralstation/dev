@@ -1,6 +1,6 @@
 package bst;
 
-import LC173_binary_search_tree_iterator.TreeNode;
+import common.TreeNode;
 
 /*
  * https://www.gohired.in/2017/04/17/handle-duplicates-binary-search-tree/

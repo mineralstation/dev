@@ -5,7 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
-public class SolutionV2 {
+public class Solution2 {
+
 	static List<List<Integer>> results = new ArrayList<List<Integer>>();
 
 	/**

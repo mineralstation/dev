@@ -2,7 +2,7 @@ package LC297_serialize_and_deserialize_binary_tree;
 
 import java.util.Stack;
 
-import LC173_binary_search_tree_iterator.TreeNode;
+import common.TreeNode;
 
 public class DeserializerImpl implements Deserializer {
 

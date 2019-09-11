@@ -1,11 +1,12 @@
 package LC088_merge_sorted_array;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class KSortedArray {
+public class Solution2 {
 
-	public static class ArrayContainer implements Comparable<ArrayContainer> {
+	public static class ArrayContainer /* implements Comparable<ArrayContainer> */ {
 		protected int[] nums;
 		protected int index;
 
@@ -29,10 +30,10 @@ public class KSortedArray {
 			return this.nums[this.index];
 		}
 
-		@Override
-		public int compareTo(ArrayContainer otherArray) {
-			return get() - otherArray.get();
-		}
+		// @Override
+		// public int compareTo(ArrayContainer other) {
+		// return get() - other.get();
+		// }
 	}
 
 	/**
@@ -41,11 +42,16 @@ public class KSortedArray {
 	 * @return
 	 */
 	public static int[] mergeKSortedArray(int[][] numsArray) {
-		PriorityQueue<ArrayContainer> queue = new PriorityQueue<ArrayContainer>();
+		PriorityQueue<ArrayContainer> queue = new PriorityQueue<ArrayContainer>(new Comparator<ArrayContainer>() {
+			@Override
+			public int compare(ArrayContainer array1, ArrayContainer array2) {
+				return array1.get() - array2.get();
+			}
+		});
 
 		int size = 0;
 
-		// add arrays to heap
+		// add arrays to the queue
 		for (int i = 0; i < numsArray.length; i++) {
 			queue.add(new ArrayContainer(numsArray[i], 0));
 			size += numsArray[i].length;

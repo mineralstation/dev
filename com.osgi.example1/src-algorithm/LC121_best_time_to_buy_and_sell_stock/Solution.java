@@ -21,19 +21,20 @@ public class Solution {
 		if (prices == null || prices.length <= 1) {
 			return 0;
 		}
-		int max = 0;
+		int maxGain = 0;
 		int min = prices[0];
 		for (int i = 1; i < prices.length; i++) {
 			if (prices[i] < min) {
 				min = prices[i];
+
 			} else if (prices[i] > min) {
 				int gain = prices[i] - min;
-				if (gain > max) {
-					max = gain;
+				if (gain > maxGain) {
+					maxGain = gain;
 				}
 			}
 		}
-		return max;
+		return maxGain;
 	}
 
 	public static void main(String[] args) {

@@ -3,7 +3,7 @@ package LC543_diameter_of_binary_tree;
 import java.util.HashMap;
 import java.util.Map;
 
-import LC173_binary_search_tree_iterator.TreeNode;
+import common.TreeNode;
 
 public class Solution {
 

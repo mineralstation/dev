@@ -29,35 +29,35 @@ public class Solution2 {
 
 		int endIndex = length - 1;
 
-		// 从倒数第二个元素开始，从后向前，找到第一个满足 后元素 > 前元素 的情况。
+		// 从倒数第二个元素开始，从后向前，找到第一个满足 前元素<后元素 的情况。
 		// 此时，记录前元素下标k，则[k+1,n-1]一定是一个非增子序列。
 		// 那么，这里只需要将一个比nums[k]大的最小数与nums[k]交换
 		int nextElement = nums[endIndex];
-		int k = length - 2;
-		for (; k >= 0; k--) {
-			int currElement = nums[k];
+		int currIndex = length - 2;
+		for (; currIndex >= 0; currIndex--) {
+			int currElement = nums[currIndex];
 			if (currElement < nextElement) {
 				break;
 			}
 			nextElement = currElement;
 		}
 
-		if (k < 0) {
+		if (currIndex < 0) {
 			// 整个排列为降序，逆序之
 			reverse(nums, 0, endIndex);
 
 		} else {
 			// 在nums[k+1,endIndex]中寻找大于nums[k]的最小数
 			// Note: nums[k+1,endIndex]现在一定是降序， 所以从右边起第一个遇到的大于nums[k]的数，一定是所有大于nums[k]中的最小的那个
-			for (int i = endIndex; i > k; i--) {
-				if (nums[i] > nums[k]) {
-					swap(nums, i, k);
+			for (int i = endIndex; i > currIndex; i--) {
+				if (nums[i] > nums[currIndex]) {
+					swap(nums, i, currIndex);
 					break;
 				}
 			}
 
 			// nums[k+1,endIndex]现在一定是降序，逆序之
-			reverse(nums, k + 1, endIndex);
+			reverse(nums, currIndex + 1, endIndex);
 		}
 		return;
 	}

@@ -3,7 +3,7 @@ package inplace_conversion_of_sorted_dll_to_balanced_bst;
 import java.util.Arrays;
 
 import LC173_binary_search_tree_iterator.Solution2.BstIteratorImpl;
-import LC173_binary_search_tree_iterator.TreeNode;
+import common.TreeNode;
 
 /*
 https://www.geeksforgeeks.org/in-place-conversion-of-sorted-dll-to-balanced-bst/

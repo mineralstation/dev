@@ -88,8 +88,6 @@ public class LRUCacheImpl1 implements LRUCache {
 			// min capacity is 1
 			// - so the min map size must be at least 2 now
 			// - so the this.tail.prev must be available
-			this.map.remove(this.tail.key);
-
 			Node oldTail = this.tail;
 			Node newTail = this.tail.prev;
 			oldTail.prev = null;

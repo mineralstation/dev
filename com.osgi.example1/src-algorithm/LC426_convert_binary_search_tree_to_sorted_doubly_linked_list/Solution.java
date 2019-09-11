@@ -2,7 +2,7 @@ package LC426_convert_binary_search_tree_to_sorted_doubly_linked_list;
 
 import java.util.Stack;
 
-import LC173_binary_search_tree_iterator.TreeNode;
+import common.TreeNode;
 
 public class Solution {
 

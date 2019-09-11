@@ -9,28 +9,28 @@ import java.util.Stack;
 public class Solution1 {
 
 	public static GraphNode clone(GraphNode node) {
-		Map<GraphNode, GraphNode> originalToCloneMap = new HashMap<GraphNode, GraphNode>();
-		return clone(node, originalToCloneMap);
+		Map<GraphNode, GraphNode> cache = new HashMap<GraphNode, GraphNode>();
+		return clone(node, cache);
 	}
 
-	public static GraphNode clone(GraphNode node, Map<GraphNode, GraphNode> originalToCloneMap) {
+	public static GraphNode clone(GraphNode node, Map<GraphNode, GraphNode> cache) {
 		if (node == null) {
 			return node;
 		}
-		GraphNode clone = originalToCloneMap.get(node);
-		if (clone != null) {
-			return clone;
+		GraphNode nodeClone = cache.get(node);
+		if (nodeClone != null) {
+			return nodeClone;
 		}
 
-		clone = new GraphNode(node.val);
-		clone.tag = "clone";
-		originalToCloneMap.put(node, clone);
+		nodeClone = new GraphNode(node.val);
+		nodeClone.tag = "clone";
+		cache.put(node, nodeClone);
 
 		for (GraphNode neighbor : node.neighbors) {
-			GraphNode neighborClone = clone(neighbor, originalToCloneMap);
-			clone.neighbors.add(neighborClone);
+			GraphNode neighborClone = clone(neighbor, cache);
+			nodeClone.neighbors.add(neighborClone);
 		}
-		return clone;
+		return nodeClone;
 	}
 
 	public static void main(String[] args) {

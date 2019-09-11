@@ -24,6 +24,7 @@ public class Solution {
 
 		List<Interval> results = new ArrayList<Interval>();
 
+		// sort intervals by starting time
 		Collections.sort(intervals, new Comparator<Interval>() {
 			@Override
 			public int compare(Interval o1, Interval o2) {
@@ -35,12 +36,13 @@ public class Solution {
 		for (int i = 1; i < intervals.size(); i++) {
 			Interval curr = intervals.get(i);
 
-			if (curr.start <= tail.end) {
+			if (curr.start >= tail.end) {
 				// can merge
 				// - merge curr into tail; tail remains tail
 				tail.end = curr.end;
 			} else {
-				// cannot merge; curr becomes new tail
+				// cannot merge
+				// - curr becomes new tail
 				tail = curr;
 			}
 		}

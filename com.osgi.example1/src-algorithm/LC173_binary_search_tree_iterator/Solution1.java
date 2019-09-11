@@ -3,6 +3,8 @@ package LC173_binary_search_tree_iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
+import common.TreeNode;
+
 public class Solution1 {
 
 	interface IBSTIterator {

@@ -14,8 +14,7 @@ public class Solution {
 		}
 
 		int result = 0;
-
-		boolean positive = ((dividend >= 0 && divisor >= 0) || (dividend < 0 && divisor < 0)) ? true : false;
+		boolean isResultPositive = ((dividend >= 0 && divisor >= 0) || (dividend < 0 && divisor < 0)) ? true : false;
 
 		long available = dividend < 0 ? -dividend : dividend;
 		long n = divisor < 0 ? -divisor : divisor;
@@ -24,7 +23,7 @@ public class Solution {
 			return Integer.MAX_VALUE;
 
 		} else if (n == 1) {
-			return (positive) ? dividend : -dividend;
+			return (isResultPositive) ? dividend : -dividend;
 
 		} else {
 			// n > 1
@@ -32,13 +31,13 @@ public class Solution {
 				long value = n << 1; // double the n
 				long times = 1; // total times of doubling
 				while (available >= value) {
-					times = times << 1;
 					value = value << 1; // double the current value again
+					times = times << 1; // double the times again
 				}
-				result += times;
 				available -= value;
+				result += times;
 			}
-			return positive ? result : -result;
+			return isResultPositive ? result : -result;
 		}
 	}
 

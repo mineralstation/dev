@@ -32,22 +32,21 @@ public class Solution {
 	 */
 	public static void collect(int[] nums, int startIndex, int endIndex, List<List<Integer>> results) {
 		// startIndex是最后一个数字
+		// - 从0到endIndex是一个排列
 		if (startIndex == endIndex) {
 			List<Integer> result = new ArrayList<>();
 			for (int i = 0; i <= endIndex; i++) {
 				result.add(nums[i]);
 			}
 			results.add(result);
-			// System.out.println(" ---> " + Arrays.toString(result.toArray(new Integer[result.size()])));
 			return;
 		}
 
-		// nums[startIndex]逐个和后面的nums[]交换
-		// System.out.println(" i: [" + startIndex + ", " + endIndex + "]");
-		for (int i = startIndex; i <= endIndex; i++) {
-			swap(nums, i, startIndex);
+		// nums[startIndex]逐个和[startIndex, endIndex]中的每个数交换
+		for (int j = startIndex; j <= endIndex; j++) {
+			swap(nums, startIndex, j);
 			collect(nums, startIndex + 1, endIndex, results);
-			swap(nums, i, startIndex);
+			swap(nums, startIndex, j);
 		}
 	}
 
