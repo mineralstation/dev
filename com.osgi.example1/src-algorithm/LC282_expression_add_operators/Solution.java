@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * Given a string that contains only digits 0-9 and a target value, return all possibilities to add binaryoperators (not unary) +, -, or * between the digits so they evaluate to the target value.
+ * 
+ * @see 224 basic calculator ii;
+ * 
+ */
 public class Solution {
 
 	public static List<String> getExpressions(String digits, int target) {

@@ -4,8 +4,8 @@ import java.util.Hashtable;
 
 import javax.websocket.server.ServerEndpointConfig;
 
-import org.orbit.service.websocket.WebSocketEndpoint;
-import org.orbit.service.websocket.impl.WebSocketEndpointImpl;
+import org.orbit.service.websocket.EndpointService;
+import org.orbit.service.websocket.impl.EndpointServiceImpl;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 
@@ -26,16 +26,16 @@ public class WebSocketServerOSGi {
 		// this.serviceRegistration1 = bundleContext.registerService(WebSocketEndpoint.class, this.endpoint1, props1);
 
 		ServerEndpointConfig endpointConfig2 = createEndpointConfig2();
-		WebSocketEndpoint endpoint2 = new WebSocketEndpointImpl(endpointConfig2);
+		EndpointService endpoint2 = new EndpointServiceImpl(endpointConfig2);
 		Hashtable<String, Object> props2 = new Hashtable<String, Object>();
 		props2.put("http.port", "7001");
-		this.serviceRegistration2 = bundleContext.registerService(WebSocketEndpoint.class, endpoint2, props2);
+		this.serviceRegistration2 = bundleContext.registerService(EndpointService.class, endpoint2, props2);
 
 		ServerEndpointConfig endpointConfig3 = createEndpointConfig3();
-		WebSocketEndpoint endpoint3 = new WebSocketEndpointImpl(endpointConfig3);
+		EndpointService endpoint3 = new EndpointServiceImpl(endpointConfig3);
 		Hashtable<String, Object> props3 = new Hashtable<String, Object>();
 		props3.put("http.port", "7001");
-		this.serviceRegistration3 = bundleContext.registerService(WebSocketEndpoint.class, endpoint3, props3);
+		this.serviceRegistration3 = bundleContext.registerService(EndpointService.class, endpoint3, props3);
 	}
 
 	/**

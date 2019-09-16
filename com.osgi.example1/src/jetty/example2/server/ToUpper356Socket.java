@@ -9,7 +9,7 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
-import org.orbit.service.websocket.WebSocketEndpoint;
+import org.orbit.service.websocket.EndpointService;
 
 /**
  * https://examples.javacodegeeks.com/enterprise-java/jetty/jetty-websocket-example/
@@ -19,7 +19,7 @@ import org.orbit.service.websocket.WebSocketEndpoint;
 public class ToUpper356Socket {
 
 	protected boolean isActivated(Session session) {
-		WebSocketEndpoint endpoint = (WebSocketEndpoint) session.getUserProperties().get(WebSocketEndpoint.class.getName());
+		EndpointService endpoint = (EndpointService) session.getUserProperties().get(EndpointService.class.getName());
 		if (endpoint != null) {
 			return endpoint.isActivated();
 		}
