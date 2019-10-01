@@ -3,17 +3,10 @@ package LC173_binary_search_tree_iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
+import common.BstIterator;
 import common.TreeNode;
 
 public class Solution2 {
-
-	interface BstIterator {
-		/** @return the next smallest number */
-		int next();
-
-		/** @return whether we have a next smallest number */
-		boolean hasNext();
-	}
 
 	public static class BstIteratorImpl implements BstIterator {
 		protected TreeNode curr;
@@ -38,6 +31,14 @@ public class Solution2 {
 				return true;
 			}
 			return false;
+		}
+
+		public int get() {
+			if (this.curr == null) {
+				throw new NoSuchElementException();
+			}
+			int result = this.curr.val;
+			return result;
 		}
 
 		@Override

@@ -26,7 +26,8 @@ public class ChannelWebSocketClientMain3 {
 	 * @throws InterruptedException
 	 */
 	public void connect(String userId, String channelId, boolean sendClientMessages) throws DeploymentException, IOException, URISyntaxException, InterruptedException {
-		URI uri = new URI("ws://localhost:7001/channel/" + channelId);
+	    // URI uri = new URI("ws://localhost:7001/channel/" + channelId);
+		URI uri = new URI("ws://127.0.0.1:8201/channel/" + channelId);
 
 		ClientEndpointConfig.Configurator configurator = new ClientEndpointConfig.Configurator() {
 			@Override
@@ -58,7 +59,8 @@ public class ChannelWebSocketClientMain3 {
 	public static void main(String[] args) {
 		try {
 			ChannelWebSocketClientMain3 main = new ChannelWebSocketClientMain3();
-			main.connect("userC", "room1", false);
+			// main.connect("userC", "room1", false);
+			main.connect("userC", "grQMNe7fQfSzXSUCcTVLnQ", false);
 
 			Thread.sleep(5 * 60 * 1000);
 

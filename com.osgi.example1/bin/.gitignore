@@ -2,6 +2,7 @@
 /LC010_regular_expression_matching/
 /LC012_integer_to_roman/
 /LC017_letter_combinations_of_a_phone_number/
+/LC026_remove_duplicates_from_sorted_array/
 /LC029_divide_two_integers/
 /LC031_next_permutation/
 /LC034_find_first_and_last_position_of_element_in_sorted_array/
@@ -71,12 +72,6 @@
 /LC896_monotonic_array/
 /LC_friend_circles/
 /LC_merge_intervals/
-/P06_17__LC001_two_sum/
-/P06_17__LC015_3sum/
-/P06_17__LC015_3sum_smaller/
-/P06_17__LC016_3sum_closest/
-/P06_17__LC018_4sum/
-/P06_17__LC454_4sum_ii/
 /P99_99__LC_maximum_distance_in_arrays/
 /P99_99__LC_minimum_distance_in_arrays/
 /best_time_to_buy_and_sell_stock_ii/
@@ -93,6 +88,15 @@
 /jgroup/
 /netty/
 /oreilly/
+/p01/
+/p02/
+/p03/
+/p04/
+/p05/
+/p06/
+/p06_readme.txt
+/p07/
+/p07_readme.txt
 /readme.txt
 /tomcat/
 /xml/

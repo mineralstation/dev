@@ -6,6 +6,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
+import common.GraphNode;
+
+/**
+ * @see LC207
+ */
 public class Solution1 {
 
 	public static GraphNode clone(GraphNode node) {
@@ -13,21 +18,21 @@ public class Solution1 {
 		return clone(node, cache);
 	}
 
-	public static GraphNode clone(GraphNode node, Map<GraphNode, GraphNode> cache) {
+	public static GraphNode clone(GraphNode node, Map<GraphNode, GraphNode> memo) {
 		if (node == null) {
 			return node;
 		}
-		GraphNode nodeClone = cache.get(node);
+		GraphNode nodeClone = memo.get(node);
 		if (nodeClone != null) {
 			return nodeClone;
 		}
 
 		nodeClone = new GraphNode(node.val);
 		nodeClone.tag = "clone";
-		cache.put(node, nodeClone);
+		memo.put(node, nodeClone);
 
 		for (GraphNode neighbor : node.neighbors) {
-			GraphNode neighborClone = clone(neighbor, cache);
+			GraphNode neighborClone = clone(neighbor, memo);
 			nodeClone.neighbors.add(neighborClone);
 		}
 		return nodeClone;

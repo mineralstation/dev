@@ -3,23 +3,16 @@ package LC173_binary_search_tree_iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
+import common.BstIterator;
 import common.TreeNode;
 
 public class Solution1 {
 
-	interface IBSTIterator {
-		/** @return the next smallest number */
-		int next();
-
-		/** @return whether we have a next smallest number */
-		boolean hasNext();
-	}
-
-	public static class BSTIterator implements IBSTIterator {
+	public static class BSTIteratorImpl implements BstIterator {
 		protected TreeNode curr;
 		protected Stack<TreeNode> stack = new Stack<TreeNode>();
 
-		public BSTIterator(TreeNode root) {
+		public BSTIteratorImpl(TreeNode root) {
 			this.curr = root;
 		}
 
@@ -55,6 +48,11 @@ public class Solution1 {
 		}
 
 		@Override
+		public int get() {
+			return -1;
+		}
+
+		@Override
 		public boolean hasNext() {
 			if (!this.stack.isEmpty()) {
 				return true;
@@ -81,7 +79,7 @@ public class Solution1 {
 			node0.left = node01;
 			node0.right = node02;
 
-			BSTIterator itor = new BSTIterator(node0);
+			BSTIteratorImpl itor = new BSTIteratorImpl(node0);
 			int v1 = itor.next(); // return 3
 			int v2 = itor.next(); // return 7
 			boolean b1 = itor.hasNext(); // return true
@@ -130,7 +128,7 @@ public class Solution1 {
 			node0.left = node01;
 			node0.right = node02;
 
-			BSTIterator itor = new BSTIterator(node0);
+			BSTIteratorImpl itor = new BSTIteratorImpl(node0);
 			while (itor.hasNext()) {
 				int val = itor.next();
 				System.out.println("-> " + val);

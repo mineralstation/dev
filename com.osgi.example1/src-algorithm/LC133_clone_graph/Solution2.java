@@ -6,25 +6,30 @@ import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
+import common.GraphNode;
+
+/**
+ * @see LC207
+ */
 public class Solution2 {
 
 	public static GraphNode clone(GraphNode node) {
-		Map<GraphNode, GraphNode> cache = new HashMap<GraphNode, GraphNode>();
+		Map<GraphNode, GraphNode> memo = new HashMap<GraphNode, GraphNode>();
 		Stack<GraphNode> queue = new Stack<GraphNode>();
 
 		GraphNode nodeClone = new GraphNode(node.val, "clone");
-		cache.put(node, nodeClone);
+		memo.put(node, nodeClone);
 		queue.push(node);
 
 		while (!queue.isEmpty()) {
 			GraphNode currNode = queue.pop();
-			GraphNode currNodeClone = cache.get(currNode);
+			GraphNode currNodeClone = memo.get(currNode);
 
 			for (GraphNode neighbor : currNode.neighbors) {
-				GraphNode neighborClone = cache.get(neighbor);
+				GraphNode neighborClone = memo.get(neighbor);
 				if (neighborClone == null) {
 					neighborClone = new GraphNode(neighbor.val, "clone");
-					cache.put(neighbor, neighborClone);
+					memo.put(neighbor, neighborClone);
 					queue.push(neighbor);
 				}
 

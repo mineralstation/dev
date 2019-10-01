@@ -12,10 +12,7 @@
 		{"Bundle-SymbolicName" : "org.orbit.spirit.resource", "Bundle-Version" : "1.0.0"},
 		{"Bundle-SymbolicName" : "org.orbit.spirit.runtime", "Bundle-Version" : "1.0.0"},
 		{"Bundle-SymbolicName" : "org.orbit.spirit.sdk", "Bundle-Version" : "1.0.0"},
-		{"Bundle-SymbolicName" : "org.orbit.spirit.webconsole", "Bundle-Version" : "1.0.0", "optional" : "true"},
-		{"Bundle-SymbolicName" : "org.common1", "Bundle-Version" : "1.0.0"},
-		{"Bundle-SymbolicName" : "org.common2", "Bundle-Version" : "1.0.0"},
-		{"Bundle-SymbolicName" : "org.common4", "Bundle-Version" : "1.0.0"}
+		{"Bundle-SymbolicName" : "org.orbit.spirit.webconsole", "Bundle-Version" : "1.0.0", "optional" : "true"}
 	],
 	"classpath" : [
 		"plugins"

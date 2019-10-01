@@ -241,28 +241,14 @@ In-place conversion of Sorted DLL to Balanced BST
 17. Letter Combinations of a Phone Number 电话号码的字母组合
 	https://www.cnblogs.com/grandyang/p/4452220.html
 
-1. Two Sum 两数之和
-	https://www.cnblogs.com/grandyang/p/4130379.html
 
-15. 3Sum 三数之和
-	https://www.cnblogs.com/grandyang/p/4481576.html
 
-	[LeetCode] 3Sum Smaller 三数之和较小值
-	https://www.cnblogs.com/grandyang/p/5235086.html	
 
-16. 3Sum Closest 最近三数之和
-	https://www.cnblogs.com/grandyang/p/4510984.html
 
-18. 4Sum 四数之和
-	https://www.cnblogs.com/grandyang/p/4515925.html
 
-454. 4Sum II 四数之和之二
-	https://www.cnblogs.com/grandyang/p/6073317.html
 
-P99_99__LC_maximum_distance_in_arrays
-	https://www.cnblogs.com/grandyang/p/7073343.html
 
-P99_99__LC_minimum_distance_in_arrays
-	https://www.geeksforgeeks.org/smallest-difference-pair-values-two-unsorted-arrays/
+
+
 
 
