@@ -1,8 +1,11 @@
 -Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=9102 
--Dlogback.configurationFile=/Users/oceaneuropa/origin/logback/orbit0.xml 
+-Dlogback.configurationFile=/path/to/origin/logback/orbit0.xml 
 
 -Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
 -Dorbit.extension_registry.url=http://127.0.0.1:8000/orbit/v1/extensionregistry 
+-Dorbit.config_registry.url=http://127.0.0.1:8000/orbit/v1/cfg 
+-Dorbit.dfs.url=http://127.0.0.1:8100/orbit/v1/dfs 
+-Dorbit.app_store.url=http://127.0.0.1:8003/orbit/v1/appstore 
 
 -Dorbit.host.url=http://127.0.0.1:9102 
 
@@ -11,7 +14,8 @@
 -Dplatform.version=1.0.0 
 -Dplatform.type=server 
 -Dplatform.context_root=/orbit/v1/platform 
- 
+-Dplatform.home={NODE_PLATFORM_HOME}/nodespace/gaia1_earth2 
+
 -Dspirit.earth.autostart=true 
 -Dspirit.earth.gaia_id=gaia1 
 -Dspirit.earth.id=earth2 
@@ -20,7 +24,7 @@
 -Dspirit.earth.jdbc.driver=org.postgresql.Driver 
 -Dspirit.earth.jdbc.url=jdbc:postgresql://127.0.0.1:5432/gaia1_earth2 
 -Dspirit.earth.jdbc.username=postgres 
--Dspirit.earth.jdbc.password=password 
+-Dspirit.earth.jdbc.password={password} 
 
 -Dorbit.cube_manager.autostart=true 
 -Dorbit.cube_manager.id=cubeManager2 

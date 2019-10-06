@@ -1,5 +1,5 @@
 -Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=8103 
--Dlogback.configurationFile=/Users/oceaneuropa/origin/logback/orbit0.xml 
+-Dlogback.configurationFile=/path/to/origin/logback/orbit0.xml 
 
 -Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
 -Dorbit.extension_registry.url=http://127.0.0.1:8000/orbit/v1/extensionregistry 
@@ -20,7 +20,7 @@
 -Dsubstance.dfs_volume.jdbc.driver=org.postgresql.Driver 
 -Dsubstance.dfs_volume.jdbc.url=jdbc:postgresql://127.0.0.1:5432/dfs1_volume3 
 -Dsubstance.dfs_volume.jdbc.username=postgres 
--Dsubstance.dfs_volume.jdbc.password=password 
+-Dsubstance.dfs_volume.jdbc.password={password} 
 -Dsubstance.dfs_volume.volume_capacity_gb=10 
 -Dsubstance.dfs_volume.block_capacity_mb=100 
 

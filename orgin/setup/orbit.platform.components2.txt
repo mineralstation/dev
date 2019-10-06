@@ -1,5 +1,5 @@
 -Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=8004 
--Dlogback.configurationFile=/Users/oceaneuropa/origin/logback/orbit0.xml 
+-Dlogback.configurationFile=/path/to/origin/logback/orbit0.xml 
 
 -Dorbit.host.url=http://127.0.0.1:8004 
 -Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
@@ -11,8 +11,8 @@
 -Dplatform.version=1.0.0 
 -Dplatform.type=server 
 -Dplatform.context_root=/orbit/v1/platform 
--Dplatform.home=/Users/oceaneuropa/origin/ta2 
--Dnodespace.location=/Users/oceaneuropa/origin/ta2/nodespace 
+-Dplatform.home=/path/to/origin/ta2 
+-Dnodespace.location=/path/to/origin/ta2/nodespace 
 
 -Dcomponent.user_registry.autostart=true 
 -Dcomponent.user_registry.name=UserRegistry2 

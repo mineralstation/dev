@@ -1,0 +1,25 @@
+-Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=9200 
+-Dlogback.configurationFile=/path/to/origin/logback/orbit0.xml 
+
+-Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
+-Dorbit.extension_registry.url=http://127.0.0.1:8000/orbit/v1/extensionregistry 
+-Dorbit.config_registry.url=http://127.0.0.1:8000/orbit/v1/cfg 
+-Dorbit.dfs.url=http://127.0.0.1:8100/orbit/v1/dfs 
+
+-Dorbit.host.url=http://127.0.0.1:9200 
+
+-Dplatform.parent.id=p101 
+-Dplatform.id=p9200 
+-Dplatform.name=Platform9200 
+-Dplatform.version=1.0.0 
+-Dplatform.type=server 
+-Dplatform.context_root=/orbit/v1/platform 
+
+-Dinfra.data_cast.autostart=true 
+-Dinfra.data_cast.id=cast1 
+-Dinfra.data_cast.name=Cast1 
+-Dinfra.data_cast.context_root=/orbit/v1/datacast 
+-Dinfra.data_cast.jdbc.driver=org.postgresql.Driver 
+-Dinfra.data_cast.jdbc.url=jdbc:postgresql://127.0.0.1:5432/cast1 
+-Dinfra.data_cast.jdbc.username=postgres 
+-Dinfra.data_cast.jdbc.password={password}

@@ -1,0 +1,24 @@
+-Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=9202 
+-Dlogback.configurationFile=/path/to/origin/logback/orbit0.xml 
+
+-Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
+-Dorbit.extension_registry.url=http://127.0.0.1:8000/orbit/v1/extensionregistry 
+-Dorbit.config_registry.url=http://127.0.0.1:8000/orbit/v1/cfg 
+-Dorbit.dfs.url=http://127.0.0.1:8100/orbit/v1/dfs 
+
+-Dorbit.host.url=http://127.0.0.1:9202 
+-Dorbit.service.http.port=8202 
+
+-Dplatform.parent.id=p101 
+-Dplatform.id=p9202 
+-Dplatform.name=Platform9202 
+-Dplatform.version=1.0.0 
+-Dplatform.type=server 
+-Dplatform.context_root=/orbit/v1/platform 
+
+-Dinfra.data_tube.autostart=true 
+-Dinfra.data_tube.data_cast_id=cast1 
+-Dinfra.data_tube.id=tube2 
+-Dinfra.data_tube.name=Tube2 
+-Dinfra.data_tube.context_root=/orbit/v1/datatube 
+-Dinfra.data_tube.http_port=8202
