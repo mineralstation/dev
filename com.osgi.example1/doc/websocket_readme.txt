@@ -30,4 +30,51 @@ https://github.com/jetty-project/embedded-jetty-websocket-examples
 Use ping/pong to maintain keep connection alive
 https://stackoverflow.com/questions/26971026/handling-connection-loss-with-websockets
 
+About bundle.info file
+https://www.eclipse.org/virgo/documentation/virgo-documentation-3.6.4.RELEASE/docs/virgo-user-guide/html/ch13.html#configuring-framework-bundles
+
+<bsn>,<version>,<jar-location>,<start-level>,<toStart?>
+
+bsn - the bundle's symbolic name string
+version - the bundle's version string
+jar-location - relative or absolute path to the jar file
+start-level - a digit indicating the bundle's start level
+toStart? - true or false value indicating whether a bundle should be started or not
+
+
+
+Import-Package: 
+javax.servlet;version="[2.6.0,3.2)",
+javax.servlet.annotation;version="[2.6.0,3.2)",
+javax.servlet.http;version="[2.6.0,3.2)",
+org.eclipse.jetty.http.pathmap;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.server;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.server.handler;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.servlet;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.util;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.util.log;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.util.thread;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.api;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.api.extensions;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.api.util;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.common;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.common.events;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.common.events.annotated;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.common.scopes;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.jsr356;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.jsr356.annotations;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.jsr356.client;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.jsr356.endpoints;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.jsr356.metadata;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.jsr356.server;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.server;version="[9.3.21,9.3.22)",
+org.eclipse.jetty.websocket.servlet;version="[9.3.21,9.3.22)",
+javax.websocket;version="[1.0,2)",
+javax.websocket.server;version="[1.0,2)"
+
+Require-Capability: 
+osgi.extender;filter:="(osgi.extender=osgi.serviceloader.registrar)";resolution:=optional,
+osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+
 

@@ -21,7 +21,7 @@ public class ChannelWebSocketClientMain2 {
 	 * @throws InterruptedException
 	 */
 	public void connect(String userId, String channelId, boolean sendClientMessages) throws DeploymentException, IOException, URISyntaxException, InterruptedException {
-		URI uri = new URI("ws://localhost:7001/channel/" + channelId);
+		URI uri = new URI("ws://localhost:8201/channel/" + channelId);
 
 		ChannelWebSocketClientV1 webSocketClient = new ChannelWebSocketClientV1(userId, channelId);
 		WebSocketContainer container = ContainerProvider.getWebSocketContainer();
@@ -44,7 +44,8 @@ public class ChannelWebSocketClientMain2 {
 	public static void main(String[] args) {
 		try {
 			ChannelWebSocketClientMain2 main = new ChannelWebSocketClientMain2();
-			main.connect("userB", "room1", true);
+			// main.connect("userB", "room1", true);
+			main.connect("userB", "grQMNe7fQfSzXSUCcTVLnQ", false);
 
 			Thread.sleep(5 * 60 * 1000);
 

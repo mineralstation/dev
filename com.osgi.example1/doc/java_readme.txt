@@ -1,0 +1,161 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+1. Java scheduler
+https://dzone.com/articles/schedulers-in-java-and-spring
+
+--------------------------------------------------------------------------------------------------------------------------------
+package com.example.timerExamples;
+import java.util.Timer;
+public class ExecuteTimer {
+  public static void main(String[] args){
+       TimerExample te1=new TimerExample("Task1");
+       TimerExample te2=new TimerExample("Task2");
+      Timer t=new Timer();
+      t.scheduleAtFixedRate(te1, 0,5*1000);
+      t.scheduleAtFixedRate(te2, 0,1000);
+   }
+}
+--------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------
+public class TimerExample extends TimerTask{
+private String name ;
+public TimerExample(String n){
+  this.name=n;
+}
+@Override
+public void run() {
+    System.out.println(Thread.currentThread().getName()+" "+name+" the task has executed successfully "+ new Date());
+    if("Task1".equalsIgnoreCase(name)){
+      try {
+      Thread.sleep(10000);
+      } catch (InterruptedException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+}
+}
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+2. Memory
+https://docs.oracle.com/javase/8/docs/api/java/lang/management/MemoryMXBean.html
+
+--------------------------------------------------------------------------------------------------------------------------------
+	/**
+	 * https://docs.oracle.com/javase/8/docs/api/java/lang/management/MemoryMXBean.html
+	 */
+	@Descriptor("Show JVM memory information")
+	public void showJVMMemory() {
+		MemoryMXBean mbean = ManagementFactory.getMemoryMXBean();
+		if (mbean instanceof NotificationEmitter) {
+			NotificationEmitter emitter = (NotificationEmitter) mbean;
+			emitter.addNotificationListener(new NotificationListener() {
+				@Override
+				public void handleNotification(Notification notification, Object handback) {
+					System.out.println("handleNotification()");
+				}
+			}, new NotificationFilter() {
+				private static final long serialVersionUID = -382808423611097197L;
+
+				@Override
+				public boolean isNotificationEnabled(Notification notification) {
+					System.out.println("isNotificationEnabled()");
+					return true;
+				}
+			}, null);
+		}
+
+		// Runs the garbage collector.
+		// mbean.gc();
+
+		// Returns the current memory usage of the heap that is used for object allocation.
+		MemoryUsage usage1 = mbean.getHeapMemoryUsage();
+		System.out.println("Heap memory usage:");
+		System.out.println("------------------------------------------------------------");
+		{
+			// Returns the amount of memory in bytes that is committed for the Java virtual machine to use.
+			// This amount of memory is guaranteed for the Java virtual machine to use.
+			long committed = usage1.getCommitted();
+			System.out.println("committed to use: " + committed + " (bytes)");
+
+			// Returns the amount of memory in bytes that the Java virtual machine initially requests from the operating system for memory management.
+			// This method returns -1 if the initial memory size is undefined.
+			long init = usage1.getInit();
+			System.out.println("initially requests: " + init + " (bytes)");
+
+			// Returns the maximum amount of memory in bytes that can be used for memory management.
+			// This method returns -1 if the maximum memory size is undefined.
+			long max = usage1.getMax();
+			System.out.println("max to be used: " + max + " (bytes)");
+
+			// Returns the amount of used memory in bytes.
+			long used = usage1.getUsed();
+			System.out.println("used: " + used + " (bytes)");
+		}
+		System.out.println("------------------------------------------------------------");
+		System.out.println();
+
+		// Returns the current memory usage of non-heap memory that is used by the Java virtual machine.
+		MemoryUsage usage2 = mbean.getNonHeapMemoryUsage();
+		System.out.println("Non-heap memory usage:");
+		System.out.println("------------------------------------------------------------");
+		{
+			// Returns the amount of memory in bytes that is committed for the Java virtual machine to use.
+			// This amount of memory is guaranteed for the Java virtual machine to use.
+			long committed = usage2.getCommitted();
+			System.out.println("committed to use: " + committed + " (bytes)");
+
+			// Returns the amount of memory in bytes that the Java virtual machine initially requests from the operating system for memory management.
+			// This method returns -1 if the initial memory size is undefined.
+			long init = usage2.getInit();
+			System.out.println("initially requests: " + init + " (bytes)");
+
+			// Returns the maximum amount of memory in bytes that can be used for memory management.
+			// This method returns -1 if the maximum memory size is undefined.
+			long max = usage2.getMax();
+			System.out.println("max to be used: " + max + " (bytes)");
+
+			// Returns the amount of used memory in bytes.
+			long used = usage2.getUsed();
+			System.out.println("used: " + used + " (bytes)");
+		}
+		System.out.println("------------------------------------------------------------");
+		System.out.println();
+
+		// Returns the approximate number of objects for which finalization is pending.
+		int pendingCount = mbean.getObjectPendingFinalizationCount();
+		System.out.println("pendingCount = " + pendingCount);
+		System.out.println();
+
+		// Tests if verbose output for the memory system is enabled.
+		boolean isVerbose = mbean.isVerbose();
+
+		// Enables or disables verbose output for the memory system.
+		// mbean.setVerbose(boolean value)
+		System.out.println("isVerbose = " + isVerbose);
+		System.out.println();
+	}
+--------------------------------------------------------------------------------------------------------------------------------
+
+Output:
+--------------------------------------------------------------------------------------------------------------------------------
+Heap memory usage:
+------------------------------------------------------------
+committed to use: 874512384 (bytes)
+initially requests: 268435456 (bytes)
+max to be used: 1908932608 (bytes)
+used: 128004120 (bytes)
+------------------------------------------------------------
+Non-heap memory usage:
+------------------------------------------------------------
+committed to use: 128319488 (bytes)
+initially requests: 2555904 (bytes)
+max to be used: -1 (bytes)
+used: 110190880 (bytes)
+------------------------------------------------------------
+pendingCount = 0
+isVerbose = false
+--------------------------------------------------------------------------------------------------------------------------------
+
+
