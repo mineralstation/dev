@@ -186,12 +186,14 @@ https://www.w3schools.com/jsref/jsref_sqrt.asp
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-8. setInterval() and clearInterval()
+8. setInterval() and clearInterval() and setTimeout()
 (GOOD) https://www.elated.com/javascript-timers-with-settimeout-and-setinterval/
 (GOOD) https://www.w3schools.com/jsref/met_win_clearinterval.asp
 https://www.kirupa.com/snippets/move_element_to_click_position.htm
 https://javascript.info/settimeout-setinterval
 https://hacks.mozilla.org/2011/08/animating-with-javascript-from-setinterval-to-requestanimationframe/
+
+https://stackoverflow.com/questions/14507718/javascript-run-setinterval-only-once
 
 ------------------------------------------------------------------------------------------------
 <!DOCTYPE html>
@@ -221,3 +223,262 @@ function myStopFunction() {
 </body>
 </html>
 ------------------------------------------------------------------------------------------------
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+7. window events
+
+window.onload
+https://www.htmlgoodies.com/beyond/javascript/article.php/3724571/Using-Multiple-JavaScript-Onload-Functions.htm
+
+window resize
+https://www.tutorialrepublic.com/faq/how-to-capture-browser-window-resize-event-in-javascript.php
+
+------------------------------------------------------------------------------------------------
+function start() {
+  func1();
+  func2();
+}
+window.onload = start;
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
+addLoadEvent(nameOfSomeFunctionToRunOnPageLoad);
+addLoadEvent(function() {
+  /* more code to run on page load */
+});
+
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+function func1() {
+  alert("This is the first.");
+}
+function func2() {
+  alert("This is the second.");
+}
+
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
+addLoadEvent(func1);
+addLoadEvent(func2);
+addLoadEvent(function() {
+    document.body.style.backgroundColor = '#EFDF95';
+})
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript Window Resize Event</title>
+</head>
+<body>
+    <div id="result"></div>
+ 
+    <script>        
+    // Defining event listener function
+    function displayWindowSize(){
+        // Get width and height of the window excluding scrollbars
+        var w = document.documentElement.clientWidth;
+        var h = document.documentElement.clientHeight;
+        
+        // Display result inside a div element
+        document.getElementById("result").innerHTML = "Width: " + w + ", " + "Height: " + h;
+    }
+     
+    // Attaching the event listener function to window's resize event
+    window.addEventListener("resize", displayWindowSize);
+    
+    // Calling the function for the first time
+    displayWindowSize();
+    </script>
+    <p><strong>Note:</strong> Please resize the browser window to see how it works.</p>
+</body>
+</html> 
+------------------------------------------------------------------------------------------------
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+8. game and annimation
+
+http://nokarma.org/2011/02/02/javascript-game-development-the-game-loop/
+https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+
+------------------------------------------------------------------------------------------------
+var start = null;
+var element = document.getElementById('SomeElementYouWantToAnimate');
+
+function step(timestamp) {
+  if (!start) start = timestamp;
+  var progress = timestamp - start;
+  element.style.transform = 'translateX(' + Math.min(progress / 10, 200) + 'px)';
+  if (progress < 2000) {
+    window.requestAnimationFrame(step);
+  }
+}
+
+window.requestAnimationFrame(step);
+------------------------------------------------------------------------------------------------
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+9. min/max screen fullscreen
+
+https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
+https://www.w3schools.com/howto/howto_js_fullscreen.asp
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_fullscreen
+https://stackoverflow.com/questions/1125084/how-to-make-the-window-full-screen-with-javascript-stretching-all-over-the-scre
+https://davidwalsh.name/fullscreen
+
+------------------------------------------------------------------------------------------------
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen(); 
+    }
+  }
+}
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+<script>
+/* Get the element you want displayed in fullscreen mode (a video in this example): */
+var elem = document.getElementById("myvideo");
+
+/* When the openFullscreen() function is executed, open the video in fullscreen.
+Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+</script>
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+<script>
+/* Get the documentElement (<html>) to display the page in fullscreen */
+var elem = document.documentElement;
+
+/* View in fullscreen */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+
+/* Close fullscreen */
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { /* Firefox */
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE/Edge */
+    document.msExitFullscreen();
+  }
+}
+</script>
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+function requestFullScreen(element) {
+    // Supports most browsers and their versions.
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+    if (requestMethod) { // Native full screen.
+        requestMethod.call(element);
+    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+        }
+    }
+}
+
+var elem = document.body; // Make the body go full screen.
+requestFullScreen(elem);
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+// Find the right method, call on correct element
+function launchIntoFullscreen(element) {
+  if(element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if(element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  }
+}
+
+// Launch fullscreen for browsers that support it!
+launchIntoFullscreen(document.documentElement); // the whole page
+launchIntoFullscreen(document.getElementById("videoElement")); // any individual element
+------------------------------------------------------------------------------------------------
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+10. iframe and positioning
+
+https://www.w3schools.com/css/css_positioning.asp
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+11. pinch and gesture
+
+https://stackoverflow.com/questions/11183174/simplest-way-to-detect-a-pinch
+
+
+
+
+
+
+
+
+
+
