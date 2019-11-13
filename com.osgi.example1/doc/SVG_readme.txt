@@ -6,8 +6,11 @@ http://wphooper.com/svg/examples/text.php
 http://wphooper.com/svg/examples/line.php
 https://vanseodesign.com/web-design/svg-text-layout-and-alignment/
 
-https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
+https://www.w3.org/TR/filter-effects-1/#FilterPrimitivesOverview (for filter)
 
+https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
+https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
+https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events/Pinch_zoom_gestures
 
 SVG tutorials
 http://tutorials.jenkov.com/svg/index.html
@@ -199,13 +202,53 @@ https://stackoverflow.com/questions/17786618/how-to-use-z-index-in-svg-elements
 https://stackoverflow.com/questions/38130781/how-to-change-text-elements-in-d3
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+7. shadow glow, back glow and colored glow 
 
+https://stackoverflow.com/questions/9630008/how-can-i-create-a-glow-around-a-rectangle-with-svg
+http://jsfiddle.net/drewnoakes/gc8Bt/
 
+https://yoksel.github.io/svg-filters/#/ (tools)
 
+------------------------------------------------------------------------------------------------
+<!-- a transparent grey drop-shadow that blends with the background colour -->
+<filter id="shadow" width="1.5" height="1.5" x="-.25" y="-.25">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur"/>
+    <feColorMatrix result="bluralpha" type="matrix" values=
+            "1 0 0 0   0
+             0 1 0 0   0
+             0 0 1 0   0
+             0 0 0 0.4 0 "/>
+    <feOffset in="bluralpha" dx="3" dy="3" result="offsetBlur"/>
+    <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+</filter>
 
+<!-- a transparent grey glow with no offset -->
+<filter id="black-glow">
+    <feColorMatrix type="matrix" values=
+                "0 0 0 0   0
+                 0 0 0 0   0
+                 0 0 0 0   0
+                 0 0 0 0.7 0"/>
+    <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+    <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+</filter>
 
-
-
+<!-- a transparent glow that takes on the colour of the object it's applied to -->
+<filter id="glow">
+    <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+    <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+</filter>
+------------------------------------------------------------------------------------------------
 
 
 

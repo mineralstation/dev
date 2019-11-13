@@ -467,16 +467,152 @@ launchIntoFullscreen(document.getElementById("videoElement")); // any individual
 https://www.w3schools.com/css/css_positioning.asp
 
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-11. pinch and gesture
+11. pinch and gesture and touchpad
 
 https://stackoverflow.com/questions/11183174/simplest-way-to-detect-a-pinch
 
+https://stackoverflow.com/questions/9977876/two-fingered-scroll-js-on-touchpad
+https://jsfiddle.net/64p5r459/2/
+https://stackoverflow.com/questions/3515446/jquery-mousewheel-detecting-when-the-wheel-stops (detect wheel stops)
+
+https://github.com/inuyaksa/jquery.nicescroll/issues/799 (allow prevent default)
+------------------------------------------------------------------------------------------------
+with this
+https://github.com/Tolc/jquery.nicescroll/blob/6876279cb895bc6ad892c71f8a327dce85e18e9b/jquery.nicescroll.js#L2555
+(passiveSupported && (active || el == window.document || el == window.document.body || el == window)) ? el.addEventListener(name, fn, { passive: false, capture: bubble }) : el.addEventListener(name, fn, bubble || false);
+------------------------------------------------------------------------------------------------
+
+https://stackoverflow.com/questions/11183174/simplest-way-to-detect-a-pinch/
+https://developer.apple.com/documentation/webkitjs/gestureevent
+------------------------------------------------------------------------------------------------
+node.addEventListener('gestureend', function(e) {
+    if (e.scale < 1.0) {
+        // User moved fingers closer together
+    } else if (e.scale > 1.0) {
+        // User moved fingers further apart
+    }
+}, false);
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+var doScroll = function(e) {
+  const deltaX = Math.max(-1, Math.min(1, e.deltaX));
+  const deltaY = Math.max(-1, Math.min(1, e.deltaY));
+
+  // Do something with `delta`
+  const elmId = `#x${deltaX}y${deltaY}`;
+  document.querySelector("#info").innerHTML = `x:${e.deltaX} y:${e.deltaY}`;
+  document.querySelector(elmId).className = "scrolled";
+
+  window.setTimeout(id => document.querySelector(id).className = "", 0, elmId);
+
+  e.preventDefault();
+};
+
+if (window.addEventListener) {
+  window.addEventListener("wheel", doScroll, false);
+}
+------------------------------------------------------------------------------------------------
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+12. context menu
+
+https://dev.to/iamafro/how-to-create-a-custom-context-menu--5d7p
+http://help.dottoro.com/ljhwjsss.php (oncontextmenu)
+https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event
 
 
+------------------------------------------------------------------------------------------------
+<div class="menu">
+  <ul class="menu-options">
+    <li class="menu-option">Back</li>
+    <li class="menu-option">Reload</li>
+    <li class="menu-option">Save</li>
+    <li class="menu-option">Save As</li>
+    <li class="menu-option">Inspect</li>
+  </ul>
+</div>
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+.menu {
+  width: 120px;
+  box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: none;
+
+  .menu-options {
+    list-style: none;
+    padding: 10px 0;
+
+    .menu-option {
+      font-weight: 500;
+      font-size: 14px;
+      padding: 10px 40px 10px 20px;
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+const toggleMenu = command => {
+  menu.style.display = command === "show" ? "block" : "none";
+};
+
+const setPosition = ({ top, left }) => {
+  menu.style.left = `${left}px`;
+  menu.style.top = `${top}px`;
+  toggleMenu('show');
+};
+
+
+window.addEventListener("contextmenu", e => {
+  e.preventDefault();
+  const origin = {
+    left: e.pageX,
+    top: e.pageY
+  };
+  setPosition(origin);
+  return false;
+});
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+const menu = document.querySelector(".menu");
+let menuVisible = false;
+
+const toggleMenu = command => {
+  menu.style.display = command === "show" ? "block" : "none";
+  menuVisible = !menuVisible;
+};
+
+const setPosition = ({ top, left }) => {
+  menu.style.left = `${left}px`;
+  menu.style.top = `${top}px`;
+  toggleMenu("show");
+};
+
+window.addEventListener("click", e => {
+  if(menuVisible)toggleMenu("hide");
+});
+
+window.addEventListener("contextmenu", e => {
+  e.preventDefault();
+  const origin = {
+    left: e.pageX,
+    top: e.pageY
+  };
+  setPosition(origin);
+  return false;
+});
+------------------------------------------------------------------------------------------------
 
 
 
