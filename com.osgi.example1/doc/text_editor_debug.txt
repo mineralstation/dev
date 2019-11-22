@@ -1,0 +1,245 @@
+// 1 document provider
+DocumentProviderRegistry.getDocumentProvider(IConfigurationElement) line: 148 // the registry contains the document provider instance	
+DocumentProviderRegistry.getDocumentProvider(IEditorInput) line: 319
+
+	public IDocumentProvider getDocumentProvider(IEditorInput editorInput) {
+		IDocumentProvider provider = null;
+		IFile file = (IFile) editorInput.getAdapter(IFile.class);
+		if (file != null) {
+			provider = getDocumentProvider(file.getFileExtension());
+		}
+		if (provider == null) {
+			Set set= (Set) findInputTypeMapping(editorInput.getClass());
+			if (set != null) {
+				IConfigurationElement entry = selectConfigurationElement(set);
+				provider = getDocumentProvider(entry);
+			}
+		}
+		return provider;
+	}
+
+TextEditor(AbstractDecoratedTextEditor).setDocumentProvider(IEditorInput) line: 1441	// done by AbstractDecoratedTextEditor
+TextEditor(AbstractTextEditor).updateDocumentProvider(IEditorInput) line: 4170	
+TextEditor(AbstractTextEditor).doSetInput(IEditorInput) line: 4225	// text editor's reference to the document provider is set by updateDocumentProvider(input);
+TextEditor(StatusTextEditor).doSetInput(IEditorInput) line: 237	
+TextEditor(AbstractDecoratedTextEditor).doSetInput(IEditorInput) line: 1480	
+TextEditor.doSetInput(IEditorInput) line: 169	
+
+
+// another editor opening the same file gets the same org.eclipse.ui.editors.text.TextFileDocumentProvider instance
+XTextEditor(AbstractDecoratedTextEditor).setDocumentProvider(IEditorInput) line: 1442	
+XTextEditor(AbstractTextEditor).updateDocumentProvider(IEditorInput) line: 4170	
+XTextEditor(AbstractTextEditor).doSetInput(IEditorInput) line: 4225	
+XTextEditor(StatusTextEditor).doSetInput(IEditorInput) line: 237	
+XTextEditor(AbstractDecoratedTextEditor).doSetInput(IEditorInput) line: 1480	
+XTextEditor(TextEditor).doSetInput(IEditorInput) line: 169	
+XTextEditor(AbstractXtextEditor).doSetInput(IEditorInput) line: 311	
+AbstractTextEditor$19.run(IProgressMonitor) line: 3220	
+ModalContext.runInCurrentThread(IRunnableWithProgress, IProgressMonitor) line: 466	
+ModalContext.run(IRunnableWithProgress, boolean, IProgressMonitor, Display) line: 374	
+WorkbenchWindow$13.run() line: 2157	
+BusyIndicator.showWhile(Display, Runnable) line: 70	
+WorkbenchWindow.run(boolean, boolean, IRunnableWithProgress) line: 2153	
+XTextEditor(AbstractTextEditor).internalInit(IWorkbenchWindow, IEditorSite, IEditorInput) line: 3238	
+XTextEditor(AbstractTextEditor).init(IEditorSite, IEditorInput) line: 3265	
+
+// another editor opening the same file gets the same org.eclipse.ui.editors.text.TextFileDocumentProvider instance
+StructuredTextEditor(AbstractDecoratedTextEditor).setDocumentProvider(IEditorInput) line: 1442	
+StructuredTextEditor.setDocumentProvider(IEditorInput) line: 2971	
+StructuredTextEditor(AbstractTextEditor).updateDocumentProvider(IEditorInput) line: 4170	
+StructuredTextEditor(AbstractTextEditor).doSetInput(IEditorInput) line: 4225	
+StructuredTextEditor(StatusTextEditor).doSetInput(IEditorInput) line: 237	
+StructuredTextEditor(AbstractDecoratedTextEditor).doSetInput(IEditorInput) line: 1480	
+StructuredTextEditor(TextEditor).doSetInput(IEditorInput) line: 169	
+StructuredTextEditor.doSetInput(IEditorInput) line: 1943	
+
+
+// 2 document
+// connect
+TextFileDocumentProvider.connect(Object) line: 475	
+TextEditor(AbstractTextEditor).doSetInput(IEditorInput) line: 4233	
+TextEditor(StatusTextEditor).doSetInput(IEditorInput) line: 237	
+TextEditor(AbstractDecoratedTextEditor).doSetInput(IEditorInput) line: 1480	
+TextEditor.doSetInput(IEditorInput) line: 169	
+
+// document is created
+SynchronizableDocument(Document).<init>() line: 49	
+SynchronizableDocument.<init>() line: 34	
+ResourceTextFileBufferManager.createEmptyDocument(IFile) line: 135	
+ResourceTextFileBuffer.initializeFileBufferContent(IProgressMonitor) line: 287	
+ResourceTextFileBuffer(ResourceFileBuffer).create(IPath, IProgressMonitor) line: 247	
+ResourceTextFileBufferManager(TextFileBufferManager).connect(IPath, LocationKind, IProgressMonitor) line: 112	
+TextFileDocumentProvider.createFileInfo(Object) line: 559	
+TextFileDocumentProvider.connect(Object) line: 478	
+TextEditor(AbstractTextEditor).doSetInput(IEditorInput) line: 4233	
+TextEditor(StatusTextEditor).doSetInput(IEditorInput) line: 237	
+TextEditor(AbstractDecoratedTextEditor).doSetInput(IEditorInput) line: 1480	
+TextEditor.doSetInput(IEditorInput) line: 169	
+AbstractTextEditor$19.run(IProgressMonitor) line: 3220	
+ModalContext.runInCurrentThread(IRunnableWithProgress, IProgressMonitor) line: 466	
+ModalContext.run(IRunnableWithProgress, boolean, IProgressMonitor, Display) line: 374	
+WorkbenchWindow$13.run() line: 2157	
+BusyIndicator.showWhile(Display, Runnable) line: 70	
+WorkbenchWindow.run(boolean, boolean, IRunnableWithProgress) line: 2153	
+TextEditor(AbstractTextEditor).internalInit(IWorkbenchWindow, IEditorSite, IEditorInput) line: 3238	
+TextEditor(AbstractTextEditor).init(IEditorSite, IEditorInput) line: 3265	
+EditorReference.initialize(IWorkbenchPart) line: 390	
+
+// File text content is set to the document
+SynchronizableDocument.set(String, long) line: 216	
+ResourceTextFileBuffer.setDocumentContent(IDocument, IFile, String) line: 580	// IFile's input stream is read here
+ResourceTextFileBuffer.initializeFileBufferContent(IProgressMonitor) line: 288	
+ResourceTextFileBuffer(ResourceFileBuffer).create(IPath, IProgressMonitor) line: 247	
+ResourceTextFileBufferManager(TextFileBufferManager).connect(IPath, LocationKind, IProgressMonitor) line: 112	
+TextFileDocumentProvider.createFileInfo(Object) line: 559	
+TextFileDocumentProvider.connect(Object) line: 478	
+TextEditor(AbstractTextEditor).doSetInput(IEditorInput) line: 4233	
+TextEditor(StatusTextEditor).doSetInput(IEditorInput) line: 237	
+TextEditor(AbstractDecoratedTextEditor).doSetInput(IEditorInput) line: 1480	
+TextEditor.doSetInput(IEditorInput) line: 169	
+AbstractTextEditor$19.run(IProgressMonitor) line: 3220	
+ModalContext.runInCurrentThread(IRunnableWithProgress, IProgressMonitor) line: 466	
+ModalContext.run(IRunnableWithProgress, boolean, IProgressMonitor, Display) line: 374	
+WorkbenchWindow$13.run() line: 2157	
+BusyIndicator.showWhile(Display, Runnable) line: 70	
+WorkbenchWindow.run(boolean, boolean, IRunnableWithProgress) line: 2153	
+TextEditor(AbstractTextEditor).internalInit(IWorkbenchWindow, IEditorSite, IEditorInput) line: 3238	
+TextEditor(AbstractTextEditor).init(IEditorSite, IEditorInput) line: 3265	
+EditorReference.initialize(IWorkbenchPart) line: 390	
+
+
+// File text content is retrieved from the document and set to the StyledText 
+SynchronizableDocument.get(int, int) line: 134	
+DefaultDocumentAdapter.doGetLine(IDocument, int) line: 150	
+DefaultDocumentAdapter.getLine(int) line: 173	
+StyledText.getPointAtOffset(int) line: 5436	
+StyledText.setCaretLocation() line: 8499	
+StyledText.reset() line: 7893	
+StyledText.setContent(StyledTextContent) line: 8654	
+SourceViewer(TextViewer).initializeWidgetContents() line: 3522	
+SourceViewer(TextViewer).setVisibleDocument(IDocument) line: 3564	
+SourceViewer(TextViewer).setDocument(IDocument) line: 2938	
+SourceViewer.setDocument(IDocument, IAnnotationModel, int, int) line: 642	
+SourceViewer.setDocument(IDocument, IAnnotationModel) line: 590	
+TextEditor(AbstractTextEditor).initializeSourceViewer(IEditorInput) line: 4050	
+TextEditor(AbstractTextEditor).createPartControl(Composite) line: 3578	
+TextEditor(StatusTextEditor).createPartControl(Composite) line: 54	
+TextEditor(AbstractDecoratedTextEditor).createPartControl(Composite) line: 447	
+CompatibilityEditor(CompatibilityPart).createPartControl(IWorkbenchPart, Composite) line: 141	
+CompatibilityEditor.createPartControl(IWorkbenchPart, Composite) line: 99	
+CompatibilityEditor(CompatibilityPart).create() line: 327	
+
+
+// 3. save
+// Text editor being saved
+TextFileDocumentProvider.getDocument(Object) line: 722	
+TextEditor(AbstractTextEditor).performSave(boolean, IProgressMonitor) line: 5076	
+TextEditor(AbstractTextEditor).doSave(IProgressMonitor) line: 4866	
+AbstractTextEditor$TextEditorSavable.doSave(IProgressMonitor) line: 7209	
+AbstractTextEditor$TextEditorSavable(Saveable).doSave(IProgressMonitor, IShellProvider) line: 216	
+SaveableHelper.doSaveModel(Saveable, IProgressMonitor, IShellProvider, boolean) line: 355	
+SaveableHelper$3.run(IProgressMonitor) line: 199	
+SaveableHelper$5.run(IProgressMonitor) line: 283	
+ModalContext.runInCurrentThread(IRunnableWithProgress, IProgressMonitor) line: 466	
+ModalContext.run(IRunnableWithProgress, boolean, IProgressMonitor, Display) line: 374	
+WorkbenchWindow$13.run() line: 2157	
+BusyIndicator.showWhile(Display, Runnable) line: 70	
+WorkbenchWindow.run(boolean, boolean, IRunnableWithProgress) line: 2153	
+SaveableHelper.runProgressMonitorOperation(String, IRunnableWithProgress, IRunnableContext, IShellProvider) line: 291	
+SaveableHelper.runProgressMonitorOperation(String, IRunnableWithProgress, IWorkbenchWindow) line: 269	
+SaveableHelper.saveModels(ISaveablesSource, IWorkbenchWindow, boolean) line: 211	
+SaveableHelper.savePart(ISaveablePart, IWorkbenchPart, IWorkbenchWindow, boolean) line: 146	
+WorkbenchPage.saveSaveable(ISaveablePart, IWorkbenchPart, boolean, boolean) line: 3915	
+WorkbenchPage.saveEditor(IEditorPart, boolean) line: 3929	
+
+
+// Write to IFile
+File.setContents(InputStream, boolean, boolean, IProgressMonitor) line: 463	
+ResourceTextFileBuffer.commitFileBufferContent(IProgressMonitor, boolean) line: 396	
+ResourceTextFileBuffer(ResourceFileBuffer).commit(IProgressMonitor, boolean) line: 327	
+TextFileDocumentProvider.commitFileBuffer(IProgressMonitor, TextFileDocumentProvider$FileInfo, boolean) line: 871	
+TextFileDocumentProvider$2.execute(IProgressMonitor) line: 795	
+TextFileDocumentProvider$2(TextFileDocumentProvider$DocumentProviderOperation).run(IProgressMonitor) line: 132	
+WorkspaceModifyDelegatingOperation.execute(IProgressMonitor) line: 69	
+WorkspaceModifyOperation$1.run(IProgressMonitor) line: 106	
+Workspace.run(IWorkspaceRunnable, ISchedulingRule, int, IProgressMonitor) line: 2313	
+WorkspaceModifyDelegatingOperation(WorkspaceModifyOperation).run(IProgressMonitor) line: 118	
+WorkspaceOperationRunner.run(IRunnableWithProgress, ISchedulingRule) line: 75	
+WorkspaceOperationRunner.run(boolean, boolean, IRunnableWithProgress) line: 65	
+TextFileDocumentProvider.executeOperation(TextFileDocumentProvider$DocumentProviderOperation, IProgressMonitor) line: 456	
+TextFileDocumentProvider.saveDocument(IProgressMonitor, Object, IDocument, boolean) line: 772	
+TextEditor(AbstractTextEditor).performSave(boolean, IProgressMonitor) line: 5076	
+TextEditor(AbstractTextEditor).doSave(IProgressMonitor) line: 4866	
+AbstractTextEditor$TextEditorSavable.doSave(IProgressMonitor) line: 7209	
+AbstractTextEditor$TextEditorSavable(Saveable).doSave(IProgressMonitor, IShellProvider) line: 216	
+SaveableHelper.doSaveModel(Saveable, IProgressMonitor, IShellProvider, boolean) line: 355	
+SaveableHelper$3.run(IProgressMonitor) line: 199	
+SaveableHelper$5.run(IProgressMonitor) line: 283	
+ModalContext.runInCurrentThread(IRunnableWithProgress, IProgressMonitor) line: 466	
+ModalContext.run(IRunnableWithProgress, boolean, IProgressMonitor, Display) line: 374	
+WorkbenchWindow$13.run() line: 2157	
+BusyIndicator.showWhile(Display, Runnable) line: 70	
+WorkbenchWindow.run(boolean, boolean, IRunnableWithProgress) line: 2153	
+SaveableHelper.runProgressMonitorOperation(String, IRunnableWithProgress, IRunnableContext, IShellProvider) line: 291	
+SaveableHelper.runProgressMonitorOperation(String, IRunnableWithProgress, IWorkbenchWindow) line: 269	
+SaveableHelper.saveModels(ISaveablesSource, IWorkbenchWindow, boolean) line: 211	
+SaveableHelper.savePart(ISaveablePart, IWorkbenchPart, IWorkbenchWindow, boolean) line: 146	
+WorkbenchPage.saveSaveable(ISaveablePart, IWorkbenchPart, boolean, boolean) line: 3915	
+WorkbenchPage.saveEditor(IEditorPart, boolean) line: 3929	
+
+
+// 4. close
+// When text editor is closed (opening the same file)
+TextFileDocumentProvider.disconnect(Object) line: 642	
+TextEditor(AbstractTextEditor).disposeDocumentProvider() line: 4537	
+TextEditor(AbstractDecoratedTextEditor).disposeDocumentProvider() line: 1463	
+TextEditor(AbstractTextEditor).dispose() line: 4419	
+TextEditor(AbstractDecoratedTextEditor).dispose() line: 383	
+TextEditor.dispose() line: 93	
+
+// When XML editor is closed (opening the same file)
+TextFileDocumentProvider.disconnect(Object) line: 642	
+StructuredTextEditor(AbstractTextEditor).disposeDocumentProvider() line: 4537	
+StructuredTextEditor(AbstractDecoratedTextEditor).disposeDocumentProvider() line: 1463	
+StructuredTextEditor.disposeDocumentProvider() line: 1874	
+StructuredTextEditor(AbstractTextEditor).dispose() line: 4419	
+StructuredTextEditor(AbstractDecoratedTextEditor).dispose() line: 383	
+StructuredTextEditor(TextEditor).dispose() line: 93	
+StructuredTextEditor.dispose() line: 1859	
+MultiPageEditorPart$9.run() line: 1035	
+SafeRunner.run(ISafeRunnable) line: 42	
+XMLMultiPageEditorPart(MultiPageEditorPart).disposePart(IWorkbenchPart) line: 1031	
+XMLMultiPageEditorPart(MultiPageEditorPart).dispose() line: 518	
+XMLMultiPageEditorPart.dispose() line: 899	
+
+
+// 5. edit text
+CopyOnWriteTextStore.replace(int, int, String) line: 153	
+SynchronizableDocument(AbstractDocument).replace(int, int, String, long) line: 1184	
+SynchronizableDocument.replace(int, int, String, long) line: 194	
+SynchronizableDocument(AbstractDocument).replace(int, int, String) line: 1210	
+SynchronizableDocument.replace(int, int, String) line: 180	
+DefaultDocumentAdapter.replaceTextRange(int, int, String) line: 248	
+StyledText.modifyContent(Event, boolean) line: 7268	
+StyledText.sendKeyEvent(Event) line: 8111	
+StyledText.doContent(char) line: 2481	
+StyledText.handleKey(Event) line: 5955	
+StyledText.handleKeyDown(Event) line: 5986	
+StyledText$7.handleEvent(Event) line: 5663	
+EventTable.sendEvent(Event) line: 84	
+Display.sendEvent(EventTable, Event) line: 4188	
+StyledText(Widget).sendEvent(Event) line: 1467	
+StyledText(Widget).sendEvent(int, Event, boolean) line: 1490	
+StyledText(Widget).sendEvent(int, Event) line: 1475	
+StyledText(Widget).sendKeyEvent(int, Event) line: 1504	
+StyledText(Control).insertText(long, long, long) line: 2084	
+StyledText(Canvas).insertText(long, long, long) line: 277	
+Display.windowProc(long, long, long) line: 5717	
+OS.objc_msgSend(long, long, long) line: not available [native method]	
+SWTCanvasView(NSResponder).interpretKeyEvents(NSArray) line: 68	
+StyledText(Composite).keyDown(long, long, long) line: 594	
+Display.windowProc(long, long, long) line: 5629	
+OS.objc_msgSendSuper(objc_super, long, long) line: not available [native method]	
+Shell(Widget).callSuper(long, long, long) line: 221	
+Shell(Widget).windowSendEvent(long, long, long) line: 2105	
+Shell.windowSendEvent(long, long, long) line: 2329	

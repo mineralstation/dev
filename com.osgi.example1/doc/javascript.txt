@@ -615,6 +615,78 @@ window.addEventListener("contextmenu", e => {
 ------------------------------------------------------------------------------------------------
 
 
+13. Text Field with scrollbar
+https://stackoverflow.com/questions/18221104/how-do-i-create-a-scrollable-textbox/18221146
+http://jsfiddle.net/rJy94/
+
+------------------------------------------------------------------------------------------------
+.scrollabletextbox {
+    // height:100px;
+    // width:200px;
+    // font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+    // font-size: 82%;
+    overflow:scroll;
+}
+
+<textarea class="scrollabletextbox" name="note" value="" style="width: 700px; height:200px;">
+	some very very long value that will wrap and won't show correctly i hope this is long enough. 
+	and will go over the current height so that it scrolls vertically
+</textarea>
+------------------------------------------------------------------------------------------------
 
 
+<textarea id="widget123_textarea" class="scrollabletextbox" style="width: 700px; height:200px;">
+	some very very long value that will wrap and won't show correctly i hope this is long enough. 
+	and will go over the current height so that it scrolls vertically
+</textarea>
+
+
+
+14. CData
+https://stackoverflow.com/questions/7092236/what-is-cdata-in-html
+------------------------------------------------------------------------------------------------
+<script type="text/javascript"> 
+// <![CDATA[
+
+// ]]>
+</script>
+------------------------------------------------------------------------------------------------
+
+15. Screen size
+https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window
+
+------------------------------------------------------------------------------------------------
+// Size of browser viewport.
+$(window).height();
+$(window).width();
+
+// Size of HTML document (same as pageHeight/pageWidth in screenshot).
+$(document).height();
+$(document).width();
+For screen size you can use the screen object:
+
+window.screen.height;
+window.screen.width;
+------------------------------------------------------------------------------------------------
+
+e.g.
+------------------------------------------------------------------------------------------------
+onclick="location.href=this.href+'&screen_width='+screen_width+'&screen_height='+screen_height"
+------------------------------------------------------------------------------------------------
+or
+------------------------------------------------------------------------------------------------
+onclick="window.open(this.href + '&screen_width=' + screen_width + '&screen_height=' + screen_height, '_blank')"
+------------------------------------------------------------------------------------------------
+
+
+15. change CSS style property value
+https://stackoverflow.com/questions/15241915/how-to-change-css-property-using-javascript
+
+------------------------------------------------------------------------------------------------
+document.elm.style.border = "3px solid #FF0000";
+
+document.getElementById("p2").style.color="blue";
+
+document.getElementById("p2").className = "classname";
+------------------------------------------------------------------------------------------------
 

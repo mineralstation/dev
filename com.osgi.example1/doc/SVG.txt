@@ -251,12 +251,68 @@ https://yoksel.github.io/svg-filters/#/ (tools)
 ------------------------------------------------------------------------------------------------
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+8. perspective
+
+https://stackoverflow.com/questions/30476852/3d-transforms-on-svg-element (3D circle)
+
+https://stackoverflow.com/questions/12919398/perspective-transform-of-svg-paths-four-corner-distort
+------------------------------------------------------------------------------------------------
+div {
+  height: 150px;
+  width: 150px;
+}
+.container {
+  perspective: 500px;
+  border: 1px solid black;
+  background: gray;
+}
+.transformed {
+  transform: rotateY(50deg);
+  background: blue;
+}
+<!doctype html>
+<html>
+<body>
+<div class="container">
+  <div class="transformed"> Hola! He sido transformado!</div>
+</div>
+</body>
+</html>
+------------------------------------------------------------------------------------------------
+
+https://stackoverflow.com/questions/30476852/3d-transforms-on-svg-element
+------------------------------------------------------------------------------------------------
+<section style="transform: perspective(200px) rotateX(-30deg); transform-origin: 50% 100%; text-align: justify; width: 100px;">
+  <p style="backface-visibility: hidden;">TEXTTEXTTEXT</p>
+</section>
+------------------------------------------------------------------------------------------------
+
+https://stackoverflow.com/questions/23485222/3d-transform-perspective-in-svg
+------------------------------------------------------------------------------------------------
+  <div id="outer">
+    <svg id="inner" width="500" height="500">
+      <image x="20" y="90" width="200" height="200" xlink:href='http://www.w3schools.com/html/smiley.gif' />
+    </svg>
+  </div>
+------------------------------------------------------------------------------------------------
 
 
+https://stackoverflow.com/questions/23485222/3d-transform-perspective-in-svg
+http://jsfiddle.net/DCqUp/
+------------------------------------------------------------------------------------------------
+#outer {
+  padding: 20px;
+  background-color: blue;
+  -webkit-transform: perspective(400px) rotateX(45deg);
+  -webkit-transform-style: preserve-3d;  
+}
 
-
-
-
+#inner {
+  -webkit-transform: rotateX(-45deg);
+  -webkit-transform-origin: bottom center;
+}
+------------------------------------------------------------------------------------------------
 
 
 
