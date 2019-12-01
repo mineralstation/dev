@@ -1,0 +1,192 @@
+.theia-bottom-right {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+}
+.theia-decorator-size {
+    transform: scale(0.7);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+.theia-Tree .theia-TreeNode.theia-mod-selected {
+    background: var(--theia-layout-color4);
+}
+.theia-Tree {
+    overflow: hidden;
+    color: var(--theia-ui-font-color1);
+    font-size: var(--theia-ui-font-size1);
+    max-height: calc(100% - var(--theia-border-width));
+    position: relative;
+}
+.theia-TreeNode {
+    line-height: 22px;
+    display: flex;
+}
+.theia-TreeNodeContent {
+    display: flex;
+    align-items: baseline;
+    width: calc(100% - var(--theia-scrollbar-rail-width));
+}
+.theia-TreeNodeSegment {
+    display: flex;
+}
+.theia-TreeNodeSegment {
+    flex-grow: 0;
+    user-select: none;
+    white-space: nowrap;
+}
+.theia-TreeNodeSegmentGrow {
+    flex-grow: 1 !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.theia-ExpansionToggle {
+    padding-right: var(--theia-ui-padding);
+    min-width: 10px;
+    display: flex;
+    justify-content: center;
+}
+.theia-TreeNode {
+    line-height: 22px;
+    display: flex;
+}
+.theia-TreeNodeContent {
+    display: flex;
+    align-items: baseline;
+    width: calc(100% - var(--theia-scrollbar-rail-width));
+}
+.theia-icon-wrapper {
+    top: 0px !important;
+    position: relative;
+    display: inline-block;
+}
+.file-icon {
+    line-height: 0.8em;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.file-icon:before {
+    font-size: calc(var(--theia-content-font-size) * 0.8);
+    text-align: center;
+    margin-right: 4px;
+}
+<style>
+.fa-folder:before {
+    content: "\F07B";
+}
+
+--------------------------------------------------------------------------------------------------------------------
+<div id="{treeItemId}" style="height:22px; left:0px; position:absolute; width:100%; top:132px; "> // low location by top
+	<div id="" style="line-height:22px; display:flex; align-items: baseline; padding-left:24px;"> // column indent by padding-left
+    	<div style="position:relative; display:inline-block;"> // icon div
+    		<img/> // arrow
+    		<img/> // icon
+    	</div>
+    	<div id="treeItemId_text" style="user-select:none; white-space:nowrap; text-overflow:ellipsis;" >
+			{text}
+		</div>
+	</div>
+</div>
+--------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------
+<div style="height: 22px; left: 0px; position: absolute; top: 132px; width: 100%;">
+	<div class="theia-TreeNode theia-CompositeTreeNode theia-ExpandableTreeNode theia-mod-selected theia-mod-focus theia-FileStatNode theia-DirNode" 
+		draggable="true" title="/projects/angular-realworld-example-app/src/app/auth" style="padding-left: 24px;">
+		<div class="theia-TreeNodeContent">
+			<div data-node-id="/projects:/projects/angular-realworld-example-app/src/app/auth" 
+			class="theia-TreeNodeSegment theia-ExpansionToggle" style="padding-left: 4px; padding-right: 4px;"></div>
+			<div class="theia-icon-wrapper">
+				<div class="fa fa-folder file-icon"></div>
+				<span class="a fa fa-circle theia-decorator-size theia-bottom-right" style="color: var(--theia-layout-color0);"></span>
+				<span class="a fa fa-times-circle theia-decorator-size theia-bottom-right" style="color: var(--theia-error-color0);"></span>
+			</div>
+			<div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/src/app/auth">
+				auth
+			</div>
+		</div>
+	</div>
+</div>
+--------------------------------------------------------------------------------------------------------------------
+
+
+<div class="ReactVirtualized__Grid__innerScrollContainer" role="rowgroup" style="width: auto; height: 374px; max-width: 213px; max-height: 374px; overflow: hidden; position: relative;">
+	<div style="height: 22px; left: 0px; position: absolute; top: 0px; width: 100%;">
+		<div class="theia-TreeNode theia-CompositeTreeNode theia-ExpandableTreeNode theia-FileStatNode theia-DirNode" draggable="true" title="/projects/.theia" style="padding-left: 0px;">
+			<div class="theia-TreeNodeContent">
+				<div data-node-id="/projects:/projects/.theia" class="theia-TreeNodeSegment theia-ExpansionToggle theia-mod-collapsed" style="padding-left: 4px; padding-right: 4px;"></div>
+				<div class="fa fa-folder file-icon"></div>
+				<div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/.theia">.theia</div>
+				</div>
+			</div>
+		</div>
+		<div style="height: 22px; left: 0px; position: absolute; top: 22px; width: 100%;">
+			<div class="theia-TreeNode theia-CompositeTreeNode theia-ExpandableTreeNode theia-mod-selected theia-mod-focus theia-FileStatNode theia-DirNode" draggable="true" title="/projects/angular-realworld-example-app" style="padding-left: 0px;">
+				<div class="theia-TreeNodeContent">
+					<div data-node-id="/projects:/projects/angular-realworld-example-app" class="theia-TreeNodeSegment theia-ExpansionToggle" style="padding-left: 4px; padding-right: 4px;"></div>
+					<div class="fa fa-folder file-icon"></div>
+					<div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app">angular-realworld-example-app</div>
+				</div>
+			</div>
+		</div>
+		<div style="height: 22px; left: 0px; position: absolute; top: 44px; width: 100%;">
+			<div class="theia-TreeNode theia-CompositeTreeNode theia-ExpandableTreeNode theia-FileStatNode theia-DirNode" draggable="true" title="/projects/angular-realworld-example-app/e2e" style="padding-left: 8px;">
+				<div class="theia-TreeNodeContent">
+					<div data-node-id="/projects:/projects/angular-realworld-example-app/e2e" class="theia-TreeNodeSegment theia-ExpansionToggle theia-mod-collapsed" style="padding-left: 4px; padding-right: 4px;"></div>
+					<div class="fa fa-folder file-icon"></div>
+					<div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/e2e">e2e</div>
+				</div>
+			</div>
+		</div>
+		<div style="height: 22px; left: 0px; position: absolute; top: 66px; width: 100%;">
+			<div class="theia-TreeNode theia-CompositeTreeNode theia-ExpandableTreeNode theia-FileStatNode theia-DirNode" draggable="true" title="/projects/angular-realworld-example-app/src" style="padding-left: 8px;"><div class="theia-TreeNodeContent"><div data-node-id="/projects:/projects/angular-realworld-example-app/src" class="theia-TreeNodeSegment theia-ExpansionToggle theia-mod-collapsed" style="padding-left: 4px; padding-right: 4px;"></div><div class="fa fa-folder file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/src">src</div></div></div>
+		</div>
+		<div style="height: 22px; left: 0px; position: absolute; top: 88px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/.editorconfig" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="editorconfig-icon medium-orange file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/.editorconfig">.editorconfig</div></div></div></div>
+		<div style="height: 22px; left: 0px; position: absolute; top: 110px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/.gitignore" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="git-icon medium-red file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/.gitignore">.gitignore</div></div></div></div>
+		<div style="height: 22px; left: 0px; position: absolute; top: 132px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/.travis.yml" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="travis-icon medium-red file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/.travis.yml">.travis.yml</div></div></div></div>
+		<div style="height: 22px; left: 0px; position: absolute; top: 154px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/angular.json" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="database-icon medium-yellow file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/angular.json">angular.json</div></div></div></div>
+		<div style="height: 22px; left: 0px; position: absolute; top: 176px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/CNAME" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="earth-icon dark-blue file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/CNAME">CNAME</div></div></div></div>
+		<div style="height: 22px; left: 0px; position: absolute; top: 198px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/karma.conf.js" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="karma-icon medium-cyan file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/karma.conf.js">karma.conf.js</div></div></div></div>
+		<div style="height: 22px; left: 0px; position: absolute; top: 220px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/logo.png" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="image-icon medium-orange file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/logo.png">logo.png</div></div></div></div>
+		<div style="height: 22px; left: 0px; position: absolute; top: 242px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/package.json" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="npm-icon medium-red file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/package.json">package.json</div></div></div></div>
+		<div style="height: 22px; left: 0px; position: absolute; top: 264px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/protractor.conf.js" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="protractor-icon medium-red file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/protractor.conf.js">protractor.conf.js</div></div></div></div><div style="height: 22px; left: 0px; position: absolute; top: 286px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/README.md" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="book-icon medium-blue file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/README.md">README.md</div></div></div></div><div style="height: 22px; left: 0px; position: absolute; top: 308px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/tsconfig.json" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="database-icon medium-yellow file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/tsconfig.json">tsconfig.json</div></div></div></div><div style="height: 22px; left: 0px; position: absolute; top: 330px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/tslint.json" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="database-icon medium-yellow file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/tslint.json">tslint.json</div></div></div></div><div style="height: 22px; left: 0px; position: absolute; top: 352px; width: 100%;"><div class="theia-TreeNode theia-FileStatNode" draggable="true" title="/projects/angular-realworld-example-app/yarn.lock" style="padding-left: 26px;"><div class="theia-TreeNodeContent"><div class="yarn-icon medium-blue file-icon"></div><div class="theia-TreeNodeSegment theia-TreeNodeSegmentGrow" id="/projects:/projects/angular-realworld-example-app/yarn.lock">yarn.lock</div></div></div></div></div>
+
+
+
+
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<div style="background-color: #ffffff; width:294px; height:474px; overflow-y:scroll;">
+		<div expanded="true" id="widget_812" style="height:18px; left:0px; position:absolute; width:100%; top:0px; ">
+			<div id="widget_812_panel" style="display:flex; align-items:flex-start; padding-left:0px;">
+				<div style="height:16px; position:relative; display:flex; align-items:center; padding-right:0px; padding-bottom:0px; align-items:flex-end; ">
+					<span id="widget_812_arrow" onclick="treeItemToggleExpand(this, 'widget_811', 'widget_812')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/down_arrow_08.png'); background-repeat: no-repeat; background-size: 9px 9px; background-position: 4px 4px;"></span>
+				</div>
+				<div style="height:16px; position:relative; display:flex; align-items:center; padding-right:2px; padding-bottom:0px; align-items:flex-end; ">
+					<span id="widget_812_image" onclick="treeItemOnSelection(this, 'widget_811', 'widget_812')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/prj_obj.gif'); "></span>
+				</div>
+				<div id="widget_812_text" style="height:18px; position:relative; display:flex; align-items:center; cursor:pointer; user-select:none; white-space:nowrap; text-overflow:ellipsis;">
+					Beverages
+				</div>
+			</div>
+		</div>
+		<div expanded="false" id="widget_813" style="height:18px; left:0px; position:absolute; width:100%; top:18px; "> <div id="widget_813_panel" style="display:flex; align-items:flex-start; padding-left:16px;">    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:0px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_813_arrow" onclick="treeItemToggleExpand(this, 'widget_811', 'widget_813')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/right_arrow_08.png'); background-repeat: no-repeat; background-size: 9px 9px; background-position: 4px 4px;"></span>    </div>    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:2px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_813_image" onclick="treeItemOnSelection(this, 'widget_811', 'widget_813')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/package_obj.gif'); "></span>    </div>    <div id="widget_813_text" style="height:18px; position:relative; display:flex; align-items:center; cursor:pointer; user-select:none; white-space:nowrap; text-overflow:ellipsis;">Water</div>  </div></div>
+		<div expanded="false" id="widget_814" style="height:18px; left:0px; position:absolute; width:100%; top:36px; ">  <div id="widget_814_panel" style="display:flex; align-items:flex-start; padding-left:16px;">    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:0px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_814_arrow" onclick="treeItemToggleExpand(this, 'widget_811', 'widget_814')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/right_arrow_08.png'); background-repeat: no-repeat; background-size: 9px 9px; background-position: 4px 4px;"></span>    </div>    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:2px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_814_image" onclick="treeItemOnSelection(this, 'widget_811', 'widget_814')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/package_obj.gif'); "></span>    </div>    <div id="widget_814_text" style="height:18px; position:relative; display:flex; align-items:center; cursor:pointer; user-select:none; white-space:nowrap; text-overflow:ellipsis;">Coffee</div>  </div></div>
+		<div expanded="true" id="widget_815" style="height:18px; left:0px; position:absolute; width:100%; top:54px; ">  <div id="widget_815_panel" style="display:flex; align-items:flex-start; padding-left:16px;">    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:0px; padding-bottom:0px; align-items:flex-end; " expanded="true">      <span id="widget_815_arrow" onclick="treeItemToggleExpand(this, 'widget_811', 'widget_815')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/down_arrow_08.png'); background-repeat: no-repeat; background-size: 9px 9px; background-position: 4px 4px;" src="./images/16x16/down_arrow_003.png"></span>    </div>    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:2px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_815_image" onclick="treeItemOnSelection(this, 'widget_811', 'widget_815')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/package_obj.gif'); "></span>    </div>    <div id="widget_815_text" style="height:18px; position:relative; display:flex; align-items:center; cursor:pointer; user-select:none; white-space:nowrap; text-overflow:ellipsis;">Tea</div></div></div>
+		<div expanded="false" id="widget_816" style="height:18px; left:0px; position:absolute; width:100%; top:72px; ">  <div id="widget_816_panel" style="display:flex; align-items:flex-start; padding-left:32px;">    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:0px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_816_arrow" onclick="treeItemToggleExpand(this, 'widget_811', 'widget_816')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/right_arrow_08.png'); background-repeat: no-repeat; background-size: 9px 9px; background-position: 4px 4px;"></span>    </div>    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:2px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_816_image" onclick="treeItemOnSelection(this, 'widget_811', 'widget_816')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/folder.png'); "></span>    </div>    <div id="widget_816_text" style="height:18px; position:relative; display:flex; align-items:center; cursor:pointer; user-select:none; white-space:nowrap; text-overflow:ellipsis;">Black Tea</div>  </div></div>
+		<div expanded="false" id="widget_817" style="height:18px; left:0px; position:absolute; width:100%; top:90px; ">  <div id="widget_817_panel" style="display:flex; align-items:flex-start; padding-left:32px;">    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:0px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_817_arrow" onclick="treeItemToggleExpand(this, 'widget_811', 'widget_817')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/right_arrow_08.png'); background-repeat: no-repeat; background-size: 9px 9px; background-position: 4px 4px;"></span>    </div>    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:2px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_817_image" onclick="treeItemOnSelection(this, 'widget_811', 'widget_817')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/folder.png'); "></span>    </div>    <div id="widget_817_text" style="height:18px; position:relative; display:flex; align-items:center; cursor:pointer; user-select:none; white-space:nowrap; text-overflow:ellipsis;">White Tea</div>  </div></div>
+		<div expanded="true" id="widget_818" style="height:18px; left:0px; position:absolute; width:100%; top:108px; ">  <div id="widget_818_panel" style="display:flex; align-items:flex-start; padding-left:32px;">    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:0px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_818_arrow" onclick="treeItemToggleExpand(this, 'widget_811', 'widget_818')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/down_arrow_08.png'); background-repeat: no-repeat; background-size: 9px 9px; background-position: 4px 4px;"></span>    </div>    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:2px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_818_image" onclick="treeItemOnSelection(this, 'widget_811', 'widget_818')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/folder.png'); "></span>    </div>    <div id="widget_818_text" style="height:18px; position:relative; display:flex; align-items:center; cursor:pointer; user-select:none; white-space:nowrap; text-overflow:ellipsis;">Green Tea</div>  </div></div>
+		<div expanded="false" id="widget_819" style="height:18px; left:0px; position:absolute; width:100%; top:126px; ">  <div id="widget_819_panel" style="display:flex; align-items:flex-start; padding-left:48px;">    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:0px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_819_arrow" onclick="treeItemToggleExpand(this, 'widget_811', 'widget_819')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/right_arrow_08.png'); background-repeat: no-repeat; background-size: 9px 9px; background-position: 4px 4px;"></span>    </div>    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:2px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_819_image" onclick="treeItemOnSelection(this, 'widget_811', 'widget_819')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/file_02.gif'); "></span>    </div>    <div id="widget_819_text" style="height:18px; position:relative; display:flex; align-items:center; cursor:pointer; user-select:none; white-space:nowrap; text-overflow:ellipsis;">Sencha</div>  </div></div>
+		<div expanded="false" id="widget_820" style="height:18px; left:0px; position:absolute; width:100%; top:144px; ">  <div id="widget_820_panel" style="display:flex; align-items:flex-start; padding-left:48px;">    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:0px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_820_arrow" onclick="treeItemToggleExpand(this, 'widget_811', 'widget_820')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/right_arrow_08.png'); background-repeat: no-repeat; background-size: 9px 9px; background-position: 4px 4px;"></span>    </div>    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:2px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_820_image" onclick="treeItemOnSelection(this, 'widget_811', 'widget_820')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/file_02.gif'); "></span>    </div>    <div id="widget_820_text" style="height:18px; position:relative; display:flex; align-items:center; cursor:pointer; user-select:none; white-space:nowrap; text-overflow:ellipsis;">Gyokuro</div>  </div></div>
+		<div expanded="false" id="widget_821" style="height:18px; left:0px; position:absolute; width:100%; top:162px; ">  <div id="widget_821_panel" style="display:flex; align-items:flex-start; padding-left:48px;">    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:0px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_821_arrow" onclick="treeItemToggleExpand(this, 'widget_811', 'widget_821')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/right_arrow_08.png'); background-repeat: no-repeat; background-size: 9px 9px; background-position: 4px 4px;"></span>    </div>    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:2px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_821_image" onclick="treeItemOnSelection(this, 'widget_811', 'widget_821')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/file_02.gif'); "></span>    </div>    <div id="widget_821_text" style="height:18px; position:relative; display:flex; align-items:center; cursor:pointer; user-select:none; white-space:nowrap; text-overflow:ellipsis;">Matcha</div>  </div></div>
+		<div expanded="false" id="widget_822" style="height:18px; left:0px; position:absolute; width:100%; top:180px; ">  <div id="widget_822_panel" style="display:flex; align-items:flex-start; padding-left:48px;">    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:0px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_822_arrow" onclick="treeItemToggleExpand(this, 'widget_811', 'widget_822')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/right_arrow_08.png'); background-repeat: no-repeat; background-size: 9px 9px; background-position: 4px 4px;"></span>    </div>    <div style="height:16px; position:relative; display:flex; align-items:center; padding-right:2px; padding-bottom:0px; align-items:flex-end; ">      <span id="widget_822_image" onclick="treeItemOnSelection(this, 'widget_811', 'widget_822')" style="cursor:pointer; display: inline; width:16px; height:16px; background:url('./images/16x16/file_02.gif'); "></span>    </div>    <div id="widget_822_text" style="height:18px; position:relative; display:flex; align-items:center; cursor:pointer; user-select:none; white-space:nowrap; text-overflow:ellipsis;">Pi Lo Chun</div>  </div></div>
+	</div>
+</div>

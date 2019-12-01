@@ -6,6 +6,7 @@ http://wphooper.com/svg/examples/text.php
 http://wphooper.com/svg/examples/line.php
 https://vanseodesign.com/web-design/svg-text-layout-and-alignment/
 
+https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use (use)
 https://www.w3.org/TR/filter-effects-1/#FilterPrimitivesOverview (for filter)
 
 https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
@@ -315,4 +316,63 @@ http://jsfiddle.net/DCqUp/
 ------------------------------------------------------------------------------------------------
 
 
+https://www.quackit.com/css/properties/webkit/css_-webkit-transform.cfm
 
+
+https://bl.ocks.org/mbostock/10571478 (painting on the wall)
+
+9 defs
+
+(1) use
+https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
+------------------------------------------------------------------------------------------------
+<svg viewBox="-40 0 150 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g fill="grey"
+     transform="rotate(-10 50 100)
+                translate(-36 45.5)
+                skewX(40)
+                scale(1 0.5)">
+    <path id="heart" d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z" />
+  </g>
+ 
+  <use xlink:href="#heart" fill="none" stroke="red"/>
+</svg>
+------------------------------------------------------------------------------------------------
+
+https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs
+------------------------------------------------------------------------------------------------
+<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Some graphical objects to use -->
+  <defs>
+    <circle id="myCircle" cx="0" cy="0" r="5" />
+
+    <linearGradient id="myGradient" gradientTransform="rotate(90)">
+      <stop offset="20%" stop-color="gold" />
+      <stop offset="90%" stop-color="red" />
+    </linearGradient>
+  </defs>
+ 
+  <!-- using my graphical objects -->
+  <use x="5" y="5" xlink:href="#myCircle" fill="url('#myGradient')" />
+</svg>
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+<g class="noselect" height="1000" id="__bgpart__" stroke-width="0px" widget="" width="1000" x="0" y="0">
+    <line stroke="#dad9d9" stroke-linecap="round" stroke-opacity="0.15" stroke-width="1px" x1="50" x2="950" y1="0" y2="0"></line>
+	<line stroke="#dad9d9" stroke-linecap="round" stroke-opacity="0.15" stroke-width="1px" x1="1000" x2="1000" y1="25" y2="975"></line>
+    <line stroke="#dad9d9" stroke-linecap="round" stroke-opacity="0.15" stroke-width="1px" x1="950" x2="50" y1="1000" y2="1000"></line>
+    <line stroke="#dad9d9" stroke-linecap="round" stroke-opacity="0.15" stroke-width="1px" x1="0" x2="0" y1="975" y2="25"></line>
+    <line stroke="#dad9d9" stroke-linecap="round" stroke-opacity="0.3" stroke-width="2px" x1="495" x2="505" y1="500" y2="500"></line>
+    <line stroke="#dad9d9" stroke-linecap="round" stroke-opacity="0.3" stroke-width="2px" x1="500" x2="500" y1="495" y2="505"></line>
+    <rect fill="#6EAEB2" fill-opacity="0.15" height="19" rx="3" ry="3" stroke="#62C5EA" stroke-opacity="0.15" stroke-width="1px" width="50" x="-25" y="-9"></rect>
+    <text dx="-14" dy="4" fill="lightgrey" font-size="11" stroke-width="0px" x="0" y="0">0,0,0</text>
+</g>
+------------------------------------------------------------------------------------------------
+
+<use xlink:href="#__bgpart__" />
+
+
+patterns with tiles
+https://designmodo.com/svg-patterns/

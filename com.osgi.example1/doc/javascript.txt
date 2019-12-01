@@ -690,3 +690,307 @@ document.getElementById("p2").style.color="blue";
 document.getElementById("p2").className = "classname";
 ------------------------------------------------------------------------------------------------
 
+https://stackoverflow.com/questions/195951/how-to-change-an-elements-class-with-javascript
+------------------------------------------------------------------------------------------------
+document.getElementById("MyElement").classList.add('MyClass');
+
+document.getElementById("MyElement").classList.remove('MyClass');
+
+if (document.getElementById("MyElement").classList.contains('MyClass'))
+
+document.getElementById("MyElement").classList.toggle('MyClass');
+------------------------------------------------------------------------------------------------
+
+<li> fill whole line
+https://stackoverflow.com/questions/20588266/fill-whole-line-of-li-using-css
+
+
+
+16. inline, block and inline-block
+https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block
+
+------------------------------------------------------------------------------------------------
+inline:			can display things before or after it, on the same line. 
+block:			demands its own line, with whitespace around it. 
+inline-block: 	can have elements before or after it, but there is whitespace around it. 
+So inline-block is not "inline but behaves like block," it's a combination of both, as the name would imply: on the same line, but has borders. 
+------------------------------------------------------------------------------------------------
+
+17 background
+https://www.w3schools.com/cssref/pr_background-position.asp
+------------------------------------------------------------------------------------------------
+body {
+  background-image: url('w3css.gif');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+------------------------------------------------------------------------------------------------
+
+
+18 align-items
+https://cssreference.io/property/align-items/
+
+------------------------------------------------------------------------------------------------
+align-items: flex-start;
+The flexbox items are aligned at the start of the cross axis.
+By default, the cross axis is vertical. This means the flexbox items will be aligned vertically at the top.
+
+align-items: flex-end;
+The flexbox items are aligned at the end of the cross axis.
+By default, the cross axis is vertical. This means the flexbox items will be aligned vertically at the bottom.
+
+align-items: center;
+The flexbox items are aligned at the center of the cross axis.
+By default, the cross axis is vertical. This means the flexbox items will be centered vertically.
+
+align-items: baseline;
+The flexbox items are aligned at the baseline of the cross axis.
+By default, the cross axis is vertical. This means the flexbox items will align themselves in order to have the baseline of their text align along a horizontal line.
+
+align-items: stretch;
+The flexbox items will stretch across the whole cross axis.
+By default, the cross axis is vertical. This means the flexbox items will fill up the whole vertical space.
+------------------------------------------------------------------------------------------------
+
+
+19. div fill remaining space in container
+https://www.whitebyte.info/programming/css/how-to-make-a-div-take-the-remaining-height
+
+HTML:
+------------------------------------------------------------------------------------------------
+<div id="outer">
+  <div id="inner_fixed">
+    I have a fixed height
+  </div>
+ 
+  <div id="inner_remaining">
+    I take up the remaining height
+  </div>
+</div>
+------------------------------------------------------------------------------------------------
+
+CSS:
+------------------------------------------------------------------------------------------------
+#outer {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+ 
+#inner_fixed {
+  height: 100px;
+  background-color: grey;
+}
+ 
+#inner_remaining {
+  background-color: #DDDDDD;
+  flex-grow : 1;
+}
+------------------------------------------------------------------------------------------------
+
+
+HTML:
+------------------------------------------------------------------------------------------------
+<div id="inner_fixed">
+    I have a fixed height
+</div>
+ 
+<div id="inner_remaining">
+    I take up the remaining height
+</div>
+------------------------------------------------------------------------------------------------
+
+CSS:
+------------------------------------------------------------------------------------------------
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+ 
+#inner_fixed {
+    height: 100px;
+    background-color: grey;
+}
+ 
+#inner_remaining {
+    background-color: #DDDDDD;
+ 
+    height: calc(100% - 100px);    
+}
+------------------------------------------------------------------------------------------------
+
+
+
+20. element under mouse pointer
+
+https://stackoverflow.com/questions/8813051/determine-which-element-the-mouse-pointer-is-on-top-of-in-javascript
+------------------------------------------------------------------------------------------------
+var x = event.clientX;
+var y = event.clientY;
+elementMouseIsOver = document.elementFromPoint(x, y);
+------------------------------------------------------------------------------------------------
+
+
+21. position-absolute-versus-relative
+https://medium.com/@leannezhang/difference-between-css-position-absolute-versus-relative-35f064384c6
+
+
+22. Object/Array/Map
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_a_function
+------------------------------------------------------------------------------------------------
+When working with Array or TypedArray objects:
+Array.prototype.every(), 
+Array.prototype.some(), 
+Array.prototype.forEach(), 
+Array.prototype.map(), 
+Array.prototype.filter(),  
+Array.prototype.reduce(), 
+Array.prototype.reduceRight(), 
+Array.prototype.find()
+------------------------------------------------------------------------------------------------
+
+When working with Map and Set objects:
+------------------------------------------------------------------------------------------------
+Map.prototype.forEach()
+Set.prototype.forEach()
+------------------------------------------------------------------------------------------------
+
+
+
+A typo in the function name
+In this case, which happens way too often, there is a typo in the method name:
+------------------------------------------------------------------------------------------------
+var x = document.getElementByID('foo');
+// TypeError: document.getElementByID is not a function
+------------------------------------------------------------------------------------------------
+
+The correct function name is getElementById:
+------------------------------------------------------------------------------------------------
+var x = document.getElementById('foo');
+------------------------------------------------------------------------------------------------
+
+Function called on the wrong object
+For certain methods, you have to provide a (callback) function and it will work on specific objects only. 
+In this example, Array.prototype.map() is used, which will work with Array objects only.
+------------------------------------------------------------------------------------------------
+var obj = {a: 13, b: 37, c: 42};
+
+obj.map(function(num) {
+  return num * 2;
+});
+
+// TypeError: obj.map is not a function
+------------------------------------------------------------------------------------------------
+
+Use an array instead:
+------------------------------------------------------------------------------------------------
+var numbers = [1, 4, 9];
+
+numbers.map(function(num) { 
+  return num * 2; 
+}); 
+
+// Array [2, 8, 18]
+------------------------------------------------------------------------------------------------
+
+Function shares a name with a pre-existing property
+Sometimes when making a class, you may have a property and a function with the same name. 
+Upon calling the function, the compiler thinks that the function ceases to exist.
+------------------------------------------------------------------------------------------------
+var Dog = function () {
+ this.age = 11;
+ this.color = "black";
+ this.name = "Ralph";
+ return this;
+} 
+
+Dog.prototype.name = function(name) {
+ this.name = name;
+ return this;
+}
+
+var myNewDog = new Dog();
+myNewDog.name("Cassidy"); //Uncaught TypeError: myNewDog.name is not a function
+------------------------------------------------------------------------------------------------
+
+Use a different property name instead:
+------------------------------------------------------------------------------------------------
+var Dog = function () {
+ this.age = 11;
+ this.color = "black";
+ this.dogName = "Ralph"; //Using this.dogName instead of .name
+ return this;
+} 
+
+Dog.prototype.name = function(name) {
+ this.dogName = name;
+ return this;
+}
+
+var myNewDog = new Dog();
+myNewDog.name("Cassidy"); //Dog { age: 11, color: 'black', dogName: 'Cassidy' }
+------------------------------------------------------------------------------------------------
+
+Using brackets for multiplication
+In math, you can write 2 x (3 + 5) as 2*(3 + 5) or just 2(3 + 5). 
+Using the latter will throw an error:
+------------------------------------------------------------------------------------------------
+var sixteen = 2(3 + 5);
+alert('2 x (3 + 5) is ' + String(sixteen));
+//Uncaught TypeError: 2 is not a function
+------------------------------------------------------------------------------------------------
+
+You can correct the code by adding a * operator:
+------------------------------------------------------------------------------------------------
+var sixteen = 2 * (3 + 5);
+alert('2 x (3 + 5) is ' + String(sixteen));
+//2 x (3 + 5) is 16
+------------------------------------------------------------------------------------------------
+
+Import the exported module correctly
+Ensure you are importing the module correctly.
+
+An example helpers library (helpers.js)
+------------------------------------------------------------------------------------------------
+let helpers = function () { };
+
+helpers.groupBy = function (objectArray, property) {
+  return objectArray.reduce(function (acc, obj) {
+    var key = obj[property];
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+    acc[key].push(obj);
+    return acc;
+  }, 
+{});
+}
+------------------------------------------------------------------------------------------------
+
+export default helpers;
+The correct import usage (App.js):
+------------------------------------------------------------------------------------------------
+import helpers from './helpers'
+------------------------------------------------------------------------------------------------
+
+
+23. javascript reload page
+https://stackoverflow.com/questions/3715047/how-to-reload-a-page-using-javascript
+------------------------------------------------------------------------------------------------
+JavaScript 1.0
+
+window.location.href = window.location.pathname + window.location.search + window.location.hash;
+// creates a history entry
+JavaScript 1.1
+
+window.location.replace(window.location.pathname + window.location.search + window.location.hash);
+// does not create a history entry
+JavaScript 1.2
+
+window.location.reload(false); or window.location.reload(true);
+// If we needed to pull the document from
+//  the web-server again (such as where the document contents
+//  change dynamically) we would pass the argument as 'true'.
+------------------------------------------------------------------------------------------------
