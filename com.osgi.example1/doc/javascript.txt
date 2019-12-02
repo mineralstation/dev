@@ -356,6 +356,38 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_fullscreen
 https://stackoverflow.com/questions/1125084/how-to-make-the-window-full-screen-with-javascript-stretching-all-over-the-scre
 https://davidwalsh.name/fullscreen
 
+https://www.w3schools.com/jsref/met_element_exitfullscreen.asp
+------------------------------------------------------------------------------------------------
+/* Get the documentElement (<html>) to display the page in fullscreen */
+var elem = document.documentElement;
+
+/* View in fullscreen */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+
+/* Close fullscreen */
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { /* Firefox */
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE/Edge */
+    document.msExitFullscreen();
+  }
+}
+------------------------------------------------------------------------------------------------
+
 ------------------------------------------------------------------------------------------------
 function toggleFullScreen() {
   if (!document.fullscreenElement) {
@@ -466,6 +498,104 @@ launchIntoFullscreen(document.getElementById("videoElement")); // any individual
 
 https://www.w3schools.com/css/css_positioning.asp
 
+hide iframe src
+https://stackoverflow.com/questions/9245133/how-to-hide-iframe-src/9245157
+------------------------------------------------------------------------------------------------
+<iframe src="javascript:;" id="myframe"></iframe>
+<script>
+$(document).ready(function() {
+    $('#myframe').attr('src', 'http://facebook.com');
+});
+</script>
+------------------------------------------------------------------------------------------------
+
+
+https://stackoverflow.com/questions/46779908/websocket-connection-from-an-iframe-in-context-of-the-parent-window
+main.js (loaded in main index.html):
+------------------------------------------------------------------------------------------------
+function SocketsCollection() {
+    this.collection = {};
+
+    this.add = function(key, obj) {
+        if (this.exists(key)) return;
+
+        // clone websocket event handlers
+        // PS: this is not the best solution to clone a function. Need a better research here
+        eval("var onopen = " + obj.onopen.toString());
+        eval("var onclose = " + obj.onclose.toString());
+        eval("var onmessage = " + obj.onmessage.toString());
+
+        // create websocket
+        var ws = new WebSocket(obj.url);
+        ws.onopen = function(e) {
+            onopen(e, key, ws);
+        };
+        ws.onclose = function(e) {
+            onclose(e, key, ws);
+        }
+        ws.onmessage = function(e) {
+            onmessage(e, key, ws);
+        }
+
+        this.collection[key] = {
+            key: key,
+            ws: ws
+        };
+
+        // test websocket is alive
+        var self = this;
+        var counter = 1;
+        window.setInterval(function () {
+            console.log('testing ' + key);
+            self.collection[key].ws.send('ping # ' + counter + ' websocket ' + key);
+            counter++;
+        }, 2000);  
+    }
+
+    this.exists = function(key){
+        return this.collection[key] !== undefined;
+    }
+}
+------------------------------------------------------------------------------------------------
+
+iframed.js:
+------------------------------------------------------------------------------------------------
+function foo(window, socketKey) {
+    if (window.socketsCollection.exists(socketKey)) return;
+
+    var newSocketData = {
+        url: "wss://echo.websocket.org/",
+        onopen: function(e, key, ws) {
+            console.log(key + ' is OPEN', ws.readyState)
+            ws.send('Hello socket ' + key);
+        },
+        onclose: function(e, key, ws) {
+            console.log(key + ' is CLOSED', ws.readyState)
+        },
+        onmessage: function (e, key, ws) {
+            console.log(key + ' response: ', e.data);
+        }
+    };
+
+    window.socketsCollection.add(socketKey, newSocketData);
+}
+------------------------------------------------------------------------------------------------
+
+a.html:
+------------------------------------------------------------------------------------------------
+<script src="iframed.js"></script>
+<script>
+    foo.call(window.parent, window.parent, 'A');
+</script>
+------------------------------------------------------------------------------------------------
+
+b.html:
+------------------------------------------------------------------------------------------------
+<script src="iframed.js"></script>
+<script>
+    foo.call(window.parent, window.parent, 'B');
+</script>
+------------------------------------------------------------------------------------------------
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 11. pinch and gesture and touchpad
@@ -994,3 +1124,90 @@ window.location.reload(false); or window.location.reload(true);
 //  the web-server again (such as where the document contents
 //  change dynamically) we would pass the argument as 'true'.
 ------------------------------------------------------------------------------------------------
+
+24. add/remove on the fly
+https://www.abeautifulsite.net/adding-and-removing-elements-on-the-fly-using-javascript
+
+------------------------------------------------------------------------------------------------
+function addElement(parentId, elementTag, elementId, html) {
+    // Adds an element to the document
+    var p = document.getElementById(parentId);
+    var newElement = document.createElement(elementTag);
+    newElement.setAttribute('id', elementId);
+    newElement.innerHTML = html;
+    p.appendChild(newElement);
+}
+------------------------------------------------------------------------------------------------
+
+Removing Elements Dynamically
+Removing an element is much easier, as it only requires the element's ID.
+------------------------------------------------------------------------------------------------
+function removeElement(elementId) {
+    // Removes an element from the document
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
+}
+------------------------------------------------------------------------------------------------
+
+Create form on the fly
+https://stackoverflow.com/questions/178964/after-submitting-a-post-form-open-a-new-window-showing-the-result
+------------------------------------------------------------------------------------------------
+var form = document.createElement("form");
+form.setAttribute("method", "post");
+form.setAttribute("action", "test.jsp");
+
+// setting form target to a window named 'formresult'
+form.setAttribute("target", "formresult");
+
+var hiddenField = document.createElement("input");              
+hiddenField.setAttribute("name", "id");
+hiddenField.setAttribute("value", "bob");
+form.appendChild(hiddenField);
+document.body.appendChild(form);
+
+// creating the 'formresult' window with custom features prior to submitting the form
+window.open('test.html', 'formresult', 'scrollbars=no,menubar=no,height=600,width=800,resizable=yes,toolbar=no,status=no');
+
+form.submit();
+------------------------------------------------------------------------------------------------
+
+
+25. http headers
+https://stackoverflow.com/questions/220231/accessing-the-web-pages-http-headers-in-javascript
+------------------------------------------------------------------------------------------------
+var req = new XMLHttpRequest();
+req.open('GET', document.location, false);
+req.send(null);
+var headers = req.getAllResponseHeaders().toLowerCase();
+alert(headers);
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+function parseHttpHeaders(httpHeaders) {
+    return httpHeaders.split("\n")
+     .map(x=>x.split(/: */,2))
+     .filter(x=>x[0])
+     .reduce((ac, x)=>{ac[x[0]] = x[1];return ac;}, {});
+}
+
+var req = new XMLHttpRequest();
+req.open('GET', document.location, false);
+req.send(null);
+var headers = parseHttpHeaders(req.getAllResponseHeaders());
+// Now we can do:  headers["content-type"]
+------------------------------------------------------------------------------------------------
+
+https://stackoverflow.com/questions/24044346/how-to-get-http-header-from-javascript
+------------------------------------------------------------------------------------------------
+xmlhttp = new XMLHttpRequest();
+xmlhttp.open("HEAD", document.URL ,true);
+xmlhttp.onreadystatechange=function() {
+if (xmlhttp.readyState==4) {
+  console.log(xmlhttp.getAllResponseHeaders());
+  }
+}
+xmlhttp.send();
+------------------------------------------------------------------------------------------------
+
+
+

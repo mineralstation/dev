@@ -78,3 +78,33 @@ osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
 
 
 
+------------------------------------------------------------------------------------------------------------------------------
+1. CapsuleServlet
+	if (globalView) {
+		webSocketUrl += "/__global__";
+	} else {
+		webSocketUrl += "/" + username;
+	}
+
+2. DataTubeWebSocketApplication
+
+	protected ServerEndpointConfig createEndpointConfigForChannel(DataTubeService service) {
+		ServerEndpointConfig.Builder configBuilder = ServerEndpointConfig.Builder.create(ChannelServerEndpoint.class, "/channel/{channelId}/{username}");
+		ServerEndpointConfig.Configurator configConfigurator = new ServerEndpointConfig.Configurator();
+		configBuilder.configurator(configConfigurator);
+		ServerEndpointConfig endpointConfig = configBuilder.build();
+		endpointConfig.getUserProperties().put(DataTubeService.class.getName(), service);
+		return endpointConfig;
+	}
+
+3. ChannelServerEndpoint
+@ServerEndpoint(value = "/channel/{channelId}/{username}")
+
+	public void onOpen(Session session, @PathParam("channelId") String channelId, @PathParam("username") String username) {
+		... ...
+	}
+------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
