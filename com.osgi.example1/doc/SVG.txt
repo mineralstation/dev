@@ -12,6 +12,7 @@ https://www.w3.org/TR/filter-effects-1/#FilterPrimitivesOverview (for filter)
 https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
 https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
 https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events/Pinch_zoom_gestures
+https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text
 
 SVG tutorials
 http://tutorials.jenkov.com/svg/index.html

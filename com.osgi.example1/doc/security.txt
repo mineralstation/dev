@@ -1,0 +1,19 @@
+https://www.devglan.com/java8/rsa-encryption-decryption-java
+
+------------------------------------------------------------------------------------------------
+Putting RSA and AES together
+With every doubling of the RSA key length, decryption is 6-7 times times slower.
+Hence, when there are large messages for RSA encryption, the performance degrades.
+In such scenarios, we first do an AES encryption of the messages and the key used 
+for AES encryption is RSA encrypted and sent to the server. 
+
+This technique can be used by the Javascript or Android client for sending sensitive 
+payloads to the server. We will demonstrate this in our next article of RSA encryption 
+in javacript and decryption in Java.
+------------------------------------------------------------------------------------------------
+
+https://www.devglan.com/corejava/java-aes-encypt-decrypt
+
+https://www.devglan.com/corejava/aes-encryption-javascript-and-decryption-in-java
+
+https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9

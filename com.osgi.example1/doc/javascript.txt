@@ -1125,7 +1125,7 @@ window.location.reload(false); or window.location.reload(true);
 //  change dynamically) we would pass the argument as 'true'.
 ------------------------------------------------------------------------------------------------
 
-24. add/remove on the fly
+24. on the fly
 https://www.abeautifulsite.net/adding-and-removing-elements-on-the-fly-using-javascript
 
 ------------------------------------------------------------------------------------------------
@@ -1169,6 +1169,60 @@ document.body.appendChild(form);
 window.open('test.html', 'formresult', 'scrollbars=no,menubar=no,height=600,width=800,resizable=yes,toolbar=no,status=no');
 
 form.submit();
+------------------------------------------------------------------------------------------------
+
+
+https://stackoverflow.com/questions/9642205/how-to-force-a-script-reload-and-re-execute
+------------------------------------------------------------------------------------------------
+<script>
+   function load_js()
+   {
+      var head= document.getElementsByTagName('head')[0];
+      var script= document.createElement('script');
+      script.src= 'source_file.js';
+      head.appendChild(script);
+   }
+   load_js();
+</script>
+
+<script>
+    function reload_js(src) {
+        $('script[src="' + src + '"]').remove();
+        $('<script>').attr('src', src).appendTo('head');
+    }
+    reload_js('source_file.js');
+</script>
+------------------------------------------------------------------------------------------------
+
+
+https://stackoverflow.com/questions/524696/how-to-create-a-style-tag-with-javascript
+------------------------------------------------------------------------------------------------
+var css = 'h1 { background: red; }',
+    head = document.head || document.getElementsByTagName('head')[0],
+    style = document.createElement('style');
+
+head.appendChild(style);
+
+style.type = 'text/css';
+if (style.styleSheet){
+  // This is required for IE8 and below.
+  style.styleSheet.cssText = css;
+} else {
+  style.appendChild(document.createTextNode(css));
+}
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+var style=document.createElement('style');
+style.type = 'text/css';
+var head=document.head||document.getElementsByTagName('head')[0];
+head.appendChild(style);
+var css='body{margin:0;}';
+if (style.styleSheet){
+style.styleSheet.cssText=css;
+}else{
+style.appendChild(document.createTextNode(css));
+}
 ------------------------------------------------------------------------------------------------
 
 

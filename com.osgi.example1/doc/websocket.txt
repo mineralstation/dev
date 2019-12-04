@@ -1,3 +1,9 @@
+Find Java process using port
+------------------------------------------------
+lsof -i:9200
+------------------------------------------------
+
+
 jar download:
 https://mvnrepository.com/artifact/javax.websocket
 
