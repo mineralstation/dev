@@ -17,3 +17,96 @@ https://www.devglan.com/corejava/java-aes-encypt-decrypt
 https://www.devglan.com/corejava/aes-encryption-javascript-and-decryption-in-java
 
 https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9
+
+
+
+http://tutorials.jenkov.com/java-cryptography/keygenerator.html
+
+KeyStore API
+------------------------------------------------------------------------------------------------
+1. Creating KeyStore instance
+// creating a KeyStore instance:
+KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+ 
+// creates a PKCS12 type KeyStore:
+KeyStore keyStore = KeyStore.getInstance("PKCS12");
+
+2. Load KeyStore instance
+// Load KeyStore instance from a *.ks file
+char[] keyStorePassword = "123456".toCharArray();
+try(InputStream keyStoreData = new FileInputStream("keystore.ks")){
+    keyStore.load(keyStoreData, keyStorePassword);
+}
+ 
+// Load KeyStore instance without data
+keyStore.load(null, keyStorePassword);
+
+3. Get Key by name
+// Get KeyStore.Entry by key name and key password:
+char[] keyPassword = "456789".toCharArray();
+KeyStore.ProtectionParameter entryPassword = new KeyStore.PasswordProtection(keyPassword);
+KeyStore.Entry keyEntry = keyStore.getEntry("key1", entryPassword);
+ 
+// If a Key is private, cast KeyStore.Entry to KeyStore.PrivateKeyEntry:
+KeyStore.PrivateKeyEntry privateKeyEntry = (KeyStore.PrivateKeyEntry).keyStore3.getEntry("key2", entryPassword);
+privateKeyEntry.getPrivateKey();
+privateKeyEntry.getCertificate();
+privateKeyEntry.getCertificateChain();
+
+4. Create a Key
+// Create a symmetric key and set it to key store
+SecretKey secretKey = getSecretKey();
+KeyStore.SecretKeyEntry secretKeyEntry = new KeyStore.SecretKeyEntry(secretKey);
+ 
+keyStore.setEntry("key3", secretKeyEntry, entryPassword);
+
+5. Save KeyStore
+char[] keyStorePassword = "123456".toCharArray();
+try (FileOutputStream keyStoreOutputStream = new FileOutputStream("data/keystore.ks")) {
+    keyStore3.store(keyStoreOutputStream, keyStorePassword);
+}
+------------------------------------------------------------------------------------------------
+
+KeyPairGenerator API
+------------------------------------------------------------------------------------------------
+1. Generate key pair
+// Generate 1024-bits RSA public key and private key:
+KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
+keyGen.initialize(1024);
+KeyPair pair = keyGen.generateKeyPair();
+byte[] publicKey = pair.getPublic().getEncoded();
+byte[] privateKey = pair.getPrivate().getEncoded();
+System.out.println("RSA/publicKey: " + Base64.getEncoder().encodeToString(publicKey));
+System.out.println("RSA/privateKey: " + Base64.getEncoder().encodeToString(privateKey));
+------------------------------------------------------------------------------------------------
+
+
+https://www.javacodegeeks.com/2014/07/java-keystore-tutorial.html
+SSL and how it works
+------------------------------------------------------------------------------------------------
+This is in short how it works:
+
+A browser requests a secure page (usually https://).
+The web server sends its public key with its certificate.
+The browser checks that the certificate was issued by a trusted party (usually a trusted root CA), that the certificate is still valid and that the certificate is related to the site contacted.
+The browser then uses the public key, to encrypt a random symmetric encryption key and sends it to the server with the encrypted URL required as well as other encrypted http data.
+The web server decrypts the symmetric encryption key using its private key and uses the symmetric key to decrypt the URL and http data.
+The web server sends back the requested html document and http data encrypted with the symmetric key.
+The browser decrypts the http data and html document using the symmetric key and displays the information.
+The world of SSL has, essentially, three types of certificates: private keys, public keys (also called public certificates or site certificates), and root certificates.
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
