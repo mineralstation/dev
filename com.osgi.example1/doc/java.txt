@@ -159,3 +159,39 @@ isVerbose = false
 --------------------------------------------------------------------------------------------------------------------------------
 
 
+org.eclipse.jface.dialogs.Dialog
+Shorten text
+--------------------------------------------------------------------------------------------------------------------------------
+	public static String shortenText(String textValue, Control control) {
+		if (textValue == null) {
+			return null;
+		}
+		GC gc = new GC(control);
+		int maxWidth = control.getBounds().width - 5;
+		int maxExtent = gc.textExtent(textValue).x;
+		if (maxExtent < maxWidth) {
+			gc.dispose();
+			return textValue;
+		}
+		int length = textValue.length();
+		int charsToClip = Math.round(0.95f*length * (1 - ((float)maxWidth/maxExtent)));
+		int pivot = length / 2;
+		int start = pivot - (charsToClip/2);
+		int end = pivot + (charsToClip/2) + 1;
+		while (start >= 0 && end < length) {
+			String s1 = textValue.substring(0, start);
+			String s2 = textValue.substring(end, length);
+			String s = s1 + ELLIPSIS + s2;
+			int l = gc.textExtent(s).x;
+			if (l < maxWidth) {
+				gc.dispose();
+				return s;
+			}
+			start--;
+			end++;
+		}
+		gc.dispose();
+		return textValue;
+	}
+--------------------------------------------------------------------------------------------------------------------------------
+	

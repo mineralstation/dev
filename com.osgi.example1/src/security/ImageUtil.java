@@ -149,6 +149,55 @@ public class ImageUtil {
 
 	/**
 	 * 
+	 * @param content
+	 * @return
+	 * @see https://developer.mozilla.org/en-US/docs/Web/API/ImageData/data
+	 */
+	public static BufferedImage encodeV4(String content) {
+		int numOfPixels = content.length();
+		int[] inputArray = new int[numOfPixels * 4];
+		int j = 0;
+		for (int i = 0; i < numOfPixels; i++) {
+			// int r = (j % 400) / 400 * 255; // Percentage in the x direction, times 255
+			// int g = (int) (Math.ceil(j / 400) / 100 * 255); // Percentage in the y direction, times 255
+			// int r = (int) ((double) (j % 200) / (double) 200 * (double) 255);
+			// int g = (int) ((double) j / (double) 200 / (double) 50 * (double) 255);
+			int r = (int) ((double) (j % 100) / (double) 100 * (double) 255);
+			int g = (int) ((double) j / (double) 100 / (double) 25 * (double) 255);
+			int b = 255 - r;
+
+			inputArray[j++] = r; // r
+			inputArray[j++] = g; // g
+			inputArray[j++] = b; // b
+			inputArray[j++] = content.charAt(i); // a
+		}
+
+		int width = numOfPixels;
+		int height = 1;
+
+		// additional adjust of width and height
+		int idealWidth = 50;
+		if (numOfPixels > idealWidth) {
+			height = numOfPixels / idealWidth;
+			int remain = numOfPixels % idealWidth;
+			if (remain > 0) {
+				height += 1;
+			}
+			width = idealWidth;
+
+			int newNumOfPixels = width * height;
+			if (newNumOfPixels > numOfPixels) {
+				int[] newInputArray = new int[newNumOfPixels * 4];
+				System.arraycopy(inputArray, 0, newInputArray, 0, inputArray.length);
+				inputArray = newInputArray;
+			}
+		}
+
+		return getImageFromArray(inputArray, width, height);
+	}
+
+	/**
+	 * 
 	 * @param image
 	 * @param shift
 	 * @return

@@ -1,0 +1,77 @@
+--------------------------------------------------------------------------------------------
+1. Context menu
+(1) Nested sub context menu items (a horizontally-expanded tree)
+(2) Menu item group
+
+
+--------------------------------------------------------------------------------------------
+2. File System (impl for DFS, GoogleDrive, Dropbox, GitHub, etc.)
+
+2.1 Basic file operations 
+(1) Create folder/file (context menu and additional wizard from app)
+	Need "New" context menu with sub menu items
+	e.g. "New" -> "Text Document" 
+	
+	Need "Open with" context menu with sub menu items
+	e.g. "Open with" -> "Text Editor" 	
+
+	(sub menu items need to be loaded from extensions and dynamically contributed to the "New" context menu)
+
+(2) Delete folder/file (context menu and command+delete)
+(3) Rename folder/file (context menu and direct cell editing)
+(4) Cut/Copy/Paste (context menu and DnD)
+(5) Upload from local computer (context menual and DnD)
+(6) Download to local computer (context menual and DnD)
+
+2.2. Read or execute files
+(1) "Open with" (context menu with sub menu items)
+(2) (program) Picture viewer
+	[ x ]
+(3) (program) Text editor
+(4) (program) mp3 player
+
+
+--------------------------------------------------------------------------------------------
+3. Install/Uninstall programs
+(1) A programs list view in a window or in a separate div (need dependency on Platform API)
+(2) Install a program from a file uploaded to DFS
+(3) Install a program from app store
+(3) Uninstall a program
+
+
+--------------------------------------------------------------------------------------------
+4. Desktop
+(1) Drag selection
+(2) Change background
+
+
+--------------------------------------------------------------------------------------------
+5. Preference settings
+
+
+--------------------------------------------------------------------------------------------
+6. Enhancement
+(1) double click folder to show its members. tree to reveal the folder (done)
+(2) Icon text to wrap lines
+(3) for double click on background, onSelectBackground(evt, widgetId) shouldn't fire event
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
