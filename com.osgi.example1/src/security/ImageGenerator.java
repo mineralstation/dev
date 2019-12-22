@@ -97,8 +97,77 @@ public class ImageGenerator {
 		// 2. init functions
 		// window.addEventListener("load", onLoad);
 		// window.addEventListener("resize", onResize);
-		// initGlobalVariables();
 		// window.addEventListener("wheel", onWheel, {passive: false});
+
+		// 3. init global variables (including the function)
+		/*-
+			function initGlobalVariables() {
+				// main div
+				mainDiv = d3.select("#main");
+				mainDivElement = mainDiv.node();
+				svg = d3.select("#main").select("svg");
+				svgElement = d3.select("#main").select("svg").node();
+			
+				// layers
+				depthLayerElement = svg.select("#layer_0").node();
+				bgLayerElement = svg.select("#layer_1").node();
+			
+				// perspective
+				viewShiftX = getViewShiftX();
+				viewShiftY = getViewShiftY();
+			
+				// degree_y is rotate along Y axis
+				// degree_x is rotate along X axis
+				rotateY = -degree_y / divider * viewShiftX;
+				rotateX = degree_x / divider * viewShiftY;
+			
+				var screen_width = window.screen.width;
+				var screen_height = window.screen.height;
+				var curr_width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+				var curr_height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				if (screen_width == curr_width && screen_height == curr_height) {
+					isFullScreen = true;
+				} else {
+					isFullScreen = false;
+				}
+			
+				top_left_svg = d3.select("#top_left_tools").select("svg");
+				if (top_left_svg) {
+					topLeftToolD3 = top_left_svg.select("#TopLeftTool");
+					topLeftToolElement = topLeftToolD3.node();
+					topLeftTool_text1Element = top_left_svg.select("#TopLeftTool_text1").node();
+					topLeftTool_text2Element = top_left_svg.select("#TopLeftTool_text2").node();
+					topLeftTool_text3Element = top_left_svg.select("#TopLeftTool_text3").node();
+				}
+			
+				top_right_svg = d3.select("#top_right_tools").select("svg");
+				if (top_right_svg) {
+					screenDepthPartD3 = top_right_svg.select("#screenDepth_part");
+					screenGridPartD3 = top_right_svg.select("#screenGrid_part");
+					screenPerspectivePartD3 = top_right_svg.select("#screenPerspective_part");
+					screenAnchorPart1D3 = top_right_svg.select("#screenAnchor_part1");
+					screenAnchorPart2D3 = top_right_svg.select("#screenAnchor_part2");
+			
+					toggleFullScreenButtonD3 = top_right_svg.select("#toggleFullScreen1");
+					if (isFullScreen) {
+						toggleFullScreenButtonD3.attr("d", fullScreenPath2);
+					} else {
+						toggleFullScreenButtonD3.attr("d", fullScreenPath1);
+					}
+				}
+			
+				isScreenDepthEnabled = getScreenDepth();
+				isScreenGridEnabled = getScreenGrid();
+				isScreenPerspectiveEnabled = getScreenPerspective();
+				isScreenAnchored = getScreenAnchored();
+			
+				refreshScreenDepth();
+				refreshScreenGrid();
+				refreshScreenPerspective();
+				refreshScreenAnchor();
+			}
+			initGlobalVariables();
+		*/
 
 		// ------------------------------------------------------
 		// javascript string to write
@@ -166,10 +235,83 @@ public class ImageGenerator {
 		// 2. execute initial functions
 		content += "window.addEventListener(\"load\", onLoad);"; // capsule_03.js
 		content += "window.addEventListener(\"resize\", onResize);"; // capsule_03.js
-		content += "initGlobalVariables();"; // capsule_04.js
 		content += "window.addEventListener(\"wheel\", onWheel, {passive: false});"; // capsule.jsp
+
+		// 3. init global variables (including the function)
+		// capsule_04.js
+		/*-
+		content += "function initGlobalVariables() {";		
+		content += "var d3 = window['d3'];";
+		content += "console.log('initGlobalVariables function is called! d3 is ' + d3);";
+		
+		// main div
+		content += "mainDiv = d3.select(\"#main\");";
+		content += "mainDivElement = mainDiv.node();";
+		content += "svg = d3.select(\"#main\").select(\"svg\");";
+		content += "svgElement = d3.select(\"#main\").select(\"svg\").node();";
+		// layers
+		content += "depthLayerElement = svg.select(\"#layer_0\").node();";
+		content += "bgLayerElement = svg.select(\"#layer_1\").node();";
+		// perspective
+		content += "viewShiftX = getViewShiftX();";
+		content += "viewShiftY = getViewShiftY();";
+		// degree_y is rotate along Y axis
+		// degree_x is rotate along X axis
+		content += "rotateY = -degree_y / divider * viewShiftX;";
+		content += "rotateX = degree_x / divider * viewShiftY;";
+		
+		content += "var screen_width = window.screen.width;";
+		content += "var screen_height = window.screen.height;";
+		content += "var curr_width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;";
+		content += "var curr_height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;";
+		content += "if (screen_width == curr_width && screen_height == curr_height) {";
+		content += "isFullScreen = true;";
+		content += "} else {";
+		content += "isFullScreen = false;";
+		content += "}";
+		
+		content += "top_left_svg = d3.select(\"#top_left_tools\").select(\"svg\");";
+		content += "if (top_left_svg) {";
+		content += "topLeftToolD3 = top_left_svg.select(\"#TopLeftTool\");";
+		content += "topLeftToolElement = topLeftToolD3.node();";
+		content += "topLeftTool_text1Element = top_left_svg.select(\"#TopLeftTool_text1\").node();";
+		content += "topLeftTool_text2Element = top_left_svg.select(\"#TopLeftTool_text2\").node();";
+		content += "topLeftTool_text3Element = top_left_svg.select(\"#TopLeftTool_text3\").node();";
+		content += "}";
+		
+		content += "top_right_svg = d3.select(\"#top_right_tools\").select(\"svg\");";
+		content += "if (top_right_svg) {";
+		content += "screenDepthPartD3 = top_right_svg.select(\"#screenDepth_part\");";
+		content += "screenGridPartD3 = top_right_svg.select(\"#screenGrid_part\");";
+		content += "screenPerspectivePartD3 = top_right_svg.select(\"#screenPerspective_part\");";
+		content += "screenAnchorPart1D3 = top_right_svg.select(\"#screenAnchor_part1\");";
+		content += "screenAnchorPart2D3 = top_right_svg.select(\"#screenAnchor_part2\");";
+		content += "toggleFullScreenButtonD3 = top_right_svg.select(\"#toggleFullScreen1\");";
+		content += "if (isFullScreen) {";
+		content += "toggleFullScreenButtonD3.attr(\"d\", fullScreenPath2);";
+		content += "} else {";
+		content += "toggleFullScreenButtonD3.attr(\"d\", fullScreenPath1);";
+		content += "}";
+		content += "}";
+		
+		content += "isScreenDepthEnabled = getScreenDepth();";
+		content += "isScreenGridEnabled = getScreenGrid();";
+		content += "isScreenPerspectiveEnabled = getScreenPerspective();";
+		content += "isScreenAnchored = getScreenAnchored();";
+		
+		content += "refreshScreenDepth();";
+		content += "refreshScreenGrid();";
+		content += "refreshScreenPerspective();";
+		content += "refreshScreenAnchor();";
+		content += "}";
+		*/
+		content += "initGlobalVariables();";
+		content += "onUpdateViewBox();";
 
 		gen.generate(content, "png", new File(userDir + "/doc/bg01.png"));
 	}
 
 }
+
+// content += "var initGlobalVariablesFunction = initGlobalVariables;";
+// content += "initGlobalVariablesFunction();";

@@ -252,6 +252,35 @@ https://yoksel.github.io/svg-filters/#/ (tools)
 </filter>
 ------------------------------------------------------------------------------------------------
 
+https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDropShadow
+(shadow behind a circle)
+------------------------------------------------------------------------------------------------
+<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="0.2" dy="0.4" stdDeviation="0.2"/>
+    </filter>
+  </defs>
+
+  <circle cx="50%" cy="50%" r="4" style="fill:pink; filter:url(#shadow);"/>
+</svg>
+------------------------------------------------------------------------------------------------
+
+https://www.w3schools.com/graphics/tryit.asp?filename=trysvg_feoffset2
+------------------------------------------------------------------------------------------------
+<svg height="140" width="140">
+  <defs>
+    <filter id="f1" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceGraphic" dx="10" dy="10" />
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
+  <rect width="90" height="90" stroke="green" stroke-width="1" fill="yellow" filter="url(#f1)" />
+  Warning: The rowser does not support inline SVG.
+</svg>
+------------------------------------------------------------------------------------------------
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 8. perspective
