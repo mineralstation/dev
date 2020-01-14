@@ -1,0 +1,9 @@
+
+“Fluent UI” or Ribbon Design
+https://news.ycombinator.com/item?id=16480366
+
+microsoft fluent
+https://thenextweb.com/microsoft/2017/05/15/microsoft-fluent-design-system-breaking-windows-10s-new-look/
+
+Windows Ribbon Framework
+https://docs.microsoft.com/en-us/windows/win32/windowsribbon/windowsribbon-introduction

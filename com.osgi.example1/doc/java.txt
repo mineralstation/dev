@@ -194,4 +194,20 @@ Shorten text
 		return textValue;
 	}
 --------------------------------------------------------------------------------------------------------------------------------
-	
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+3. OSGi Console programmatically
+
+https://stackoverflow.com/questions/56652973/execute-osgi-console-commands-programmatically
+--------------------------------------------------------------------------------------------------------------------------------
+BundleContext context = framework.getBundleContext();
+ServiceReference<CommandProcessor> reference = context.getServiceReference(CommandProcessor.class);
+
+CommandProcessor processor = context.getService(reference);
+CommandSession session = processor.createSession(System.in, System.out, System.err);
+
+session.execute("lsb");
+--------------------------------------------------------------------------------------------------------------------------------
+
+

@@ -1,0 +1,7 @@
+nginx
+
+nginx实现的权重的动态调度
+https://cloud.tencent.com/developer/information/nginx%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%9D%83%E9%87%8D%E7%9A%84%E5%8A%A8%E6%80%81%E8%B0%83%E5%BA%A6
+
+最基础的Nginx教学
+https://cloud.tencent.com/developer/article/1483798
