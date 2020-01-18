@@ -1,0 +1,10 @@
+Java KeyStore
+http://tutorials.jenkov.com/java-cryptography/keystore.html
+
+6.1. Reading a Single Entry
+https://www.baeldung.com/java-keystore
+
+Images
+https://www.google.com/search?q=java+keystore+editor&sxsrf=ACYBGNQ4y0XU4YHLOXXYb9q0ERy8UN4QRA:1574746180010&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjcva7VkofmAhVO-qwKHYTrBGYQ_AUoAnoECGcQBA&biw=1366&bih=657#imgrc=7R2JZbD3npFLHM:
+https://support.code42.com/Administrator/6/Configuring/Install_a_CA-signed_SSL%2F%2FTLS_certificate_with_KeyStore_Explorer
+
