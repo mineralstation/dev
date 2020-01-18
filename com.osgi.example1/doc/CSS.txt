@@ -3,3 +3,36 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_C
 
 Text
 https://css-tricks.com/fun-line-height/
+
+DIV round border
+https://www.w3schools.com/css/css3_borders.asp
+------------------------------------------------------------------------------------------------
+#rcorners1 {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+#rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+#rcorners3 {
+  border-radius: 25px;
+  background: url(paper.gif);
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+------------------------------------------------------------------------------------------------
+
+Inline block:
+https://www.w3schools.com/css/tryit.asp?filename=trycss_inline-block_span1

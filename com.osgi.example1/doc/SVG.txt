@@ -406,3 +406,10 @@ https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs
 
 patterns with tiles
 https://designmodo.com/svg-patterns/
+
+
+10. SVG with scrollbar
+https://stackoverflow.com/questions/45802877/overflow-y-scroll-not-working-showing-style-but-cannot-be-scrolled
+https://stackoverflow.com/questions/34206459/scroll-is-not-working-inside-svg-foreign-object-in-chrome
+https://bugs.chromium.org/p/chromium/issues/detail?id=568614
+http://jsfiddle.net/ranr/ncry8Lmx/

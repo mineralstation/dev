@@ -210,4 +210,7 @@ CommandSession session = processor.createSession(System.in, System.out, System.e
 session.execute("lsb");
 --------------------------------------------------------------------------------------------------------------------------------
 
+4. ClassLoader isloation
+https://stackoverflow.com/questions/9576207/what-is-an-isolated-classloader-in-java
+http://blog.markturansky.com/archives/21
 
