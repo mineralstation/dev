@@ -231,6 +231,7 @@ public class ImageGenerator {
 		content += "var isScreenGridEnabled = true;";
 		content += "var isScreenPerspectiveEnabled = false;";
 		content += "var isScreenAnchored = false;";
+		content += "var backgroundImageURL = null;";
 		content += "var isFullScreen = false;";
 
 		// 2. execute initial functions
