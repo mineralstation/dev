@@ -184,6 +184,8 @@ public class ImageGenerator {
 		content += "window['SOUTH_WEST'] = 7;";
 		content += "window['NORTH_WEST'] = 8;";
 		content += "window['MOVE'] = 10;";
+		content += "window['H_SCROLL'] = 11;";
+		content += "window['V_SCROLL'] = 12;";
 		content += "window['tagName1'] = 'script';";
 		content += "window['tagType1'] = 'text/javascript';";
 

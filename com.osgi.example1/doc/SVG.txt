@@ -413,3 +413,529 @@ https://stackoverflow.com/questions/45802877/overflow-y-scroll-not-working-showi
 https://stackoverflow.com/questions/34206459/scroll-is-not-working-inside-svg-foreign-object-in-chrome
 https://bugs.chromium.org/p/chromium/issues/detail?id=568614
 http://jsfiddle.net/ranr/ncry8Lmx/
+
+11. ClipPath
+http://tutorials.jenkov.com/svg/clip-path.html
+------------------------------------------------------------------------------------------------
+  <defs>
+      <clipPath id="clipPath">
+          <rect x="15" y="15" width="40" height="40" />
+      </clipPath>
+  </defs>
+  <circle cx="25" cy="25" r="20" style="fill: #0000ff; clip-path: url(#clipPath); " />
+
+
+<defs>
+    <clipPath id="clipPath3">
+        <path d="M10,10 q60,60 100,0 q50,50 50,50 l40,0 l-40,40 l-100,-20"/>
+    </clipPath>
+</defs>
+<rect x="5" y="5" width="190" height="90" style="stroke: none; fill:#00ff00; clip-path: url(#clipPath3);"/>
+
+
+<defs>
+    <clipPath id="clipPath4">
+        <rect x="10" y="20" width="100" height="20" />
+    </clipPath>
+</defs>
+<g style="clip-path: url(#clipPath4);">
+    <rect x="5" y="5" width="190" height="90" style="stroke: none; fill:#00ff00;"/>
+    <circle cx="20" cy="20" r="20" style="stroke: none; fill: #ff0000;" />
+</g>
+
+
+<defs>
+    <clipPath id="clipPath5">
+        <text x="10" y="20" style="font-size: 20px; ">This is a text</text>
+    </clipPath>
+</defs>
+<g style="clip-path: url(#clipPath5);">
+    <rect x="5" y="5" width="190" height="90" style="stroke: none; fill:#00ff00;"/>
+    <circle cx="20" cy="20" r="20" style="stroke: none; fill: #ff0000;" />
+</g>
+------------------------------------------------------------------------------------------------          
+
+
+https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-path
+
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape
+------------------------------------------------------------------------------------------------
+clip-path: inset(22% 12% 15px 35px);
+clip-path: circle(6rem at 12rem 8rem);
+clip-path: ellipse(115px 55px at 50% 40%);
+clip-path: polygon(50% 20%, 90% 80%, 10% 80%);
+clip-path: polygon(50% 2.4%, 34.5% 33.8%, 0% 38.8%, 25% 63.1%, 19.1% 97.6%, 50% 81.3%, 80.9% 97.6%, 75% 63.1%, 100% 38.8%, 65.5% 33.8%);
+------------------------------------------------------------------------------------------------
+
+https://vanseodesign.com/web-design/more-about-svg-clipping-paths/
+------------------------------------------------------------------------------------------------
+<svg width="600" height="300" style="outline: 1px solid red;">  
+  <rect x="-50" y="-25" width="200" height="100" fill="#9c6" />  
+</svg>
+
+
+<svg width="600" height="300" style="outline: 5px solid #630; overflow: visible">  
+  <rect x="-50" y="-25" width="200" height="100" fill="red" />  
+</svg>
+
+
+<svg width="660" height="220" style="outline: 1px solid #f00; clip-path: circle(100px at 50px 50px);">  
+ <rect x="25" y="25" width="200" height="100" fill="#9c6" />  
+</svg>
+
+
+<svg width="660" height="220" style="outline: 1px solid red">  
+ <defs>  
+   <clipPath id="clip-3" clipPathUnits="userSpaceOnUse">  
+     <rect x="10" y="10" width="100" height="100" />  
+   </clipPath>  
+ </defs>
+ <circle cx="110" cy="110" r="100" fill="#9c6" clip-path="url(#clip-3)" />  
+</svg>
+
+
+<svg width="660" height="220" style="outline: 1px solid red">  
+ <defs>  
+   <clipPath id="quarter-circle-2" clipPathUnits="objectBoundingBox">  
+     <rect x="0" y="0" width="0.5" height="0.5" />  
+   </clipPath>  
+ </defs>
+ <circle cx="110" cy="110" r="100" fill="#9c6" clip-path="url(#quarter-circle-2)" />  
+</svg>
+------------------------------------------------------------------------------------------------
+
+
+
+
+12. Scrollbar with clip-path (ClipPath)
+http://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
+
+https://codepen.io/dabrorius/details/EdQoYe
+------------------------------------------------------------------------------------------------
+<svg id="main" viewBox="0 0 400 200">
+	<rect x="50" y="10" width="300" height="180" fill="#98C8E0"></rect>
+	<g id="scrollgroup" x="50" y="10" width="300" height="180" clip-path="url(#scrollbox-clip-path)">
+		<rect x="50" y="10" width="300" height="180" opacity="0"></rect>
+		<g transform="translate(50,10)">
+			<text x="10" ,="" y="20">This is a scrollable SVG group!</text>
+			<rect x="100" y="40" width="100" height="100" fill="#F07830"></rect>
+			<rect x="100" y="150" width="100" height="100" fill="#781800"></rect>
+			<rect x="100" y="260" width="100" height="100" fill="red"></rect>
+		</g>
+	</g>
+	<clipPath id="scrollbox-clip-path">
+		<rect x="50" y="10" width="300" height="180"></rect>
+	</clipPath>
+	// vertical scroll bar
+	// need to support dragging on it and moving mouse event
+	<rect width="8" rx="4" ry="4" transform="translate(342,10)" height="90"></rect>
+</svg>
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+<script id="rendered-js">
+/**
+ * SVG group elements don't allow setting fixed dimensions and adding scroll bars for overflowing content.
+ * Most likely you do not need this, as SVG elements do support scroll bars so in most cases a better solution is having multiple SVG elements that are scrollable.
+ *
+ * However, adding a scrollable area within an SVG was required in a project I'm working on for a client, so here's an example of how you might go about doing it.
+ *
+ * Basic elements of the solution are:
+ * 1. Clip Path that hides everything outside of defined bounds
+ * 2. Custom built scroll bar with D3.drag event attached to it
+ * 3. Catching scroll events
+ */
+const scrollBarWidth = 8;
+
+window.onload = function () {
+	let scrollDistance = 0;
+
+	const root = d3.select("#scrollgroup").attr("clip-path", "url(#scrollbox-clip-path)");
+  	const parent = d3.select(root.node().parentNode);
+
+  	const rootBBox = {
+    	x: parseFloat(root.attr("x")),
+    	y: parseFloat(root.attr("y")),
+    	width: parseFloat(root.attr("width")),
+    	height: parseFloat(root.attr("height"))
+    };
+
+	// Move all children of scrollgroup to a content sub-group. I'm doing this because otherwise clip path gets glitchy.
+	const contentItems = root.selectAll('*');
+	const content = root.append('g').attr('transform', `translate(${rootBBox.x},${rootBBox.y})`);
+
+  	contentItems.each(function (e) {
+    	content.node().appendChild(this);
+  	});
+
+  	// Add a clip path and a rect within it everything inside the scrollgroup group that does not overlap this rectangle will be hidden
+  	const clipRect = parent.append('clipPath').attr('id', 'scrollbox-clip-path').append('rect');
+  	clipRect.attr('x', rootBBox.x).attr('y', rootBBox.y).attr('width', rootBBox.width).attr('height', rootBBox.height);
+
+  	// Insert an invisible rect that will catch scroll events as group element itself can't do it.
+  	root.insert('rect', 'g').attr('x', rootBBox.x).attr('y', rootBBox.y).attr('width', rootBBox.width).attr('height', rootBBox.height).attr('opacity', 0);
+
+  	// Position the scroll indicator
+  	const scrollBar = parent.append('rect').
+  	attr('width', scrollBarWidth).
+  	attr('rx', scrollBarWidth / 2).
+  	attr('ry', scrollBarWidth / 2).
+  	attr('transform', `translate(${rootBBox.x + rootBBox.width - scrollBarWidth},${rootBBox.y})`);
+
+  	// Calculate maximum scrollable amount
+  	const contentBBox = content.node().getBBox();
+  	const absoluteContentHeight = contentBBox.y + contentBBox.height;
+
+  	const scrollbarHeight = rootBBox.height * rootBBox.height / absoluteContentHeight;
+  	scrollBar.attr('height', scrollbarHeight);
+
+  	const maxScroll = Math.max(absoluteContentHeight - rootBBox.height, 0);
+
+
+  	function updateScrollPosition(diff) {
+    	scrollDistance += diff;
+    	scrollDistance = Math.max(0, scrollDistance);
+    	scrollDistance = Math.min(maxScroll, scrollDistance);
+	
+    	content.attr('transform', `translate(${rootBBox.x},${rootBBox.y - scrollDistance})`);
+    	const scrollBarPosition = scrollDistance / maxScroll * (rootBBox.height - scrollbarHeight);
+    	scrollBar.attr('y', scrollBarPosition);
+  	}
+
+	// Set up scroll events
+  	root.on('wheel', e => {
+    	updateScrollPosition(event.deltaY);
+  	});
+
+  	// Set up scrollbar drag events
+  	const dragBehaviour = d3.drag().on("drag", () => {
+    	updateScrollPosition(d3.event.dy * maxScroll / (rootBBox.height - scrollbarHeight));
+  	});
+  	scrollBar.call(dragBehaviour);
+};
+
+//# sourceURL=pen.js
+</script>
+------------------------------------------------------------------------------------------------
+
+12. draggable
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_ondrag
+https://www.w3schools.com/jsref/event_ondrag.asp
+
+http://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
+------------------------------------------------------------------------------------------------
+function makeDraggable(evt) {
+  var svg = evt.target;
+  svg.addEventListener('mousedown', startDrag);
+  svg.addEventListener('mousemove', drag);
+  svg.addEventListener('mouseup', endDrag);
+  svg.addEventListener('mouseleave', endDrag);
+  function startDrag(evt) {
+  }
+  function drag(evt) {
+  }
+  function endDrag(evt) {
+  }
+}
+
+function startDrag(evt) {
+  if (evt.target.classList.contains('draggable')) {
+    selectedElement = evt.target;
+  }
+}
+
+function drag(evt) {
+  if (selectedElement) {
+    evt.preventDefault();
+    var x = parseFloat(selectedElement.getAttributeNS(null, "x"));
+    selectedElement.setAttributeNS(null, "x", x + 0.1);
+  }
+}
+
+function endDrag(evt) {
+  selectedElement = null;
+}
+
+function getMousePosition(evt) {
+  var CTM = svg.getScreenCTM();
+  return {
+    x: (evt.clientX - CTM.e) / CTM.a,
+    y: (evt.clientY - CTM.f) / CTM.d
+  };
+}
+
+------------------------------------------------------------------------------------------------
+
+
+http://bl.ocks.org/enjalot/1378144
+------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Chernoff Smileys</title>
+   <script type="text/javascript" src="https://mbostock.github.com/d3/d3.js?2.5.0"></script>
+   <script type="text/javascript" src="https://mbostock.github.com/d3/d3.layout.js?2.5.0"></script>
+   <style type="text/css">
+
+   </style>
+ </head>
+ <body>
+
+     <p>Click a Smiley<p>
+
+   <script type="text/javascript">
+
+
+    var drag = d3.behavior.drag()
+        .on("drag", function(d,i) {
+            d.x += d3.event.dx
+            d.y += d3.event.dy
+            d3.select(this).attr("transform", function(d,i){
+                return "translate(" + [ d.x,d.y ] + ")"
+            })
+        });
+
+
+    function face_factory(classname, data, x, y, r)
+    { 
+        //data format
+        //{ "x": 0 - 1 , "y": 0 -1, "z": 0-1 }
+        //color could be made a parameter
+        //var arc = d3.svg.arc().outerRadius(r)
+        //var donut = d3.layout.pie();
+
+        var face = d3.select("#charts")
+            .append("svg:g")
+                //.data([data.sort(d3.descending)])
+                //.data([data])
+                .data([ {"x":x, "y":y} ])
+                .attr("class", classname)
+                .attr("transform", "translate(" + x + "," + y + ")")
+                .call(drag);
+
+
+        console.log("make head");
+        var head_color = d3.scale.linear()
+            .domain([0, 1])
+            .interpolate(d3.interpolateRgb)
+            .range(["#ff0000", "#0000ff"]);
+
+        var head = face.append("svg:circle")
+                .attr("class", "head")
+                .attr("fill", function(d){ return head_color(data.x); })
+                .attr("fill-opacity", .8)
+                .attr("stroke", "#000")
+                .attr("stroke-width", 4)
+                .attr("r", r);
+
+        console.log("make mouth");
+        var mouth_x = [0, .5, 1];
+
+        var mouth_x_range = d3.scale.linear()
+            .domain([0, 1])
+            .range([-r/2, r/2]);
+
+
+        var mouth_y_range = d3.scale.linear()
+            .domain([0, 1])
+            .range([-r/2, r/2]);
+
+        var mouth_y = [.5, data.y, .5];
+        console.log(mouth_y)
+
+        var mouth_line = d3.svg.line()
+            .x(function(d,i) {
+                return mouth_x_range(mouth_x[i]);
+            })
+            .y(function(d,i) {
+                return mouth_y_range(mouth_y[i]);
+            })
+            .interpolate("basis");
+
+        /*
+        var mouth = face.append("svg:path")
+                .attr("class", "mouth")
+                .attr("stroke", "#000")
+                .attr("stroke-width", 4)
+                .attr("fill", "none")
+                .attr("transform", "translate(" + [0, r/3] + ")")
+                .attr("d", mouth_line(mouth_x));
+                */
+
+        console.log("create eyes")
+        var eyer = r/10 + data.z * (r/3);
+        console.log(eyer);
+        var left_eye = face.append("svg:circle")
+            .attr("class", "eyes")
+            .attr("stroke", "#000")
+            .attr("fill", "none")
+            .attr("stroke-width", 4)
+            .attr("transform", "translate(" + [-r/2.5, -r/3] + ")")
+            .attr("r", eyer);
+
+        //eyer = r/10 + data.w * (r/3);
+        var right_eye = face.append("svg:circle")
+            .attr("class", "eyes")
+            .attr("stroke", "#000")
+            .attr("fill", "none")
+            .attr("stroke-width", 4)
+            .attr("transform", "translate(" + [r/2.5, -r/3] + ")")
+            .attr("r", eyer);
+
+        var text = face.append("svg:text")
+            .text("SMILE!")
+            .attr("y", ".5em")
+            .attr("transform", "translate(" + [0, r/3] + ")")
+            .attr("text-anchor", "middle")
+            .attr("font-weight", 700)
+            .attr("font-family", "Helvetica")
+            .attr("fill", "#ff0")
+            .attr("stroke", "none")
+            .attr("pointer-events", "none") 
+
+    }
+
+    var w = 700;
+    var h = 400;
+
+    //setup svg canvas
+    d3.select("body")
+        .append("svg:svg")
+            .attr("width", w)
+            .attr("height", h)
+            .attr("id", "charts")
+            //.on("click", clickypie)
+            .append("svg:rect")
+                .attr("width", "100%")
+                .attr("height", "100%")
+                .attr("stroke", "#000")
+                .attr("stroke-width", 3)
+                .attr("fill", "none")
+
+    //r = 100;
+    for(i = 0; i < 20; i++)
+    {
+        var r = 20 + Math.random() * 50;
+        var data = { "x":Math.random(), "y":Math.random(), "z":Math.random(), "w":Math.random() };
+        x = Math.random() * w
+        y = Math.random() * h
+        face_factory("face"+i, data, x, y, r);
+    }
+    
+   
+   </script>
+ </body>
+</html>
+------------------------------------------------------------------------------------------------
+
+
+https://octoperf.com/blog/2018/04/18/d3-js-drag-and-drop-tutorial/
+------------------------------------------------------------------------------------------------
+var svg = d3.select("svg");
+svg.append("use")
+    .attr("href", "#pointer")
+    .attr("x", 50)
+    .attr("y", 50)
+    .attr("fill", "#039BE5")
+    .attr("stroke", "#039BE5")
+    .attr("stroke-width", "1px");
+
+var deltaX, deltaY;
+
+var dragHandler = d3.drag()
+    .on("start", function () {
+        var current = d3.select(this);
+        deltaX = current.attr("x") - d3.event.x;
+        deltaY = current.attr("y") - d3.event.y;
+    })
+    .on("drag", function () {
+        d3.select(this)
+            .attr("x", d3.event.x + deltaX)
+            .attr("y", d3.event.y + deltaY);
+    });
+
+dragHandler(svg.selectAll("use"));
+------------------------------------------------------------------------------------------------
+
+
+13. SVG Knob example (search 'volume tune' images)
+
+https://codepen.io/lchngr/pen/HqGFC
+------------------------------------------------------------------------------------------------
+%svg(id="level" width="200" height="200")
+    %path(d="M 15.39 150 A 98 98 0, 0, 1, 100 2" fill="none" stroke-width="4" stroke="blue")
+%svg(id="knob" width="200" height="200" fill="none")
+    %circle(cx="100" cy="100" r="80" stroke="grey" stroke-width="4" fill="none")
+    %circle(cx="100" cy="35" r="5" stroke="none"   stroke-width="0" fill="grey")
+#log
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+var rotate = 0;
+var level  = 0;
+var mx = Math.cos((210) * Math.PI / 180) * 98 + 100;
+var my = Math.sin((210) * Math.PI / 180) * -98 + 100;
+
+var limiter = function(value, lower, upper) {
+  if(value < lower) return lower;
+  else if(value > upper) return upper;
+  else return value;
+}
+
+var log = function(msg) {
+  $('#log').prepend('<p>' + msg + '</p>');
+  $('#log p:gt(9)').remove();
+}
+
+$(document).ready(function() {
+  $('#knob').on('DOMMouseScroll mousewheel', function(e) {
+    e.preventDefault();
+    log(e.originalEvent.deltaY);
+    rotate += limiter(e.originalEvent.deltaY,-4,4);
+    
+    //snap only work with osx two finger swipe
+    if(rotate > -4 && rotate < 4) rotate = 0;
+    if(rotate >= 120) rotate = 120;
+    if(rotate <= -120) rotate = -120; 
+    
+   $(this).css('transform','rotate(' + rotate + 'deg)');
+    
+    //level = 411 - ((rotate + 120) / 240 * 411);
+    //$('#level').css('stroke-dashoffset',level);
+    var x = Math.cos((90-rotate) * Math.PI / 180) * 98 + 100;
+    var y = Math.sin((90-rotate) * Math.PI / 180) * -98 + 100;
+    
+    var largeArc = (rotate >= 60) ? 1 : 0;
+    
+    $('#level').find('path').attr('d','M ' + mx + ' ' + my + ' A 98 98 45, '+ largeArc + ', 1, ' + x + ' ' + y);
+  });
+});
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#knob {
+  margin: 50px;
+  width: 200px;
+  height: 200px;
+  -webkit-transform: rotate(0deg);
+}
+
+#level {
+  position: absolute;
+  margin: 50px;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 0;
+  #stroke-dasharray: 411;
+  #stroke-dashoffset: 205.5;
+}
+------------------------------------------------------------------------------------------------
+
+

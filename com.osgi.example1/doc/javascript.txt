@@ -1265,3 +1265,23 @@ xmlhttp.send();
 
 
 
+26. onmouseenter and onmouseleave
+// https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave
+------------------------------------------------------------------------------------------------
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="parent" onmouseenter="mouselog(event)" onmouseleave="mouselog(event)">parent
+    <div id="child">child</div>
+  </div>
+  <textarea id="text"></textarea>
+  <input type="button" onclick="text.value=''" value="Clear">
+  <script src="script.js"></script>
+</body>
+</html>
+------------------------------------------------------------------------------------------------
+

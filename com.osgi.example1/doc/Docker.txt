@@ -1,0 +1,7 @@
+1. Isolate containers with a user namespace
+https://docs.docker.com/engine/security/userns-remap/
+
+2. Run oracle
+https://medium.com/@mfofana/how-to-install-oracle-database-on-mac-os-sierra-10-12-or-above-c0b350fd2f2c
+
+
