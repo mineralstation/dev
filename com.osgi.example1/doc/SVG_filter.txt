@@ -24,3 +24,12 @@ https://www.youtube.com/watch?v=sLkBmV4yGJ4&feature=emb_logo
 }
 
 https://www.smashingmagazine.com/2015/05/why-the-svg-filter-is-awesome/
+
+Frosting Glass with CSS Filters
+https://css-tricks.com/frosting-glass-css-filters/
+
+Boxes with shadows
+https://css-tricks.com/almanac/properties/b/box-shadow/
+
+
+
