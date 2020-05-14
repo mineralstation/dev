@@ -38,6 +38,10 @@ Inline block:
 https://www.w3schools.com/css/tryit.asp?filename=trycss_inline-block_span1
 
 
+TD align
+http://www.tagindex.net/html/table/td_align.html
+
+
 Table green style example
 https://codepen.io/rjmk159/pen/QWwYaYV
 ------------------------------------------------------------------------------------------------

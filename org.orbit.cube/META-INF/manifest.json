@@ -9,8 +9,7 @@
 		{"Bundle-SymbolicName" : "org.orbit.cube.connector", "Bundle-Version" : "1.0.0"},
 		{"Bundle-SymbolicName" : "org.orbit.cube.io", "Bundle-Version" : "1.0.0"},
 		{"Bundle-SymbolicName" : "org.orbit.cube.model", "Bundle-Version" : "1.0.0"},
-		{"Bundle-SymbolicName" : "org.orbit.cube.runtime", "Bundle-Version" : "1.0.0"},
-		{"Bundle-SymbolicName" : "org.orbit.cube.webconsole", "Bundle-Version" : "1.0.0", "optional" : "true"}
+		{"Bundle-SymbolicName" : "org.orbit.cube.runtime", "Bundle-Version" : "1.0.0"}
 	],
 	"classpath" : [
 		"plugins"

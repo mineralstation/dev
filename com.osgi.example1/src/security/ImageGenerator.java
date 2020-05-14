@@ -222,6 +222,7 @@ public class ImageGenerator {
 		content += "var screenAnchorPart1D3;";
 		content += "var screenAnchorPart2D3;";
 		content += "var toggleFullScreenButtonD3;";
+		content += "var exitButtonD3;";
 
 		// max to full screen icon
 		content += "window['fullScreenPath1'] = 'M4 7 L4 4 L7 4  M10 4 L16 4 M11 9 L15 5 M16 4 L16 10  M16 13 L16 16 L13 16  M10 16 L4 16 M9 11 L5 15 M4 16 L4 10';";
