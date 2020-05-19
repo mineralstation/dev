@@ -32,4 +32,62 @@ Boxes with shadows
 https://css-tricks.com/almanac/properties/b/box-shadow/
 
 
+SVG blur vs CSS blur with image
+http://placekitten.com/g/500/300
+https://codepen.io/sandstedt/pen/NxNGPd
 
+html
+----------------------------------------------------------------------
+<div class="column">
+  <h1>CSS-blur</h1>
+  <div class="cssblur">
+    <img src="http://placekitten.com/g/500/300" />
+  </div>
+</div>
+
+<div class="column">
+  <h1>SVG-blur</h1>
+  <div class="svgblur">
+    <img src="http://placekitten.com/g/500/300" />
+  </div>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10,10"></feGaussianBlur>
+    </filter>
+  </defs>
+</svg>
+----------------------------------------------------------------------
+
+CSS
+----------------------------------------------------------------------
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+.svgblur{
+  filter: url(#blur);
+}
+.cssblur{ 
+   filter: blur(10px);
+}
+.transform {
+   transform: translateZ(-200px) rotateX(40deg);
+}
+
+html, body {
+  padding: 2em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #e56262;
+}
+img {
+  margin-bottom: 2em;
+}
+.column {
+  float: left;
+  margin-right: 4em;
+  perspective: 450; /* For compatibility with iPhone 3.0, we leave off the units here */
+  perspective-origin: 50% 225px;
+}
+----------------------------------------------------------------------
