@@ -186,6 +186,7 @@ public class ImageGenerator {
 		content += "window['MOVE'] = 10;";
 		content += "window['H_SCROLL'] = 11;";
 		content += "window['V_SCROLL'] = 12;";
+		content += "window['DND'] = 15;";
 		content += "window['tagName1'] = 'script';";
 		content += "window['tagType1'] = 'text/javascript';";
 

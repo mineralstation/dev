@@ -1,0 +1,3 @@
+org.eclipse.osgi_3.15.0.v20190830-1434 bundle link:
+https://download.eclipse.org/oomph/archive/reports/download.eclipse.org/releases/2019-09/index/org.eclipse.osgi_3.15.0.v20190830-1434.html
+https://git.eclipse.org/c/equinox/rt.equinox.framework.git/
