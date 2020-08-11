@@ -1,5 +1,7 @@
+-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console -clean
+
 -Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=8080 
--Dlogback.configurationFile=/path/to/origin/logback/orbit0.xml 
+-Dlogback.configurationFile=/Users/user1/origin/logback/orbit0.xml 
 
 -Dorbit.host.url=http://127.0.0.1:8080 
 
@@ -12,22 +14,31 @@
 -Dorbit.domain_service.url=http://127.0.0.1:8000/orbit/v1/domain 
 -Dorbit.dfs.url=http://127.0.0.1:8100/orbit/v1/dfs 
 
+-Dorbit.dfs.id=dfs1 
+
 -Dplatform.id=webconsole1 
 -Dplatform.name=WebConsole1 
 -Dplatform.version=1.0.0 
 -Dplatform.type=server 
 -Dplatform.context_root=/orbit/v1/platform 
--Dplatform.home=/path/to/origin/ta1 
+-Dplatform.home=/Users/user1/origin/ta1 
 
+-Dorigin.web_console.autostart=true 
+-Dorigin.web_console.context_root=/origin 
 
 -Dpublic.web_console.autostart=true 
 -Dpublic.web_console.context_root=/orbit/webconsole/public 
+
+-Dpublic.web_console.apps_folder=/Users/user1/git/ocean/org.orbit.component.webconsole/WEB-INF/apps 
 
 -Dplatform.web_console.autostart=true 
 -Dplatform.web_console.context_root=/orbit/webconsole/platform 
 
 -Dinfra.web_console.autostart=true 
 -Dinfra.web_console.context_root=/orbit/webconsole/infra 
+
+-Ddatatube.web_console.autostart=true 
+-Ddatatube.web_console.context_root=/orbit/webconsole/datatube 
 
 -Dcomponent.web_console.autostart=true 
 -Dcomponent.web_console.context_root=/orbit/webconsole/component 
@@ -39,4 +50,4 @@
 -Dspirit.web_console.context_root=/orbit/webconsole/spirit 
 
 -Dcube.web_console.autostart=true 
--Dcube.web_console.context_root=/orbit/webconsole/cube 
+-Dcube.web_console.context_root=/orbit/webconsole/cube

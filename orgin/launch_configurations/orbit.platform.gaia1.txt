@@ -1,5 +1,7 @@
+-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console -clean
+
 -Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=9100 
--Dlogback.configurationFile=/path/to/origin/logback/orbit0.xml 
+-Dlogback.configurationFile=/Users/user1/origin/logback/orbit0.xml 
 
 -Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
 -Dorbit.extension_registry.url=http://127.0.0.1:8000/orbit/v1/extensionregistry 
@@ -9,28 +11,23 @@
 
 -Dorbit.host.url=http://127.0.0.1:9100 
 
--Dplatform.id=p9100 
--Dplatform.name=Spirit10 
--Dplatform.version=1.0.0 
--Dplatform.type=server 
--Dplatform.context_root=/orbit/v1/platform 
-
 -Dplatform.parent.id=p101 
 -Dplatform.id=p9100 
 -Dplatform.name=Spirit10 
 -Dplatform.version=1.0.0 
 -Dplatform.type=server 
 -Dplatform.context_root=/orbit/v1/platform 
--Dplatform.home={NODE_PLATFORM_HOME}/nodespace/gaia1 
+-Dplatform.home=/Users/user1/origin/ta1/nodespace/gaia1 
 
--Dspirit.gaia.autostart=true  
+-Dspirit.gaia.autostart=true 
 -Dspirit.gaia.id=gaia1 
 -Dspirit.gaia.name=GAIA1 
 -Dspirit.gaia.context_root=/orbit/v1/gaia 
 -Dspirit.gaia.jdbc.driver=org.postgresql.Driver 
 -Dspirit.gaia.jdbc.url=jdbc:postgresql://127.0.0.1:5432/gaia1 
 -Dspirit.gaia.jdbc.username=postgres 
--Dspirit.gaia.jdbc.password={password} 
+-Dspirit.gaia.jdbc.password={password}
+
 
 Node properties:
 -----------------------------------------------------------------------------

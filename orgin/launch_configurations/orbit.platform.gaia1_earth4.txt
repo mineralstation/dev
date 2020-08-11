@@ -1,5 +1,7 @@
--Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=9102 
--Dlogback.configurationFile=/path/to/origin/logback/orbit0.xml 
+-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console
+
+-Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=9104 
+-Dlogback.configurationFile=/Users/user1/origin/logback/orbit0.xml 
 
 -Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
 -Dorbit.extension_registry.url=http://127.0.0.1:8000/orbit/v1/extensionregistry 
@@ -7,53 +9,55 @@
 -Dorbit.dfs.url=http://127.0.0.1:8100/orbit/v1/dfs 
 -Dorbit.app_store.url=http://127.0.0.1:8003/orbit/v1/appstore 
 
--Dorbit.host.url=http://127.0.0.1:9102 
+-Dorbit.host.url=http://127.0.0.1:9104 
 
--Dplatform.id=p9102 
--Dplatform.name=Spirit12 
+-Dplatform.parent.id=p101 
+-Dplatform.id=p9104 
+-Dplatform.name=Spirit14 
 -Dplatform.version=1.0.0 
 -Dplatform.type=server 
 -Dplatform.context_root=/orbit/v1/platform 
--Dplatform.home={NODE_PLATFORM_HOME}/nodespace/gaia1_earth2 
+-Dplatform.home=/Users/user1/origin/ta1/nodespace/gaia1_earth4 
 
 -Dspirit.earth.autostart=true 
 -Dspirit.earth.gaia_id=gaia1 
--Dspirit.earth.id=earth2 
--Dspirit.earth.name=Earth2 
+-Dspirit.earth.id=earth4 
+-Dspirit.earth.name=Earth4 
 -Dspirit.earth.context_root=/orbit/v1/earth 
 -Dspirit.earth.jdbc.driver=org.postgresql.Driver 
--Dspirit.earth.jdbc.url=jdbc:postgresql://127.0.0.1:5432/gaia1_earth2 
+-Dspirit.earth.jdbc.url=jdbc:postgresql://127.0.0.1:5432/gaia1_earth4 
 -Dspirit.earth.jdbc.username=postgres 
 -Dspirit.earth.jdbc.password={password} 
 
 -Dorbit.cube_manager.autostart=true 
--Dorbit.cube_manager.id=cubeManager2 
--Dorbit.cube_manager.name=CubeManager2 
--Dorbit.cube_manager.context_root=/orbit/v1/cubemanager 
+-Dorbit.cube_manager.id=cubeManager4 
+-Dorbit.cube_manager.name=CubeManager4 
+-Dorbit.cube_manager.context_root=/orbit/v1/cubemanager
+
 
 Node properties:
 -----------------------------------------------------------------------------
-org.osgi.service.http.port=9102
-orbit.host.url=http://127.0.0.1:9102
+org.osgi.service.http.port=9104
+orbit.host.url=http://127.0.0.1:9104
 
-platform.id=p9102
-platform.name=Spirit12
+platform.id=p9104
+platform.name=Spirit14
 platform.version=1.0.0
 platform.type=node
 platform.context_root=/orbit/v1/platform
 
 spirit.earth.autostart=true
 spirit.earth.gaia_id=gaia1
-spirit.earth.id=earth2
-spirit.earth.name=Earth2
+spirit.earth.id=earth4
+spirit.earth.name=Earth4
 spirit.earth.context_root=/orbit/v1/earth
 spirit.earth.jdbc.driver=org.postgresql.Driver
-spirit.earth.jdbc.url=jdbc:postgresql://127.0.0.1:5432/gaia1_earth2
+spirit.earth.jdbc.url=jdbc:postgresql://127.0.0.1:5432/gaia1_earth4
 spirit.earth.jdbc.username=postgres
 spirit.earth.jdbc.password=password
 
 orbit.cube_manager.autostart=true
-orbit.cube_manager.id=cubeManager2
-orbit.cube_manager.name=CubeManager2
+orbit.cube_manager.id=cubeManager4
+orbit.cube_manager.name=CubeManager4
 orbit.cube_manager.context_root=/orbit/v1/cubemanager
 -----------------------------------------------------------------------------

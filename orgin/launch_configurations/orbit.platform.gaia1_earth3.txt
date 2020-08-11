@@ -1,5 +1,7 @@
+-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console
+
 -Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=9103 
--Dlogback.configurationFile=/path/to/origin/logback/orbit0.xml 
+-Dlogback.configurationFile=/Users/user1/origin/logback/orbit0.xml 
 
 -Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
 -Dorbit.extension_registry.url=http://127.0.0.1:8000/orbit/v1/extensionregistry 
@@ -9,12 +11,13 @@
 
 -Dorbit.host.url=http://127.0.0.1:9103 
 
+-Dplatform.parent.id=p101 
 -Dplatform.id=p9103 
 -Dplatform.name=Spirit13 
 -Dplatform.version=1.0.0 
 -Dplatform.type=server 
 -Dplatform.context_root=/orbit/v1/platform 
--Dplatform.home={NODE_PLATFORM_HOME}/nodespace/gaia1_earth3 
+-Dplatform.home=/Users/user1/origin/ta1/nodespace/gaia1_earth3 
 
 -Dspirit.earth.autostart=true 
 -Dspirit.earth.gaia_id=gaia1 
@@ -29,7 +32,8 @@
 -Dorbit.cube_manager.autostart=true 
 -Dorbit.cube_manager.id=cubeManager3 
 -Dorbit.cube_manager.name=CubeManager3 
--Dorbit.cube_manager.context_root=/orbit/v1/cubemanager 
+-Dorbit.cube_manager.context_root=/orbit/v1/cubemanager
+
 
 Node properties:
 -----------------------------------------------------------------------------

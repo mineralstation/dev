@@ -1,8 +1,11 @@
--Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=8002 
--Dlogback.configurationFile=/path/to/origin/logback/orbit0.xml 
+-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console -clean
 
--Dorbit.index_service.url=http://127.0.0.1:8002/orbit/v1/indexservice 
+-Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=8002 
+-Dlogback.configurationFile=/Users/user1/origin/logback/orbit0.xml 
+
+-Dorbit.index_service.url=http://127.0.0.1:8000/orbit/v1/indexservice 
 -Dorbit.extension_registry.url=http://127.0.0.1:8002/orbit/v1/extensionregistry 
+-Dorbit.config_registry.url=http://127.0.0.1:8002/orbit/v1/cfg 
 -Dorbit.host.url=http://127.0.0.1:8002 
 
 -Dplatform.id=p92 
@@ -10,7 +13,7 @@
 -Dplatform.version=1.0.0 
 -Dplatform.type=server 
 -Dplatform.context_root=/orbit/v1/platform 
--Dplatform.home=/path/to/origin 
+-Dplatform.home=/Users/user1/origin 
 
 -Dcomponent.index_service.autostart=true 
 -Dcomponent.index_service.name=IndexService2 
@@ -18,7 +21,7 @@
 -Dcomponent.index_service.jdbc.driver=org.postgresql.Driver 
 -Dcomponent.index_service.jdbc.url=jdbc:postgresql://127.0.0.1:5432/origin 
 -Dcomponent.index_service.jdbc.username=postgres 
--Dcomponent.index_service.jdbc.password=password 
+-Dcomponent.index_service.jdbc.password={password} 
 
 -Dcomponent.extension_registry.autostart=true 
 -Dcomponent.extension_registry.name=ExtensionRegistryService2 
@@ -26,7 +29,7 @@
 -Dcomponent.extension_registry.jdbc.driver=org.postgresql.Driver 
 -Dcomponent.extension_registry.jdbc.url=jdbc:postgresql://127.0.0.1:5432/origin 
 -Dcomponent.extension_registry.jdbc.username=postgres 
--Dcomponent.extension_registry.jdbc.password=password 
+-Dcomponent.extension_registry.jdbc.password={password} 
 
 -Dinfra.config_registry.autostart=true 
 -Dinfra.config_registry.name=ConfigRegistry2 
@@ -34,9 +37,9 @@
 -Dinfra.config_registry.jdbc.driver=org.postgresql.Driver 
 -Dinfra.config_registry.jdbc.url=jdbc:postgresql://127.0.0.1:5432/origin 
 -Dinfra.config_registry.jdbc.username=postgres 
--Dinfra.config_registry.jdbc.password=password 
+-Dinfra.config_registry.jdbc.password={password} 
 
--Dcomponent.channel.autostart=true 
+-Dcomponent.channel.autostart=false 
 -Dcomponent.channel.name=Channel2 
 -Dcomponent.channel.context_root=/orbit/v1/channel 
--Dcomponent.channel.http_port=7002 
+-Dcomponent.channel.http_port=7002
