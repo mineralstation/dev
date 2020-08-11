@@ -1,0 +1,53 @@
+Equinox/p2/p2 index
+https://wiki.eclipse.org/Equinox/p2/p2_index
+
+Understanding the p2.index file
+https://eclipsesource.com/blogs/2012/06/05/understanding-the-p2-index-file/
+
+Bug 381598 - [repository] Improve the efficiency of p2 over http
+https://bugs.eclipse.org/bugs/show_bug.cgi?id=381598
+
+
+Restricting Access with HTTP Basic Authentication
+https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/
+
+Update site protected by SSL and HTTP basic Authentication
+https://www.eclipse.org/forums/index.php/t/61225/
+
+P2 authentication upon target platform import(How to specify credentials to p2-repositories requiring authentication?)
+https://www.eclipse.org/forums/index.php/t/556492/
+
+	basic auth is not the ideal, but even though, that does not seem to work. Target platform definitions does not seem to allow such format:
+	
+	java.lang.NumberFormatException: For input string: "<my_pass>@<our_host>"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientRetrieveFileTransfer.getPortFromURL(HttpClientRetrieveFileTransfer.java:844)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientFileSystemBrowser.setupAuthentication(HttpClientFileSystemBrowser.java:313)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:212)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+	
+	This is defining a TP definition using Eclipse 3.8.2.
+	
+	
+	Eclipse 4.3 does not work either:
+	
+	org.eclipse.equinox.p2.core.ProvisionException: Authentication failed for https://<user>:<pass>@<host>.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:143)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.ProvisioningUI.loadMetadataRepository(ProvisioningUI.java:439)
+	at org.eclipse.equinox.internal.p2.ui.model.MetadataRepositoryElement.getMetadataRepository(MetadataRepositoryElement.java:120)
+	at org.eclipse.equinox.internal.p2.ui.model.MetadataRepositoryElement.fetchChildren(MetadataRepositoryElement.java:70)
+	at org.eclipse.equinox.internal.p2.ui.model.RemoteQueriedElement.fetchDeferredChildren(RemoteQueriedElement.java:34)
+	at org.eclipse.ui.progress.DeferredTreeContentManager$1.run(DeferredTreeContentManager.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+	
+	I tested it and this URL works on Firefox and Chrome. Apparently, Internet Explorer does not allow passing user/pass in the URL anymore.
