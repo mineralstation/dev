@@ -39,7 +39,7 @@ public class DOMUtil {
 	 * @param localName
 	 * @return
 	 */
-	public static List<Element> getChildElementsByLocalName(Element parentElement, String localName) {
+	public static List<Element> getChildrenElementsByLocalName(Element parentElement, String localName) {
 		List<Element> elements = new ArrayList<Element>();
 		NodeList children = parentElement.getChildNodes();
 		for (int i = 0; i < children.getLength(); i++) {

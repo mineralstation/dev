@@ -185,7 +185,7 @@ public class CompositeRepositoryReader {
 		}
 
 		List<CompositeRepositoryProperty> properties = new ArrayList<CompositeRepositoryProperty>();
-		List<Element> elements = DOMUtil.getChildElementsByLocalName(propertiesElement, "property");
+		List<Element> elements = DOMUtil.getChildrenElementsByLocalName(propertiesElement, "property");
 		for (Element element : elements) {
 			CompositeRepositoryProperty property = xml2Property(element);
 			if (property != null) {
@@ -244,7 +244,7 @@ public class CompositeRepositoryReader {
 		}
 
 		List<CompositeRepositoryChild> children = new ArrayList<CompositeRepositoryChild>();
-		List<Element> elements = DOMUtil.getChildElementsByLocalName(pluginsElement, "child");
+		List<Element> elements = DOMUtil.getChildrenElementsByLocalName(pluginsElement, "child");
 		for (Element element : elements) {
 			CompositeRepositoryChild child = xml2Child(element);
 			if (child != null) {

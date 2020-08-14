@@ -198,7 +198,7 @@ public class RepositoryReader {
 		}
 
 		List<RepositoryProperty> properties = new ArrayList<RepositoryProperty>();
-		List<Element> elements = DOMUtil.getChildElementsByLocalName(propertiesElement, "property");
+		List<Element> elements = DOMUtil.getChildrenElementsByLocalName(propertiesElement, "property");
 		for (Element element : elements) {
 			RepositoryProperty property = xml2Property(element);
 			if (property != null) {
@@ -257,7 +257,7 @@ public class RepositoryReader {
 		}
 
 		List<RepositoryUnit> units = new ArrayList<RepositoryUnit>();
-		List<Element> elements = DOMUtil.getChildElementsByLocalName(unitsElement, "unit");
+		List<Element> elements = DOMUtil.getChildrenElementsByLocalName(unitsElement, "unit");
 		for (Element element : elements) {
 			RepositoryUnit unit = xml2Unit(element);
 			if (unit != null) {
@@ -419,7 +419,7 @@ public class RepositoryReader {
 		}
 
 		List<UnitProperty> properties = new ArrayList<UnitProperty>();
-		List<Element> elements = DOMUtil.getChildElementsByLocalName(propertiesElement, "property");
+		List<Element> elements = DOMUtil.getChildrenElementsByLocalName(propertiesElement, "property");
 		for (Element element : elements) {
 			UnitProperty property = xml2UnitProperty(element);
 			if (property != null) {
@@ -478,7 +478,7 @@ public class RepositoryReader {
 		}
 
 		List<UnitRequired> requires = new ArrayList<UnitRequired>();
-		List<Element> elements = DOMUtil.getChildElementsByLocalName(metaRequirementsElement, "required");
+		List<Element> elements = DOMUtil.getChildrenElementsByLocalName(metaRequirementsElement, "required");
 		for (Element element : elements) {
 			UnitRequired required = xml2UnitRequired(element);
 			if (required != null) {
@@ -549,7 +549,7 @@ public class RepositoryReader {
 		}
 
 		List<UnitProvided> provides = new ArrayList<UnitProvided>();
-		List<Element> elements = DOMUtil.getChildElementsByLocalName(providesElement, "provided");
+		List<Element> elements = DOMUtil.getChildrenElementsByLocalName(providesElement, "provided");
 		for (Element element : elements) {
 			UnitProvided provided = xml2UnitProvided(element);
 			if (provided != null) {
@@ -631,7 +631,7 @@ public class RepositoryReader {
 		}
 
 		List<UnitRequired> requires = new ArrayList<UnitRequired>();
-		List<Element> elements = DOMUtil.getChildElementsByLocalName(requiresElement, "required");
+		List<Element> elements = DOMUtil.getChildrenElementsByLocalName(requiresElement, "required");
 		for (Element element : elements) {
 			UnitRequired required = xml2UnitRequired(element);
 			if (required != null) {
@@ -667,7 +667,7 @@ public class RepositoryReader {
 		}
 
 		List<UnitArtifact> requires = new ArrayList<UnitArtifact>();
-		List<Element> elements = DOMUtil.getChildElementsByLocalName(artifactsElement, "artifact");
+		List<Element> elements = DOMUtil.getChildrenElementsByLocalName(artifactsElement, "artifact");
 		for (Element element : elements) {
 			UnitArtifact artifact = xml2UnitArtifact(element);
 			if (artifact != null) {
@@ -789,7 +789,7 @@ public class RepositoryReader {
 		}
 
 		List<UnitInstruction> instructions = new ArrayList<UnitInstruction>();
-		List<Element> elements = DOMUtil.getChildElementsByLocalName(instructionsElement, "instruction");
+		List<Element> elements = DOMUtil.getChildrenElementsByLocalName(instructionsElement, "instruction");
 		for (Element element : elements) {
 			UnitInstruction instruction = xml2UnitInstruction(element);
 			if (instruction != null) {
@@ -848,7 +848,7 @@ public class RepositoryReader {
 		}
 
 		List<UnitLicense> licenses = new ArrayList<UnitLicense>();
-		List<Element> elements = DOMUtil.getChildElementsByLocalName(licensesElement, "license");
+		List<Element> elements = DOMUtil.getChildrenElementsByLocalName(licensesElement, "license");
 		for (Element element : elements) {
 			UnitLicense license = xml2UnitLicense(element);
 			if (license != null) {

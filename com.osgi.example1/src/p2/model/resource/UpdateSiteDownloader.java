@@ -77,10 +77,10 @@ public class UpdateSiteDownloader {
 				int size = plugins.size();
 				int i = 0;
 				for (CompositeRepositoryChild plugin : plugins) {
-					if (i < 76) {
-						i++;
-						continue;
-					}
+					// if (i < 86) {
+					// i++;
+					// continue;
+					// }
 
 					String numToAll = "(" + (i + 1) + "/" + size + ")";
 

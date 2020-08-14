@@ -1,0 +1,1 @@
+http://update.tibco.com/eclipse/bw/6.5/compositeContent.xml

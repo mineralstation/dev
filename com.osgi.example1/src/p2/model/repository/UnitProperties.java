@@ -37,4 +37,17 @@ public class UnitProperties extends DOMElement {
 		this.children = children;
 	}
 
+	public UnitProperty getChild(String name) {
+		UnitProperty result = null;
+		if (this.children != null && name != null) {
+			for (UnitProperty child : this.children) {
+				if (name.equals(child.getName())) {
+					result = child;
+					break;
+				}
+			}
+		}
+		return result;
+	}
+
 }
