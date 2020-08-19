@@ -16,7 +16,7 @@ import p2.model.resource.CompositeRepositoryResource;
  * @author <a href="mailto:yangyang4j@gmail.com">Yang Yang</a>
  *
  */
-public class CompositeRepositoryTest {
+public class ParseCompositeRepositoryTest {
 
 	public static void main(String[] args) {
 		try {

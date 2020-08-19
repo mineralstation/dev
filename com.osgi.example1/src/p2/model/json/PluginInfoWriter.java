@@ -125,11 +125,13 @@ public class PluginInfoWriter {
 			pluginInfoJSONObject.put("icon", iconFullPath);
 		}
 
+		/*-
 		// name
 		String name = PluginInfoHelper.getName(pluginInfo, true);
 		if (name != null && !name.isEmpty() && !"null".equals(name)) {
 			pluginInfoJSONObject.put("name", name);
 		}
+		*/
 
 		// description
 		String description = PluginInfoHelper.getDescription(pluginInfo, true);

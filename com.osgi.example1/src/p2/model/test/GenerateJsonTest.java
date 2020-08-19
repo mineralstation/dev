@@ -7,7 +7,7 @@ import p2.model.json.PluginInfo;
 import p2.model.json.PluginInfoWriter;
 import p2.model.json.RepositoryProcessor;
 
-public class RepositoryProcessorTest {
+public class GenerateJsonTest {
 
 	public static void main(String[] args) {
 		try {
