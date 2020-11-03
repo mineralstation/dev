@@ -11,11 +11,7 @@
 		{"Bundle-SymbolicName" : "org.orbit.substance.model", "Bundle-Version" : "1.0.0"},
 		{"Bundle-SymbolicName" : "org.orbit.substance.runtime", "Bundle-Version" : "1.0.0"},
 		{"Bundle-SymbolicName" : "org.orbit.substance.sdk", "Bundle-Version" : "1.0.0"},
-		{"Bundle-SymbolicName" : "org.orbit.substance.webconsole", "Bundle-Version" : "1.0.0", "optional" : "true"},
-		{"Bundle-SymbolicName" : "org.common1", "Bundle-Version" : "1.0.0"},
-		{"Bundle-SymbolicName" : "org.common2", "Bundle-Version" : "1.0.0"},
-		{"Bundle-SymbolicName" : "org.common3", "Bundle-Version" : "1.0.0"},
-		{"Bundle-SymbolicName" : "org.common4", "Bundle-Version" : "1.0.0"}
+		{"Bundle-SymbolicName" : "org.orbit.substance.webconsole", "Bundle-Version" : "1.0.0", "optional" : "true"}
 	],
 	"classpath" : [
 		"plugins/org.orbit.substance.api_1.0.0.jar",
@@ -24,11 +20,7 @@
 		"plugins/org.orbit.substance.model_1.0.0.jar",
 		"plugins/org.orbit.substance.runtime_1.0.0.jar",
 		"plugins/org.orbit.substance.sdk_1.0.0.jar",
-		"plugins/org.orbit.substance.webconsole_1.0.0.jar",
-		"plugins/org.common1_1.0.0.jar",
-		"plugins/org.common2_1.0.0.jar",
-		"plugins/org.common3_1.0.0.jar",
-		"plugins/org.common4_1.0.0.jar"
+		"plugins/org.orbit.substance.webconsole_1.0.0.jar"
 	],
 	"properties" : [
 		{"name" : "substance.dfs.id", "value" : "dfs1"},
