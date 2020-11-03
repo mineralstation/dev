@@ -18,7 +18,17 @@
 		{"Bundle-SymbolicName" : "org.common4", "Bundle-Version" : "1.0.0"}
 	],
 	"classpath" : [
-		"plugins"
+		"plugins/org.orbit.substance.api_1.0.0.jar",
+		"plugins/org.orbit.substance.connector_1.0.0.jar",
+		"plugins/org.orbit.substance.io_1.0.0.jar",
+		"plugins/org.orbit.substance.model_1.0.0.jar",
+		"plugins/org.orbit.substance.runtime_1.0.0.jar",
+		"plugins/org.orbit.substance.sdk_1.0.0.jar",
+		"plugins/org.orbit.substance.webconsole_1.0.0.jar",
+		"plugins/org.common1_1.0.0.jar",
+		"plugins/org.common2_1.0.0.jar",
+		"plugins/org.common3_1.0.0.jar",
+		"plugins/org.common4_1.0.0.jar"
 	],
 	"properties" : [
 		{"name" : "substance.dfs.id", "value" : "dfs1"},
