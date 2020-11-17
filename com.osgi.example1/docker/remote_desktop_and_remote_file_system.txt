@@ -1,0 +1,81 @@
+Raspberry Pi Tutorial 2 - Remote Desktop & VNC on Mac 2017 UPDATE
+https://www.youtube.com/watch?v=PYunvpwSwGY
+
+Raspberry Pi Tutorial 3 - File Sharing between RPi and Computer
+https://www.youtube.com/watch?v=Cpekkzc80Do
+
+1. [VNC] Cannot currently show the dekstop
+https://www.raspberrypi.org/forums/viewtopic.php?t=216737
+
+--------------------------------------------------------
+raspi-config
+	Enable VNC
+	Change resolution to highest
+
+reboot
+--------------------------------------------------------
+
+After raspberry pi restarts, may need this command to start vnc server
+--------------------------------------------------------
+vncserver :1
+--------------------------------------------------------
+
+
+2. From browser:
+http://192.168.0.22:5800
+
+
+3. nano /boot/config.txt
+
+--------------------------------------------------------
+nano /boot/config.txt
+--------------------------------------------------------
+
+--------------------------------------------------------
+...
+hdmi_ignore_edid=0xa5000080
+hdmi_group=2
+hdmi_mode=85
+...
+--------------------------------------------------------
+save: control+x
+
+
+4. Remote file system
+(1.1) Install netatalk
+--------------------------------------------------------
+sudo apt-get install netatalk
+--------------------------------------------------------
+
+(1.2) Configure netatalk
+https://www.raspberrypi.org/forums/viewtopic.php?t=243785
+https://chicagodist.com/blogs/news/using-netatalk-to-share-files-between-a-raspberry-pi-and-mac
+--------------------------------------------------------
+sudo nano /etc/netatalk/afp.conf
+
+// enable this two lines. no need to reboot.
+[Homes]
+basedir regex = /home
+--------------------------------------------------------
+
+(1.3) Finder 
+command+k to open "Connect to Server" dialog
+Enter:
+--------------------------------------------------------
+afp://192.168.0.22
+--------------------------------------------------------
+Press connect button and enter pi and password.
+
+(2.1) FileZilla
+https://filezilla-project.org/
+--------------------------------------------------------
+sftp://192.168.0.22	pi <password> 22
+--------------------------------------------------------
+
+
+(3.1) Use samba
+
+
+
+
+

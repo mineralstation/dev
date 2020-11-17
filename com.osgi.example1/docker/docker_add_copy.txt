@@ -1,0 +1,18 @@
+1. https://phoenixnap.com/kb/docker-add-vs-copy
+
+Instead of using ADD and running the following command:
+----------------------------------------------------------------
+ADD http://source.file/package.file.tar.gz /temp
+RUN tar -xjf /temp/package.file.tar.gz \
+  && make -C /tmp/package.file \
+  && rm /tmp/ package.file.tar.gz
+----------------------------------------------------------------
+
+You should use:
+----------------------------------------------------------------
+RUN curl http://source.file/package.file.tar.gz \
+  | tar -xjC /tmp/ package.file.tar.gz \
+  && make -C /tmp/ package.file.tar.gz
+----------------------------------------------------------------
+
+Note: The only time you would need to use the ADD command is when extracting local tar files into the image.

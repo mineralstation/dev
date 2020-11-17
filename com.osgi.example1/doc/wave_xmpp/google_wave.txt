@@ -1,0 +1,15 @@
+
+
+https://mashable.com/2009/05/28/google-wave-guide/
+
+Wave Project Incubation Status
+http://incubator.apache.org/projects/wave.html
+
+wave-protocol/wave
+https://github.com/wave-protocol/wave/tree/master/wave/src/main/java/com/google/wave/api/robot
+
+wave-protocol/wave
+https://github.com/wave-protocol/wave
+
+wave-protocol/wave
+https://github.com/wave-protocol/wave/tree/master/wave/src/main/java/com/google/wave/api

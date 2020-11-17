@@ -1,0 +1,166 @@
+Videos:
+---------------------------------------------------------------------------------------------------------------
+(1) Intro to Docker using a Raspberry Pi 4
+    https://www.youtube.com/watch?v=nBwJm0onzeo
+---------------------------------------------------------------------------------------------------------------
+
+
+
+1. vi
+https://www.guru99.com/the-vi-editor.html
+---------------------------------------------------------------------------------------------------------------
+i - Insert at cursor (goes into insert mode)
+dd - Delete line
+x - Delete character at the cursor
+
+:q - Quit without saving
+:wq - Save the file and quit
+---------------------------------------------------------------------------------------------------------------
+
+
+2.apt
+---------------------------------------------------------------------------------------------------------------
+// update packages metadata
+sudo apt update
+
+// install packages (handle dependencies automatically)
+sudo apt upgrade 
+
+// change to root user
+sudo -s
+
+(https://askubuntu.com/questions/489933/how-to-come-out-of-root-user)
+// return to user
+exit
+
+Or you can simply press CTRL+D.
+
+// Install jre
+apt install default-jre
+
+// top
+top session
+'q' to exit
+---------------------------------------------------------------------------------------------------------------
+
+
+3. Install Docker
+---------------------------------------------------------------------------------------------------------------
+// on raspberry pi 3
+$ curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+
+// on raspberry pi 4
+$ curl -fsSL get.docker.com -o get-docker.sh 
+
+// edit get-docker.sh file, in do_install()
+	change from:
+	case "$dist_version" in
+			9)
+				dist_version="stretch"
+
+	to:
+	case "$dist_version" in
+			10)
+				dist_version="stretch"
+
+
+$ chmod -x ./get-docker.sh
+$ ./get-docker.sh
+---------------------------------------------------------------------------------------------------------------
+
+
+4. Docker command
+(see "Intro to Docker using a Raspberry Pi 4" - https://www.youtube.com/watch?v=nBwJm0onzeo)
+---------------------------------------------------------------------------------------------------------------
+sudo Docker --version
+sudo Docker images
+sudo Docker ps
+
+https://hub.docker.com
+docker pull hello-world
+docker pull ubuntu
+docker pull node
+docker pull gcc
+
+
+// pull hello-world image and run it
+sudo docker run hello-world
+
+(https://linuxize.com/post/docker-run-command/)
+sudo docker run --name <INSTANCE_NAME> hello-world
+
+
+// pull ubuntu image and run it by interactive mode (-it)
+// -t to allocate a pseudo-tty to the process, 
+// -i to keep STDIN open even if not attached.
+sudo docker run -it ubuntu bash
+
+// show os info
+root@12144ee6d282:/# uname -a
+Linux 12144ee6d282 5.4.72-v7l+ #1356 SMP Thu Oct 22 13:57:51 BST 2020 armv7l armv7l armv7l GNU/Linux
+
+more /etc/os-release
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+To run a Docker container in the background, use the use -d=true or just -d option.
+docker run --rm -ti -p 8000:80 -p 8443:443 --name pandorafms pandorafms/pandorafms:latest
+docker run -d --rm -p 8000:80 -p 8443:443 --name pandorafms pandorafms/pandorafms:latest
+
+// run ubuntu in background
+docker run -dit ubuntu
+
+(https://stackoverflow.com/questions/28212380/why-docker-container-exits-immediately)
+// run the ubuntu container in background in interactive mode
+// --rm means remove container after ubuntu exits
+
+(https://linuxize.com/post/docker-run-command/)
+// The --rm options tells docker run command to remove the container when it exits automatically
+docker run -dit --rm ubuntu
+
+// a container to stay up after finish the script execution
+docker run -d ubuntu bash && tail -f /dev/null (not working)
+
+// override the entry point to change it to a shell:
+docker run -it --entrypoint=/bin/bash ubuntu
+
+
+// stop a container
+docker stop <container_id>
+
+// remove a container
+docker rm -f <container_id>
+// remove containers separated by space
+docker rm -f <container_id1> <container_id2>
+
+(https://www.youtube.com/watch?v=nBwJm0onzeo)
+// start an existing container
+docker start -i <container_id>
+
+
+
+// check running containers
+docker ps -a
+docker container ls -a
+
+// clear all stopped containers (running container will not be cleared)
+docker container prune
+
+
+
+// attach to a container
+docker attach CONTAINER_NAME
+
+(https://phase2.github.io/devtools/common-tasks/ssh-into-a-container/)
+// a bash shell in the container
+docker exec -it <container name> /bin/bash
+
+// exiting without stopping the container
+^P^Q
+
+(https://stackoverflow.com/questions/25267372/correct-way-to-detach-from-a-container-without-stopping-it)
+// turn interactive mode to daemon mode.
+ctrl+p ctrl+q
+---------------------------------------------------------------------------------------------------------------
+
+
