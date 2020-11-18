@@ -1,0 +1,79 @@
+1. denied: requested access to the resource is denied : docker
+   https://stackoverflow.com/questions/41984399/denied-requested-access-to-the-resource-is-denied-docker
+
+Rename the image by adding a tag to it using username
+------------------------------------------------------------------------
+docker tag <image_name> YOUR_DOCKERHUB_NAME/<image_name>
+docker push YOUR_DOCKERHUB_NAME/<image_name>
+------------------------------------------------------------------------
+
+Sample
+------------------------------------------------------------------------
+docker login
+
+docker tag hello-world-java yangyang4j/hello-world-java
+
+docker push yangyang4j/hello-world-java
+The push refers to repository [docker.io/yangyang4j/hello-world-java]
+48a8fc6b86a7: Pushed 
+b999df59fec7: Pushed 
+2a9db3d727cd: Pushed 
+ef54000f9c04: Pushed 
+e1c30708e50c: Pushed 
+449a36a9c103: Pushed 
+6cfb666fef14: Pushed 
+f9b2786de272: Pushed 
+e371647df2c8: Pushed 
+latest: digest: sha256:d069d278bdb6eeb97eb5a4dee47f3e758d5aef40ac84ca2818023dd8c96fc05e size: 2203
+
+root@raspberrypi:/home/pi# docker pull yangyang4j/hello-world-java
+Using default tag: latest
+latest: Pulling from yangyang4j/hello-world-java
+15cfb32571a9: Already exists 
+284ec6226ea6: Already exists 
+c3f65834a938: Already exists 
+99f145832e9b: Already exists 
+06169c95c7dc: Already exists 
+21e7b223f865: Already exists 
+ce20c1969884: Already exists 
+9e5a3ad3846d: Pull complete 
+2ead03d3ef85: Pull complete 
+Digest: sha256:d069d278bdb6eeb97eb5a4dee47f3e758d5aef40ac84ca2818023dd8c96fc05e
+Status: Downloaded newer image for yangyang4j/hello-world-java:latest
+docker.io/yangyang4j/hello-world-java:latest
+root@raspberrypi:/home/pi# docker images
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+yangyang4j/hello-world-java   latest              700e23c4b6b0        15 hours ago        380MB
+simple-node-webserver         latest              e8a076355626        22 hours ago        766MB
+hello-world-gcc               latest              a9d18bea43db        24 hours ago        1.19GB
+node                          latest              338eedef62b1        5 days ago          766MB
+ubuntu                        latest              3324772e8bdf        3 weeks ago         49.8MB
+gcc                           latest              d9a891dc4ac8        4 weeks ago         871MB
+hello-world                   latest              851163c78e4a        10 months ago       4.85kB
+openjdk                       7                   d91d1fcddbd1        18 months ago       380MB
+gcc                           4.9                 69a20488ee66        3 years ago         1.19GB
+root@raspberrypi:/home/pi# 
+
+------------------------------------------------------------------------
+
+Sample:
+------------------------------------------------------------------------
+// add username to tag
+docker tag hello-world-gcc yangyang4j/hello-world-gcc
+
+// push image
+docker push yangyang4j/hello-world-gcc
+
+// remove images
+docker rmi yangyang4j/hello-world-gcc
+docker rmi hello-world-gcc
+
+// pull image
+docker pull yangyang4j/hello-world-gcc
+
+// run image
+docker run -it yangyang4j/hello-world-gcc
+------------------------------------------------------------------------
+
+
+

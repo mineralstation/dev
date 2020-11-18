@@ -68,7 +68,20 @@ Press "GENERATE" button
 to generate and download a "docker-spring-boot.zip" file.
 
 
+------------------------------------------------------------------------
+docker pull frankwolf/rpi-oracle-java8-jdk
+
+docker build -t docker-spring-boot .
+
+docker run --rm -it -p 8081:8080 docker-spring-boot
+------------------------------------------------------------------------
 
 
-
-
+https://www.techiedelight.com/spring-boot-app-shuts-down-automatically-at-startup/
+(1) add this
+------------------------------------------------------------------------
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+------------------------------------------------------------------------
