@@ -1,0 +1,8 @@
+1. Repository is not signed in docker build
+https://stackoverflow.com/questions/59139453/repository-is-not-signed-in-docker-build
+-------------------------------------------------
+docker image prune
+docker image prune -f
+
+docker container prune
+-------------------------------------------------
