@@ -11,8 +11,8 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import org.junit.runners.MethodSorters;
-import org.origin.common.io.ZipUtil;
 import org.origin.common.jdbc.DatabaseUtil;
+import org.origin.common.util.ZipUtil;
 
 import com.osgi.example1.fs.common.Path;
 import com.osgi.example1.fs.server.service.FileSystem;

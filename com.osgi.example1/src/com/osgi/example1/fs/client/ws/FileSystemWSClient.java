@@ -23,12 +23,12 @@ import org.glassfish.jersey.media.multipart.FormDataMultiPart;
 import org.glassfish.jersey.media.multipart.MultiPart;
 import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;
 import org.glassfish.jersey.media.multipart.file.StreamDataBodyPart;
-import org.origin.common.io.IOUtil;
 import org.origin.common.json.JSONUtil;
 import org.origin.common.rest.client.WSClient;
 import org.origin.common.rest.client.WSClientConfiguration;
 import org.origin.common.rest.client.ClientException;
 import org.origin.common.rest.model.StatusDTO;
+import org.origin.common.util.IOUtil;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.osgi.example1.fs.common.FileMetadata;

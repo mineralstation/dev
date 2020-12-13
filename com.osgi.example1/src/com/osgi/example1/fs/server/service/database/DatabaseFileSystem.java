@@ -11,8 +11,8 @@ import java.util.Hashtable;
 import java.util.List;
 
 import org.origin.common.adapter.AdaptorSupport;
-import org.origin.common.io.IOUtil;
 import org.origin.common.jdbc.DatabaseUtil;
+import org.origin.common.util.IOUtil;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 

@@ -15,9 +15,9 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import org.junit.runners.MethodSorters;
-import org.origin.common.io.FileUtil;
-import org.origin.common.io.IOUtil;
 import org.origin.common.jdbc.DatabaseUtil;
+import org.origin.common.util.FileUtil;
+import org.origin.common.util.IOUtil;
 
 import com.osgi.example1.fs.server.service.database.FsFileContentTableHandler;
 import com.osgi.example1.fs.server.service.database.FsFileMetadataTableHandler;

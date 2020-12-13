@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.origin.common.io.FileUtil;
-import org.origin.common.io.IOUtil;
+import org.origin.common.util.FileUtil;
+import org.origin.common.util.IOUtil;
 
 import com.osgi.example1.fs.common.FileMetadata;
 import com.osgi.example1.fs.common.Path;

@@ -11,7 +11,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.PropertyException;
 
-import org.origin.common.io.IOUtil;
+import org.origin.common.util.IOUtil;
 
 import com.sun.xml.internal.bind.marshaller.NamespacePrefixMapper;
 

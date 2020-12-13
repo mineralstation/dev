@@ -9,8 +9,8 @@ import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.origin.common.io.IOUtil;
 import org.origin.common.json.JSONUtil;
+import org.origin.common.util.IOUtil;
 
 import p2.model.repository.RepositoryUnit;
 import p2.model.resource.P2Constants;
