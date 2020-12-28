@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.origin.common.jdbc.AbstractResultSetHandler;
-import org.origin.common.jdbc.DatabaseTableAware;
+import org.origin.common.jdbc.DatabaseTableProvider;
 import org.origin.common.jdbc.DatabaseUtil;
 import org.origin.common.jdbc.ResultSetSingleHandler;
 
@@ -41,7 +41,7 @@ import com.osgi.example1.fs.common.vo.FileContentVO;
  * Need to create bytes array input stream and specify the length of the bytes array to do the file content update.
  * http://stackoverflow.com/questions/4299765/saving-java-object-to-postgresql-problem
  */
-public class FsFileContentTableHandler implements DatabaseTableAware {
+public class FsFileContentTableHandler implements DatabaseTableProvider {
 
 	public static FsFileContentTableHandler INSTANCE = new FsFileContentTableHandler();
 
@@ -53,7 +53,7 @@ public class FsFileContentTableHandler implements DatabaseTableAware {
 	@Override
 	public String getCreateTableSQL(String database) {
 		StringBuilder sb = new StringBuilder();
-		if (DatabaseTableAware.MYSQL.equalsIgnoreCase(database)) {
+		if (DatabaseTableProvider.MYSQL.equalsIgnoreCase(database)) {
 			sb.append("CREATE TABLE IF NOT EXISTS " + getTableName() + " (");
 			sb.append("    fileContentId int NOT NULL AUTO_INCREMENT,");
 			sb.append("    fileId int NOT NULL,");
@@ -63,7 +63,7 @@ public class FsFileContentTableHandler implements DatabaseTableAware {
 			// sb.append(" FOREIGN KEY (fileId) REFERENCES FsFileMetadata(fileId)");
 			sb.append(");");
 
-		} else if (DatabaseTableAware.POSTGRESQL.equalsIgnoreCase(database)) {
+		} else if (DatabaseTableProvider.POSTGRESQL.equalsIgnoreCase(database)) {
 			sb.append("CREATE TABLE IF NOT EXISTS " + getTableName() + " (");
 			sb.append("    fileContentId serial NOT NULL,");
 			sb.append("    fileId int NOT NULL,");

@@ -8,14 +8,14 @@ import java.util.Date;
 import java.util.List;
 
 import org.origin.common.jdbc.AbstractResultSetHandler;
-import org.origin.common.jdbc.DatabaseTableAware;
+import org.origin.common.jdbc.DatabaseTableProvider;
 import org.origin.common.jdbc.DatabaseUtil;
 import org.origin.common.jdbc.ResultSetListHandler;
 import org.origin.common.jdbc.ResultSetSingleHandler;
 
 import com.osgi.example1.fs.common.vo.FileMetadataVO;
 
-public class FsFileMetadataTableHandler implements DatabaseTableAware {
+public class FsFileMetadataTableHandler implements DatabaseTableProvider {
 
 	public static FsFileMetadataTableHandler INSTANCE = new FsFileMetadataTableHandler();
 
@@ -28,7 +28,7 @@ public class FsFileMetadataTableHandler implements DatabaseTableAware {
 	public String getCreateTableSQL(String database) {
 		StringBuilder sb = new StringBuilder();
 
-		if (DatabaseTableAware.MYSQL.equalsIgnoreCase(database)) {
+		if (DatabaseTableProvider.MYSQL.equalsIgnoreCase(database)) {
 			sb.append("CREATE TABLE IF NOT EXISTS " + getTableName() + " (");
 			sb.append("    fileId int NOT NULL AUTO_INCREMENT,");
 			sb.append("    parentFileId int NOT NULL DEFAULT -1,");
@@ -44,7 +44,7 @@ public class FsFileMetadataTableHandler implements DatabaseTableAware {
 			sb.append("    PRIMARY KEY (fileId)");
 			sb.append(");");
 
-		} else if (DatabaseTableAware.POSTGRESQL.equalsIgnoreCase(database)) {
+		} else if (DatabaseTableProvider.POSTGRESQL.equalsIgnoreCase(database)) {
 			sb.append("CREATE TABLE IF NOT EXISTS " + getTableName() + " (");
 			sb.append("    fileId serial NOT NULL,");
 			sb.append("    parentFileId int NOT NULL DEFAULT -1,");
