@@ -319,4 +319,9 @@ public class LocalFileSystem implements FileSystem {
 		this.adaptorSupport.adapt(classes, object);
 	}
 
+	@Override
+	public <T> Class<T>[] getAdaptedClasses() {
+		return this.adaptorSupport.getAdaptedClasses();
+	}
+
 }
